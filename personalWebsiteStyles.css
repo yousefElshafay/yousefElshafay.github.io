@@ -10,7 +10,10 @@ body {
     --primaryText-color: black;
     --primary-color: rgb(2, 2, 36);
     --primaryBorder-color: white;
+    --secondaryBorder-color: rgb(0, 0, 0);
     --primaryHover-color: rgb(53, 53, 53);
+    /* font family  */
+    font-family: 'Roboto', sans-serif;
 }
 
 * {
@@ -30,7 +33,7 @@ body {
 } */
 
 #BrasovMountainview {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     object-fit: cover;
     /* background-image: url("Assests/BrasovMountainviewDesktopVw.png"); */
@@ -65,10 +68,11 @@ body {
 }
 
 
-/*  Rotating cube ANIMATION END */
-
-
 /*  Content Css START */
+
+.content {
+    padding: 1em;
+}
 
 
 /* hamburger btn */
@@ -77,7 +81,7 @@ body {
     display: none;
     position: sticky;
     z-index: 5;
-    top: 15px;
+    top: 5%;
     grid-area: header-right;
     cursor: pointer;
 }
@@ -202,9 +206,21 @@ body {
     .img-magnifier-glass {
         display: none;
     }
+    /* change grid layout on mobile view  */
+    .container {
+        grid-template-columns: 4fr 1fr;
+        grid-template-rows: 0.25fr 2fr;
+        grid-gap: 1em;
+        grid-template-areas: "header-left  header-right" "content   content";
+        width: auto;
+        height: 100vh;
+    }
+    .contentContainer {
+        grid-area: content;
+    }
     /* side nav bar  */
     #sideNav {
-        grid-area: content-right;
+        grid-area: header-right;
     }
     #sideNav li {
         list-style: none;
@@ -243,6 +259,43 @@ body {
     }
     #btn-navMenu {
         display: block;
+    }
+    .sectionTitle {
+        text-align: center;
+        margin-bottom: 10%;
+    }
+    .timelineContainer {
+        height: auto;
+        overflow: hidden;
+    }
+    .timelineContainer ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        transition: all 0.5s linear;
+        top: 0
+    }
+    .timelineContainer ul li {
+        position: relative;
+        padding: 5%;
+        color: var(--primaryText-color, rgb(0, 0, 0));
+        border-top: 3px solid var(--secondaryBorder-color);
+        width: 100%;
+    }
+    .timelineContainer .title {
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 5px
+    }
+    .timelineContainer .info:first-letter {
+        text-transform: capitalize;
+        line-height: 1.7
+    }
+    .timelineContainer .date span {
+        right: 0px;
+        color: var(--primaryText-color, rgb(0, 0, 0));
+        font-weight: bold;
     }
 }
 
@@ -430,3 +483,6 @@ body {
     -webkit-transform: rotateX( -90deg) translateZ(var(--cube-Ztranslate));
     -moz-transform: rotateX( -90deg) translateZ(var(--cube-Ztranslate));
 }
+
+
+/*  Rotating cube ANIMATION END */

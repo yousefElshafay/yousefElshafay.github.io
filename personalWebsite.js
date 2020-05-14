@@ -85,6 +85,7 @@ sidebarBtn.addEventListener('click', function(event) {
     sidenavBox.style.width = "50vw";
     sidenavBox.style.display = "block";
     sidebarBtn.style.display = "none";
+
 });
 
 sidenavBox.addEventListener('click', function(event) {
