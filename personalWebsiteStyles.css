@@ -1,13 +1,15 @@
 body {
+    background: whitesmoke;
     /* Declare cube transition vairable */
     --cube-transition-duration: 1s;
     /* for the cube ztranslate property  */
     --cube-Ztranslate: 2em;
     --cube-ZtranslateOnHover: 4em;
     /* color schema  */
-    --primaryBackground-color: white;
+    --primaryBackground-color: whitesmoke;
     --secondaryBackground-color: black;
     --primaryText-color: black;
+    --secondaryText-color: dimgray;
     --primary-color: rgb(2, 2, 36);
     --primaryBorder-color: white;
     --secondaryBorder-color: rgb(0, 0, 0);
@@ -278,25 +280,99 @@ body {
     }
     .timelineContainer ul li {
         position: relative;
-        padding: 5%;
+        padding: 3% 5%;
         color: var(--primaryText-color, rgb(0, 0, 0));
-        border-top: 3px solid var(--secondaryBorder-color);
+        background: white;
+        border-top: 2px solid var(--primary-color, rgb(0, 0, 0));
+        box-shadow: 2px 1px 3px #030821;
+        margin-bottom: 5%;
         width: 100%;
+    }
+    .timelineContainer .info {
+        color: var(--primaryText-color, rgb(0, 0, 0));
+        padding: 1em 0;
     }
     .timelineContainer .title {
         text-transform: uppercase;
         font-weight: 700;
-        margin-bottom: 5px
+        color: var(--primaryText-color, rgb(0, 0, 0));
+        font-size: larger;
+        font-weight: bold;
+        margin-bottom: 5px;
     }
-    .timelineContainer .info:first-letter {
+    .timelineContainer .info::first-letter {
         text-transform: capitalize;
         line-height: 1.7
     }
+    .timelineContainer a {
+        text-decoration: none;
+        color: inherit;
+    }
+    .timelineContainer .date {
+        text-align: start;
+    }
     .timelineContainer .date span {
         right: 0px;
-        color: var(--primaryText-color, rgb(0, 0, 0));
+        color: var(--secondaryText-color, rgb(0, 0, 0));
         font-weight: bold;
     }
+    .collapsible {
+        cursor: pointer;
+        width: 100%;
+        border: none;
+        outline: none;
+    }
+    .collapsible:before {
+        /* content: url("Assests/ExpandArrow.png"); */
+        /* color: white;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px; */
+        background-image: url("Assests/ExpandArrow.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        float: right;
+        width: 1.5em;
+        height: 1.5em;
+        content: "";
+    }
+    .content {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0px;
+    }
+    .active:before {
+        background-image: url("Assests/CollapseArrow.png");
+        content: "";
+    }
+    .active .content {
+        max-height: none;
+    }
+    .active .date {
+        text-align: end;
+    }
+    /* .accordion__item {
+        border-bottom: 1px solid #e6e6e6;
+    }
+    .accordion__header {
+        cursor: pointer;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+        padding-right: 1.5rem;
+        margin: 0;
+    }
+    .accordion__body {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0;
+        transition: max-height .5s;
+        transition-delay: -.2s;
+        transition-timing-function: cubic-bezier(0, 1, 0, 1);
+    }
+    .accordion__header:before {
+        background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='rgb%280%2C0%2C255%29'%3E%3Cpath fill-rule='evenodd' d='M3.646 8.306a.508.508 0 01-.71 0 .497.497 0 01-.007-.7l4.085-4.06 4.054 4.055a.505.505 0 010 .707.501.501 0 01-.71-.002L7.008 4.954 3.646 8.306z'/%3E%3C/svg%3E");
+        margin-right: -1.5rem;
+    } */
 }
 
 
