@@ -1,12 +1,12 @@
 body {
-    background: whitesmoke;
+    background: white;
     /* Declare cube transition vairable */
     --cube-transition-duration: 1s;
     /* for the cube ztranslate property  */
     --cube-Ztranslate: 2em;
     --cube-ZtranslateOnHover: 4em;
     /* color schema  */
-    --primaryBackground-color: whitesmoke;
+    --primaryBackground-color: white;
     --secondaryBackground-color: black;
     --primaryText-color: black;
     --secondaryText-color: dimgray;
@@ -35,9 +35,12 @@ body {
 } */
 
 #BrasovMountainview {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+    background-image: url("Assests/BrasovMountainview2.png");
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     /* background-image: url("Assests/BrasovMountainviewDesktopVw.png"); */
     /* background-image: url("BrasovMountainviewEdited.png"); */
     /* width: 100vw;
@@ -80,11 +83,12 @@ body {
 /* hamburger btn */
 
 #btn-navMenu {
-    display: none;
-    position: sticky;
+    display: block;
+    position: absolute;
     z-index: 5;
-    top: 5%;
-    grid-area: header-right;
+    right: 5%;
+    margin-top: 10%;
+    /* grid-area: header-right; */
     cursor: pointer;
 }
 
@@ -127,7 +131,7 @@ body {
     transform: translateY(-10px) rotate(-45deg);
 }
 
-.contentContainer {
+#contentContainer {
     /* grid-column: 2; */
     grid-area: content-middle;
 }
@@ -151,14 +155,14 @@ body {
 /* eductionSection */
 
 #eductionSection {
-    display: block;
+    display: none;
 }
 
 
 /* experienceSection */
 
 #experienceSection {
-    display: none;
+    display: block;
 }
 
 
@@ -202,6 +206,11 @@ body {
         width: 2em;
         height: 2em;
     }
+    #welcomeSection>p {
+        width: 80%;
+        text-align: justify;
+        margin: auto;
+    }
     #personalProfilePic {
         width: 50%;
     }
@@ -217,8 +226,9 @@ body {
         width: auto;
         height: 100vh;
     }
-    .contentContainer {
+    #contentContainer {
         grid-area: content;
+        transition: 1s ease-in-out;
     }
     /* side nav bar  */
     #sideNav {
@@ -260,7 +270,15 @@ body {
         padding-top: 60px;
     }
     #btn-navMenu {
+        transition: 0.5s ease-in-out;
+    }
+    .is-visible {
+        opacity: 1;
         display: block;
+    }
+    .is-not-visible {
+        opacity: 0;
+        display: none !important;
     }
     .sectionTitle {
         text-align: center;
@@ -288,11 +306,7 @@ body {
         margin-bottom: 5%;
         width: 100%;
     }
-    .timelineContainer .info {
-        color: var(--primaryText-color, rgb(0, 0, 0));
-        padding: 1em 0;
-    }
-    .timelineContainer .title {
+    .title {
         text-transform: uppercase;
         font-weight: 700;
         color: var(--primaryText-color, rgb(0, 0, 0));
@@ -300,18 +314,28 @@ body {
         font-weight: bold;
         margin-bottom: 5px;
     }
-    .timelineContainer .info::first-letter {
+    .Subtitle {
+        color: var(--secondaryText-color, lightgrey);
+    }
+    .title .countryCode {
+        font-size: x-small;
+        color: var(--secondaryText-color, rgb(0, 0, 0));
+    }
+    .info {
+        color: var(--primaryText-color, rgb(0, 0, 0));
+        padding: 1em 0;
+    }
+    .info::first-letter {
         text-transform: capitalize;
         line-height: 1.7
     }
-    .timelineContainer a {
-        text-decoration: none;
+    a {
         color: inherit;
     }
-    .timelineContainer .date {
+    .date {
         text-align: start;
     }
-    .timelineContainer .date span {
+    .date span {
         right: 0px;
         color: var(--secondaryText-color, rgb(0, 0, 0));
         font-weight: bold;
@@ -321,6 +345,20 @@ body {
         width: 100%;
         border: none;
         outline: none;
+    }
+    .subSection {
+        background: #e6e6e6;
+        padding: 10px;
+        /* padding-left: 0px; */
+        /* border: crimson; */
+        border-radius: 5px;
+    }
+    .subSection .quote {
+        margin-top: 3%;
+        text-align: center;
+    }
+    .subSection .quote q {
+        background: var(--primaryBackground-color, white);
     }
     .collapsible:before {
         /* content: url("Assests/ExpandArrow.png"); */
@@ -336,8 +374,13 @@ body {
         height: 1.5em;
         content: "";
     }
+    .subSection .collapsible:before {
+        width: 1em;
+        height: 1em;
+    }
     .content {
-        max-height: 0;
+        display: none;
+        transition: max-height 0.75s cubic-bezier(0, 1, 0, 1);
         overflow: hidden;
         padding: 0px;
     }
@@ -346,10 +389,11 @@ body {
         content: "";
     }
     .active .content {
-        max-height: none;
+        display: block;
+        transition: max-height 0.75s cubic-bezier(0, 1, 0, 1);
     }
     .active .date {
-        text-align: end;
+        margin-top: 1vh;
     }
     /* .accordion__item {
         border-bottom: 1px solid #e6e6e6;
