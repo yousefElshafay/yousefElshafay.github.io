@@ -1,3 +1,38 @@
+.quoteContainer {
+    height: auto;
+    overflow: hidden;
+}
+
+.quote {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: xx-large;
+    text-emphasis: bold;
+    padding: 1%;
+    padding-left: 15%;
+}
+
+.quoteOwner {
+    font-size: medium;
+    color: #0000006b;
+}
+
+.faded {
+    opacity: 0.4;
+    font-size: smaller;
+}
+
+.align-right {
+    float: right;
+}
+
+.align-left {
+    float: left;
+}
+
+
+/* Dark Grey */
+
 body {
     background: white;
     /* Declare cube transition vairable */
@@ -11,6 +46,7 @@ body {
     --primaryText-color: black;
     --secondaryText-color: dimgray;
     --primary-color: rgb(2, 2, 36);
+    --secondary-color: rgb(143, 143, 143);
     --primaryBorder-color: white;
     --secondaryBorder-color: rgb(0, 0, 0);
     --primaryHover-color: rgb(53, 53, 53);
@@ -24,24 +60,6 @@ body {
     box-sizing: border-box;
 }
 
-
-/* .actionCube {
-    width: 60px;
-    height: 60px;
-    position: absolute;
-    bottom: -40vh;
-    left: 50vw;
-    background-color: whitesmoke;
-} */
-
-.quote {
-    text-align: center;
-    text-transform: uppercase;
-    color: black;
-    font-size: x-large;
-    padding: 1%;
-}
-
 #BrasovMountainview {
     background-image: url("Assests/BrasovMountainview2.png");
     height: 100vh;
@@ -50,36 +68,24 @@ body {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    /* background-image: url("Assests/BrasovMountainviewDesktopVw.png"); */
-    /* background-image: url("BrasovMountainviewEdited.png"); */
-    /* width: 100vw;
-    height: 150vh;
-    max-width: 100%;
-    object-fit: cover;
-    background-repeat: no-repeat; */
-    /* opacity: 0.1;
-   transition: opacity 2s ease-in-out; */
 }
 
 .img-magnifier-glass {
-    position: absolute;
+    position: fixed;
     border: 3px solid var(--primary-color);
     border-radius: 50%;
     cursor: none;
     /*Set the size of the magnifier glass:*/
-    width: 100px;
-    height: 100px;
+    width: 10Vw;
+    height: 10vw;
+}
+
+aside {
+    grid-area: content-right;
 }
 
 .navItem {
     color: black;
-}
-
-#sideNav {
-    display: block;
-    height: 100%;
-    width: 100%;
-    grid-area: content-right;
 }
 
 .container {
@@ -111,7 +117,7 @@ body {
 /* Welcome Section */
 
 #welcomeSection {
-    display: none;
+    display: block;
     text-align: center;
 }
 
@@ -137,7 +143,7 @@ body {
 /* projects */
 
 #projectsSection {
-    display: block;
+    display: none;
 }
 
 
@@ -147,11 +153,64 @@ body {
     display: none;
 }
 
+#skillsAndHobbiesSection .skillContainer {
+    width: 100%;
+    /* Full width */
+    /* Grey background */
+}
+
+#skillsAndHobbiesSection .skills {
+    text-align: right;
+    /* Right-align text */
+    padding-top: 10px;
+    /* Add top padding */
+    padding-bottom: 10px;
+    /* Add bottom padding */
+    color: white;
+    /* White text color */
+}
+
+#skillsAndHobbiesSection .html {
+    width: 90%;
+    background-color: #4CAF50;
+}
+
+
+/* #skillsAndHobbiesSection .skill {
+    width: 80%;
+    background-color: #2196F3;
+} */
+
 
 /* contactme */
 
 #contactmeSection {
-    display: none;
+    display: block;
+    text-align: center;
+}
+
+#contactmeSection h3 {
+    opacity: 0.2;
+}
+
+#contactmeSection h3:hover {
+    opacity: 0.5;
+}
+
+#contactmeSection a {
+    text-decoration: none;
+    font-size: 22px;
+    color: var(--secondary-color, grey);
+    width: 25%;
+    margin: auto;
+}
+
+#contactmeSection a:hover {
+    color: var( --primary-color, black);
+}
+
+#contactLinksContainer {
+    margin-top: 10%;
 }
 
 
@@ -169,16 +228,23 @@ body {
 /* mobile view  */
 
 @media only screen and (max-width: 600px) {
+    /*  Hero  image   */
     #BrasovMountainview {
         height: 100vh;
         width: 100vw;
         max-width: 100vw;
     }
-    #cube div {
+    .quote {
+        padding: 0px;
+    }
+    .quote span {
+        width: 100%;
+    }
+    /* #cube div {
         --cube-Ztranslate: 1em;
         width: 2em;
         height: 2em;
-    }
+    } */
     /* hamburger btn */
     #btn-navMenu {
         display: block;
@@ -186,8 +252,8 @@ body {
         z-index: 5;
         right: 5%;
         margin-top: 10%;
-        /* grid-area: header-right; */
         cursor: pointer;
+        transition: 0.5s ease-in-out;
     }
     #btn-navMenu div {
         width: 10vw;
@@ -200,32 +266,6 @@ body {
     #btn-navMenu.active {
         left: 230px;
     }
-    /* 
-    #btn-navMenu.active div {
-        background-color: var(--primaryHover-color, #343838);
-    }
-
-    #btn-navMenu.active:hover>div {
-        box-shadow: 0 0 1px var(--primaryHover-color, #343838);
-    }
-
-    #btn-navMenu.active #top {
-        -webkit-transform: translateY(10px) rotate(-135deg);
-        -ms-transform: translateY(10px) rotate(-135deg);
-        transform: translateY(10px) rotate(-135deg);
-    }
-
-    #btn-navMenu.active #middle {
-        -webkit-transform: scale(0);
-        -ms-transform: scale(0);
-        transform: scale(0);
-    }
-
-    #btn-navMenu.active #bottom {
-        -webkit-transform: translateY(-10px) rotate(-45deg);
-        -ms-transform: translateY(-10px) rotate(-45deg);
-        transform: translateY(-10px) rotate(-45deg);
-    } */
     /* side nav bar  */
     #sideNav {
         grid-area: header-right;
@@ -251,27 +291,6 @@ body {
         transition: 0.5s;
         padding-top: 60px;
     }
-    /* li::before {
-    content: '';
-    width: 100%;
-    height: 100%;
-    background: orange;
-    border: 3px solid white;
-    margin: 0;
-    padding: 1em;
-    } */
-    #welcomeSection>p {
-        width: 80%;
-        text-align: justify;
-        margin: auto;
-        margin-top: 5%;
-    }
-    #personalProfilePic {
-        width: 50%;
-    }
-    .img-magnifier-glass {
-        display: none;
-    }
     /* change grid layout on mobile view  */
     .container {
         grid-template-columns: 4fr 1fr;
@@ -285,8 +304,9 @@ body {
         grid-area: content;
         transition: 1s ease-in-out;
     }
-    #btn-navMenu {
-        transition: 0.5s ease-in-out;
+    /* magnifier glass */
+    .img-magnifier-glass {
+        display: none;
     }
     .is-visible {
         opacity: 1;
@@ -296,15 +316,8 @@ body {
         opacity: 0;
         display: none !important;
     }
-    .sectionTitle {
-        text-align: center;
-        margin-bottom: 10%;
-    }
-    .timelineContainer {
-        height: auto;
-        overflow: hidden;
-    }
-    .timelineContainer ul {
+    /* section css  */
+    section ul {
         list-style-type: none;
         margin: 0;
         padding: 0;
@@ -312,7 +325,7 @@ body {
         transition: all 0.5s linear;
         top: 0
     }
-    .timelineContainer ul li {
+    section ul li {
         position: relative;
         padding: 3% 5%;
         color: var(--primaryText-color, rgb(0, 0, 0));
@@ -321,6 +334,10 @@ body {
         box-shadow: 2px 1px 3px #030821;
         margin-bottom: 5%;
         width: 100%;
+    }
+    .sectionTitle {
+        text-align: center;
+        margin-bottom: 10%;
     }
     .title {
         text-transform: uppercase;
@@ -356,6 +373,7 @@ body {
         color: var(--secondaryText-color, rgb(0, 0, 0));
         font-weight: bold;
     }
+    /* collapsible css */
     .collapsible {
         cursor: pointer;
         width: 100%;
@@ -365,8 +383,6 @@ body {
     .subSection {
         background: #e6e6e6;
         padding: 10px;
-        /* padding-left: 0px; */
-        /* border: crimson; */
         border-radius: 5px;
     }
     .subSection .quote {
@@ -377,11 +393,6 @@ body {
         background: var(--primaryBackground-color, white);
     }
     .collapsible:before {
-        /* content: url("Assests/ExpandArrow.png"); */
-        /* color: white;
-        font-weight: bold;
-        float: right;
-        margin-left: 5px; */
         background-image: url("Assests/ExpandArrow.png");
         background-size: cover;
         background-repeat: no-repeat;
@@ -411,28 +422,21 @@ body {
     .active .date {
         margin-top: 1vh;
     }
-    /* .accordion__item {
-        border-bottom: 1px solid #e6e6e6;
+    /*  Welcome section     */
+    #welcomeSection>p {
+        width: 80%;
+        text-align: justify;
+        margin: auto;
+        margin-top: 5%;
     }
-    .accordion__header {
-        cursor: pointer;
-        padding-bottom: 1rem;
-        padding-top: 1rem;
-        padding-right: 1.5rem;
-        margin: 0;
+    #personalProfilePic {
+        width: 50%;
     }
-    .accordion__body {
-        max-height: 0;
-        overflow: hidden;
-        padding: 0;
-        transition: max-height .5s;
-        transition-delay: -.2s;
-        transition-timing-function: cubic-bezier(0, 1, 0, 1);
+    /*  contact me  */
+    #contactLinksContainer {
+        display: grid;
+        grid-gap: 50%;
     }
-    .accordion__header:before {
-        background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='rgb%280%2C0%2C255%29'%3E%3Cpath fill-rule='evenodd' d='M3.646 8.306a.508.508 0 01-.71 0 .497.497 0 01-.007-.7l4.085-4.06 4.054 4.055a.505.505 0 010 .707.501.501 0 01-.71-.002L7.008 4.954 3.646 8.306z'/%3E%3C/svg%3E");
-        margin-right: -1.5rem;
-    } */
 }
 
 
@@ -458,6 +462,8 @@ body {
 
 /*  Rotating cube ANIMATION START */
 
+
+/* 
 .cubeContainer {
     width: 20%;
     height: 20%;
@@ -618,7 +624,7 @@ body {
 #cube .bottom {
     -webkit-transform: rotateX( -90deg) translateZ(var(--cube-Ztranslate));
     -moz-transform: rotateX( -90deg) translateZ(var(--cube-Ztranslate));
-}
+} */
 
 
 /*  Rotating cube ANIMATION END */

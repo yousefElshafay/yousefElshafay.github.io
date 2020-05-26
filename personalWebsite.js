@@ -1,3 +1,55 @@
+// side nav 
+var sidenavBox = document.querySelector('#sideNav');
+var sidebarBtn = document.querySelector('#btn-navMenu');
+var contentContainer = document.querySelector("#contentContainer");
+
+var myScrollFunc = function() {
+    var y = window.pageYOffset;
+    if (y >= 450) {
+        sidebarBtn.classList.add('is-visible');
+        contentContainer.classList.add('is-visible');
+        sidebarBtn.classList.remove('is-not-visible');
+        contentContainer.classList.remove('is-not-visible');
+    } else {
+        sidebarBtn.classList.add('is-not-visible');
+        contentContainer.classList.add('is-not-visible');
+        sidebarBtn.classList.remove('is-visible');
+        contentContainer.classList.remove('is-visible');
+    }
+};
+
+window.addEventListener("scroll", myScrollFunc);
+
+sidebarBtn.addEventListener('click', function(event) {
+    sidenavBox.style.width = "50vw";
+    sidenavBox.style.display = "block";
+    sidebarBtn.style.display = "none";
+
+});
+
+sidenavBox.addEventListener('click', function(event) {
+    sidenavBox.style.width = "0vw";
+    sidebarBtn.style.display = "block";
+
+});
+
+
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+            content.style.display = "none";
+        } else {
+            content.style.display = "block";
+        }
+    });
+}
+
+
 // this function magnify the hero image on the website 
 // REFERENCE https://www.w3schools.com/
 
@@ -73,67 +125,4 @@ function magnify(imgID, zoom) {
             y: y
         };
     }
-}
-
-// side nav 
-
-
-var sidenavBox = document.querySelector('#sideNav');
-var sidebarBtn = document.querySelector('#btn-navMenu');
-var contentContainer = document.querySelector("#contentContainer");
-
-var myScrollFunc = function() {
-    var y = window.pageYOffset;
-    if (y >= 450) {
-        sidebarBtn.classList.add('is-visible');
-        contentContainer.classList.add('is-visible');
-        sidebarBtn.classList.remove('is-not-visible');
-        contentContainer.classList.remove('is-not-visible');
-    } else {
-        sidebarBtn.classList.add('is-not-visible');
-        contentContainer.classList.add('is-not-visible');
-        sidebarBtn.classList.remove('is-visible');
-        contentContainer.classList.remove('is-visible');
-    }
-};
-
-window.addEventListener("scroll", myScrollFunc);
-
-sidebarBtn.addEventListener('click', function(event) {
-    sidenavBox.style.width = "50vw";
-    sidenavBox.style.display = "block";
-    sidebarBtn.style.display = "none";
-
-});
-
-sidenavBox.addEventListener('click', function(event) {
-    sidenavBox.style.width = "0vw";
-    sidebarBtn.style.display = "block";
-
-});
-
-
-// collapsible items 
-// var coll = document.getElementsByClassName("collapsible");
-// var i;
-
-// for (i = 0; i < coll.length; i++) {
-//     coll[i].addEventListener("click", function() {
-//         this.classList.toggle("active");
-//     });
-// }
-
-var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.display === "block") {
-            content.style.display = "none";
-        } else {
-            content.style.display = "block";
-        }
-    });
 }

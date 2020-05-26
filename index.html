@@ -1,3 +1,8 @@
+<!-- this website was created with the help of the following individuals or resources for inspiration /how to or reference  
+https://www.w3schools.com/howto
+https://codepen.io/milacarrera -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,12 +16,22 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <!-- my css -->
     <link rel="stylesheet" href="personalWebsiteStyles.css">
+
+    <!-- font awesome cdn  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
 <body>
     <div class="brasovMountainViewContainer">
-        <div class="actionCube"></div>
         <!-- <img src="Assests/BrasovMountainview2.png" id="BrasovMountainview" width="600" height="400" alt="Girl"> -->
+        <div id="BrasovMountainview"></div>
+
+        <div class="quoteContainer">
+            <p class="quote"> life is either a daring adventure
+                <span class="align-right faded"> or nothing at all <br><span class="quoteOwner"> Helen Keller <span></span>
+            </p>
+        </div>
         <div id="BrasovMountainview"></div>
     </div>
     <main>
@@ -24,17 +39,6 @@
             <!-- <div class="quote">
                 <p>life is a daring adventure of nothing at all </p>
             </div> -->
-            <!-- <div class="cubeContainer">
-                <div id="cube">
-                    <div class="front"></div>
-                    <div class="back"></div>
-                    <div class="right"></div>
-                    <div class="left"></div>
-                    <div class="top"></div>
-                    <div class="bottom"></div>
-                </div>
-            </div> -->
-
 
             <!-- The sidebar -->
             <div id="btn-navMenu">
@@ -43,25 +47,27 @@
                 <div id="bottom"></div>
             </div>
 
-            <div id="sideNav" class="sidenavbar">
-                <ul>
-                    <li class="navItem">
-                        <a>Education</a>
-                    </li>
-                    <li class="navItem">
-                        <a>Experience</a>
-                    </li>
-                    <li class="navItem">
-                        <a>Projects</a>
-                    </li>
-                    <li class="navItem">
-                        <a>Skills & Hobbies</a>
-                    </li>
-                    <li class="navItem">
-                        <a>Contact</a>
-                    </li>
-                </ul>
-            </div>
+            <aside id="sideNav" class="sidenavbar">
+                <nav>
+                    <ul>
+                        <li class="navItem">
+                            <a>Education</a>
+                        </li>
+                        <li class="navItem">
+                            <a>Experience</a>
+                        </li>
+                        <li class="navItem">
+                            <a>Projects</a>
+                        </li>
+                        <li class="navItem">
+                            <a>Skills & Hobbies</a>
+                        </li>
+                        <li class="navItem">
+                            <a>Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
 
             <div id="contentContainer">
 
@@ -70,11 +76,14 @@
                     <img id="personalProfilePic" src="Assests/PersonalProfile.jpeg" alt="">
                     <p> <q> <span>welcome </span> to my personal website, as u may have noticed iam a big fan of experiencing new thing in life, and getting the most i can out of it, i hope to also help others along the way  </q>
                     </p>
+
+                    <!-- <img src="Assests/MylifeInArt.png" id="MylifeInArt" width="100%" height="100%" alt="Girl"> -->
+
                 </section>
 
                 <section id="eductionSection">
                     <h2 class="sectionTitle">Education</h2>
-                    <div class="timelineContainer">
+                    <div>
                         <ul>
                             <li>
                                 <div class="collapsible">
@@ -106,7 +115,7 @@
 
                 <section id="experienceSection">
                     <h2 class="sectionTitle">Experience</h2>
-                    <div class="timelineContainer">
+                    <div>
                         <ul>
                             <li>
                                 <div class="collapsible">
@@ -172,7 +181,7 @@
                                 </div>
                                 <div class="content">
                                     <div class="info">
-                                        The internship assignment at <a target="_blank" href="https://www.itpinternational.com/"> ITP Caribbean</a> was to research the most optimal way for data replication between two different database environment where
+                                        The internship assignment at <a target="_blank" href="https://www.itpinternational.com/"> ITP Caribbean</a> was to research the most optimal way for data replication between two different database environments where
                                         the schema is different between the two databases and to create a prototype that handles these differences.
                                     </div>
                                     <div class="subSection">
@@ -191,35 +200,193 @@
                                     </div>
                                 </div>
                             </li>
-                            <!-- <li>
-                                <div class="collapsible">
-                                    <div class="title">Certwell <span class="countryCode">- NL</span></div>
-                                    <div class="content">
-                                        <div class="info">
-                                            Full stack software engineer at certwell, developing new features for <a target="_blank" href="https://www.certwell.com/">certwell</a> digital products following the agile methodology.
-                                        </div>
-                                    </div>
-                                    <div class="date">
-                                        <span>April 2019 - April 2020</span>
-                                    </div>
-                                </div>
-                            </li> 
-                            -->
                         </ul>
                     </div>
                 </section>
 
                 <section id="projectsSection">
+                    <h2 class="sectionTitle">Projects</h2>
+                    <div>
+                        <ul>
+                            <li>
+                                <div class="collapsible">
+                                    <div class="title">C-Register System migration </div>
+                                    <div class="date">
+                                        <span>December 2019 - March 2020</span>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <div class="info">
+                                        <p> migration project using .net core </p>
+                                    </div>
+                                    <div class="subSection">
+                                        <div class="collapsible">
+                                            <div class="Subtitle">Reference</div>
+                                        </div>
+                                        <div class="content">
+                                            <div class="info ">
+                                                <a target="_blank" href="">Jacco Kooie</a> <span class="Subtitle">IT Manager @Certwell</span>
+                                                <br>
+                                                <div class="quote">
+                                                    <q> 
+                                                    </q>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
 
+                            <li>
+                                <div class="collapsible">
+                                    <div class="title">Anamoly detection system </div>
+                                    <div class="date">
+                                        <span>SEP 2018 - JAN 2019</span>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <div class="info">
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="collapsible">
+                                    <div class="title">Data Base replicator </div>
+                                    <div class="date">
+                                        <span>SEP 2017 - JAN 2018</span>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <div class="info">
+                                        <p>
+                                            The internship assignment at ITP Caribbean was to research the most optimal way for data replication between two different database environments where the schema is different between the two databases and creating a prototype that handles these differences.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+
+
+                            <li>
+                                <div class="collapsible">
+                                    <div class="title">B-MAGISTER </div>
+                                    <div class="date">
+                                        <span>SEP 2016 - PRESENT</span>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <div class="info">
+                                        <p> Creating a low cost read and write braille display for visually impaired individuals. This device would be powered by Web-services. This is an ongoing project/startup. We won the audience award for this project
+                                            during the 2017 ictalentAward.nl. at FONTYS University.
+
+                                        </p>
+                                        <div class="subSection">
+                                            <div class="collapsible">
+                                                <div class="Subtitle">Reference</div>
+                                            </div>
+                                            <div class="content">
+                                                <div class="info">
+                                                    <a target="_blank" href="https://www.fontysictalent.nl/nl/voorgaande-edities/ictalent-2017/">Fontys ICT talent awards </a>
+                                                    <br>
+                                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/rypb-N6uA2c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
                 </section>
 
-                <section id="skillsAndHobbiesSection">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero delectus quae recusandae explicabo beatae odit dolores quis maxime eum, laborum eligendi ipsum numquam ea qui iusto accusamus consequuntur, libero earum!</section>
+                <section id="skillsAndHobbiesSection">
 
-                <section id="contactmeSection"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates cum voluptatum omnis laborum optio laudantium possimus corporis distinctio illo necessitatibus voluptatibus iste autem, dolorem quaerat, quidem dignissimos. Molestiae,
-                    sunt illum?
+                    <ul>
+                        <li id="SkillsSubSection">
+                            <div class="collapsible">
+                                <div class="title">
+                                    <h2>Skills</h2>
+                                </div>
+                            </div>
+                            <ul class="content">
+                                <li id="TechnicalSkills">
+                                    <div class="collapsible">
+                                        <div class="title">Technical Skills </div>
+                                    </div>
+
+                                    <div class="content">
+
+                                        <p>HTML</p>
+                                        <div class="skillContainer">
+                                            <div class="skills html">90%</div>
+                                        </div>
+
+                                        <p>CSS</p>
+                                        <div class="skillContainer">
+                                            <div class="skills css">80%</div>
+                                        </div>
+
+                                        <p>JavaScript</p>
+                                        <div class="skillContainer">
+                                            <div class="skills js">65%</div>
+                                        </div>
+
+                                        <p>PHP</p>
+                                        <div class="skillContainer">
+                                            <div class="skills php">60%</div>
+                                        </div>
+                                    </div>
+
+                                </li>
+                                <li id="LanguageSkills">
+                                    <div class="collapsible">
+                                        <div class="title">Language Skills </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="HobbiesSubSection">
+                            <div class="collapsible">
+                                <div class="title">
+                                    <h2>Hobbies</h2>
+                                </div>
+                            </div>
+                            <ul class="content">
+                                <li>
+                                    <div class="collapsible">
+                                        <div class="title">Martial art </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="collapsible">
+                                        <div class="title">Cooking</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="collapsible">
+                                        <div class="title">Traveling</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section id="contactmeSection">
+                    <address>
+                                <!-- <h3>yousefelshafay@gmail.com</h3>
+                                <h3>(0031) 649374646</h3>
+                                 -->
+                                <div id="contactLinksContainer">
+                                <a href="mailto:yousefelshafay@gmail.com"><i class="fa fa-lg fa-google"></i></a>   
+                                <a href="https://api.whatsapp.com/send?phone=0031649373646" target="_blank"><i class="fa fa-lg fa-whatsapp" aria-hidden="true"></i></a>
+                                <a href="https://www.linkedin.com/in/yousefelshafay/" target="_blank"><i class="fa fa-lg fa-linkedin"></i></a>
+                                <a href="/Assests/YoussefElshafayCV2020.pdf" download><i class="fa fa-lg fa-download" aria-hidden="true"></i></a> 
+                            </div>
+                        </address>
                 </section>
             </div>
-
         </div>
     </main>
 </body>
@@ -228,6 +395,8 @@
 </script>
 <script>
     // magnify("BrasovMountainview", 2);
+
+    // magnify("MylifeInArt", 4);
 </script>
 
 </html>
