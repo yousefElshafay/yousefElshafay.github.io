@@ -1,3 +1,130 @@
+/* .timeline {
+    position: relative;
+    margin: 0 auto;
+    width: 70%;
+    display: flex;
+} */
+
+.timeline {
+    grid-area: content-left;
+    display: flex;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 3px;
+    background-color: #f0f0f0;
+}
+
+.timeline ul li {
+    margin-bottom: 50px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.point {
+    min-width: 20px;
+    height: 20px;
+    background-color: #f3f3f3;
+    border-radius: 100%;
+    z-index: 2;
+    border: 3px #dddddd solid;
+    position: relative;
+    left: -25px;
+    opacity: 0.6;
+    transition: all 0.5s ease-in;
+}
+
+
+/* .timeline ul li .content {
+    width: 50%;
+    padding: 0 20px;
+} */
+
+.timeline ul li:nth-child(odd) .content {
+    padding-left: 0;
+}
+
+.timeline ul li:nth-child(odd) .date {
+    padding-right: 0;
+}
+
+.timeline ul li:nth-child(even) .content {
+    padding-right: 0;
+}
+
+.timeline ul li:nth-child(even) .date {
+    padding-left: 0;
+}
+
+.timeline ul li .date {
+    transition: all 0.5s ease-in;
+    width: 50%;
+    padding: 0 20px;
+    font-weight: normal;
+    position: relative;
+    right: 120%;
+    opacity: 0.2;
+}
+
+.timeline ul li:hover .date {
+    opacity: 1;
+}
+
+.timeline ul li:hover .point {
+    background-color: #070318;
+    border: 4px #f7f7f7 solid;
+    opacity: 1;
+}
+
+.timeline ul li .date {
+    background-color: #f1f1f1;
+    color: gray;
+    width: 100px;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+
+/* 
+.timeline ul li .content h3 {
+    padding: 10px 20px;
+    background-color: #be9fe1;
+    margin-bottom: 0;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.timeline ul li .content p {
+    padding: 10px 20px;
+    background-color: #e1d9ec;
+    margin-top: 0;
+    text-align: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+} */
+
+
+/* .timeline ul li:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline ul li:nth-child(even) .date h4 {
+    float: right
+} */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .quoteContainer {
     height: auto;
     overflow: hidden;
@@ -51,13 +178,16 @@ body {
     --secondaryBorder-color: rgb(0, 0, 0);
     --primaryHover-color: rgb(53, 53, 53);
     /* font family  */
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
+    /* scroll behaviour and overflow  */
+    overflow-x: hidden;
+    overflow-y: scroll;
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body::-webkit-scrollbar {
+    width: 0 !important
 }
 
 #BrasovMountainview {
@@ -70,30 +200,61 @@ body {
     background-repeat: no-repeat;
 }
 
-.img-magnifier-glass {
+
+/* .img-magnifier-glass {
     position: fixed;
     border: 3px solid var(--primary-color);
     border-radius: 50%;
     cursor: none;
-    /*Set the size of the magnifier glass:*/
-    width: 10Vw;
+    width: 10vw;
     height: 10vw;
-}
+} */
 
 aside {
     grid-area: content-right;
+    padding: 1vw 15vw 1vw 10vw;
+    width: 20vw;
+}
+
+aside a {
+    transition: all 0.5s ease-out;
+}
+
+aside:hover a {
+    opacity: 0.5;
+    transition: all 0.3s ease-out;
+}
+
+nav {
+    margin: auto;
 }
 
 .navItem {
-    color: black;
+    list-style: none;
+    text-decoration: none;
+    padding: 1em;
+    width: max-content;
+    padding-bottom: 7vh;
+}
+
+.navItem a {
+    position: absolute;
+    color: var(--secondary-color, grey);
+    opacity: 0.2;
+}
+
+.navItem a:hover {
+    color: var(--primary-color, black);
+    opacity: 1;
+    font-size: larger;
 }
 
 .container {
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
-    grid-template-rows: 0.25fr 2fr 1fr;
+    grid-template-rows: 2fr;
     grid-gap: 1em;
-    grid-template-areas: "header-left header-middle header-right" "content-left  content-middle content-right" "footer-left footer-middle footer-right ";
+    grid-template-areas: "content-left  content-middle content-right";
     width: auto;
     height: 100vh;
 }
@@ -117,13 +278,60 @@ aside {
 /* Welcome Section */
 
 #welcomeSection {
-    display: block;
+    display: none;
     text-align: center;
+    height: 100%;
 }
 
 #personalProfilePic {
     border-radius: 50%;
 }
+
+#welcomeSection {
+    transition: all 1s ease-out;
+    opacity: 0.1;
+}
+
+#welcomeSection:hover {
+    transition: all 1s ease-in;
+    opacity: 1;
+}
+
+#WelcomeParagraph {
+    width: 50%;
+    margin: auto;
+    margin-top: 3vh;
+    font-size: larger;
+}
+
+#WelcomeParagraph {
+    color: var(--secondaryText-color, rgb(0, 0, 0));
+    text-align: center;
+}
+
+.emphasis {
+    text-transform: uppercase;
+    background: orange;
+    font-size: larger;
+    color: rgb(41, 41, 41);
+    padding: 3px;
+}
+
+#WelcomeParagraph q::before,
+q::after {
+    display: none;
+}
+
+
+/* 
+#WelcomeParagraph q::before {
+    bottom: 20%;
+}
+
+#WelcomeParagraph q::after {
+    top: 20%;
+}
+ */
 
 
 /* eductionSection */
@@ -159,33 +367,83 @@ aside {
     /* Grey background */
 }
 
-#skillsAndHobbiesSection .skills {
-    text-align: right;
-    /* Right-align text */
-    padding-top: 10px;
-    /* Add top padding */
-    padding-bottom: 10px;
-    /* Add bottom padding */
-    color: white;
-    /* White text color */
+
+/* skills section  */
+
+@keyframes load {
+    from {
+        width: 0%
+    }
 }
 
-#skillsAndHobbiesSection .html {
-    width: 90%;
-    background-color: #4CAF50;
+@-webkit-keyframes load {
+    from {
+        width: 0%
+    }
 }
 
+@-moz-keyframes load {
+    from {
+        width: 0%
+    }
+}
 
-/* #skillsAndHobbiesSection .skill {
-    width: 80%;
-    background-color: #2196F3;
-} */
+@-o-keyframes load {
+    from {
+        width: 0%
+    }
+}
+
+.bar {
+    background-color: #EEE;
+    padding: 2px;
+    border-radius: 15px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #FFF;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.bar::before {
+    content: attr(data-skill);
+    background-color: var(--primary-color);
+    display: inline-block;
+    padding: 5px 0 5px 10px;
+    border-radius: inherit;
+    animation: load 2s 0s;
+    -webkit-animation: load 2s 0s;
+    -moz-animation: load 2s 0s;
+    -o-animation: load 2s 0s;
+}
+
+.bar.learning::before {
+    width: calc(20% - 10px);
+}
+
+.bar.basic::before {
+    width: calc(40% - 10px);
+}
+
+.bar.intermediate::before {
+    width: calc(60% - 10px);
+}
+
+.bar.advanced::before {
+    width: calc(80% - 10px);
+}
+
+.bar.expert::before {
+    width: calc(100% - 10px);
+}
 
 
 /* contactme */
 
 #contactmeSection {
-    display: block;
+    display: none;
     text-align: center;
 }
 
@@ -206,7 +464,7 @@ aside {
 }
 
 #contactmeSection a:hover {
-    color: var( --primary-color, black);
+    color: var(--primary-color, black);
 }
 
 #contactLinksContainer {
@@ -248,10 +506,10 @@ aside {
     /* hamburger btn */
     #btn-navMenu {
         display: block;
-        position: absolute;
+        grid-area: header-right;
         z-index: 5;
+        margin-top: 50%;
         right: 5%;
-        margin-top: 10%;
         cursor: pointer;
         transition: 0.5s ease-in-out;
     }
@@ -270,12 +528,8 @@ aside {
     #sideNav {
         grid-area: header-right;
     }
-    #sideNav li {
-        list-style: none;
-        text-decoration: none;
-        padding: 1em;
-    }
-    .navItem {
+    .navItem a {
+        opacity: 1;
         color: whitesmoke;
     }
     #sideNav {
@@ -289,20 +543,24 @@ aside {
         background-color: var(--secondaryBackground-color, #111);
         overflow-x: hidden;
         transition: 0.5s;
-        padding-top: 60px;
+        padding: 60px 0px;
     }
     /* change grid layout on mobile view  */
     .container {
         grid-template-columns: 4fr 1fr;
         grid-template-rows: 0.25fr 2fr;
         grid-gap: 1em;
-        grid-template-areas: "header-left  header-right" "content   content";
+        grid-template-areas: "header-left  header-right""content   content";
         width: auto;
         height: 100vh;
     }
     #contentContainer {
         grid-area: content;
+        overflow: scroll;
         transition: 1s ease-in-out;
+    }
+    .timeline {
+        display: none;
     }
     /* magnifier glass */
     .img-magnifier-glass {
@@ -323,7 +581,7 @@ aside {
         padding: 0;
         position: relative;
         transition: all 0.5s linear;
-        top: 0
+        top: 0;
     }
     section ul li {
         position: relative;
@@ -334,6 +592,10 @@ aside {
         box-shadow: 2px 1px 3px #030821;
         margin-bottom: 5%;
         width: 100%;
+    }
+    ul li ul li {
+        border-top: none;
+        margin-bottom: 0px;
     }
     .sectionTitle {
         text-align: center;
@@ -360,7 +622,7 @@ aside {
     }
     .info::first-letter {
         text-transform: capitalize;
-        line-height: 1.7
+        line-height: 1.7;
     }
     a {
         color: inherit;
@@ -374,16 +636,15 @@ aside {
         font-weight: bold;
     }
     /* collapsible css */
-    .collapsible {
-        cursor: pointer;
-        width: 100%;
-        border: none;
-        outline: none;
-    }
-    .subSection {
+    .subSection,
+    .x-subSection {
         background: #e6e6e6;
         padding: 10px;
         border-radius: 5px;
+    }
+    .x-subSection {
+        width: 90% !important;
+        opacity: 0.8;
     }
     .subSection .quote {
         margin-top: 3%;
@@ -391,6 +652,12 @@ aside {
     }
     .subSection .quote q {
         background: var(--primaryBackground-color, white);
+    }
+    .collapsible {
+        cursor: pointer;
+        width: 100%;
+        border: none;
+        outline: none;
     }
     .collapsible:before {
         background-image: url("Assests/ExpandArrow.png");
@@ -409,7 +676,7 @@ aside {
         display: none;
         transition: max-height 0.75s cubic-bezier(0, 1, 0, 1);
         overflow: hidden;
-        padding: 0px;
+        padding: 5% 0px;
     }
     .active:before {
         background-image: url("Assests/CollapseArrow.png");
@@ -625,6 +892,3 @@ aside {
     -webkit-transform: rotateX( -90deg) translateZ(var(--cube-Ztranslate));
     -moz-transform: rotateX( -90deg) translateZ(var(--cube-Ztranslate));
 } */
-
-
-/*  Rotating cube ANIMATION END */

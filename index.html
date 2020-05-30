@@ -50,7 +50,7 @@ https://codepen.io/milacarrera -->
             <aside id="sideNav" class="sidenavbar">
                 <nav>
                     <ul>
-                        <li class="navItem">
+                        <li class="navItem active">
                             <a>Education</a>
                         </li>
                         <li class="navItem">
@@ -74,20 +74,56 @@ https://codepen.io/milacarrera -->
                 <section id="welcomeSection">
                     <!-- personal image  -->
                     <img id="personalProfilePic" src="Assests/PersonalProfile.jpeg" alt="">
-                    <p> <q> <span>welcome </span> to my personal website, as u may have noticed iam a big fan of experiencing new thing in life, and getting the most i can out of it, i hope to also help others along the way  </q>
+                    <p id="WelcomeParagraph">
+                        <q> <span class="emphasis">Welcome </span> to my personal website, as u may have noticed iam a big fan of experiencing new thing in life, and getting the most i can out of it, i hope to also help others along the way.
+                    </q>
                     </p>
 
                     <!-- <img src="Assests/MylifeInArt.png" id="MylifeInArt" width="100%" height="100%" alt="Girl"> -->
 
                 </section>
 
-                <section id="eductionSection">
-                    <h2 class="sectionTitle">Education</h2>
-                    <div>
+                <section id="eductionSection ">
+
+                    <div class="timeline">
+
                         <ul>
                             <li>
-                                <div class="collapsible">
-                                    <div class="title">Fontys university
+                                <div class="content">
+                                </div>
+                                <div class="point"></div>
+                                <div class="date">
+                                    <h4>January 2020</h4>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="content">
+                                </div>
+                                <div class="point"></div>
+                                <div class="date">
+                                    <h4>July 2019</h4>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="content">
+                                </div>
+                                <div class="point"></div>
+                                <div class="date">
+                                    <h4>March 2019</h4>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <!-- <div id="timelineContentContainer">
+                        <h2 class="sectionTitle">Education</h2>
+                        <div>
+                            <ul>
+                                <li>
+                                    <div class="collapsible">
+                                        <div class="title">Fontys university
+                                        </div>
                                     </div>
 
                                     <div class="content">
@@ -96,21 +132,53 @@ https://codepen.io/milacarrera -->
                                     <div class="date">
                                         <span>JAN 2019</span>
                                     </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="collapsible">
-                                    <div class="title">Gamal Abdl el Nasser military high school </div>
+                                </li>
+                                <li>
+                                    <div class="collapsible">
+                                        <div class="title">Gamal Abdl el Nasser military high school </div>
+                                    </div>
+
                                     <div class="content">
                                         <div class="info">I have obtained my high school degree with a GPA of 4.0 in Alexandria, Egypt. </div>
                                     </div>
                                     <div class="date">
                                         <span>JUN 2012</span>
                                     </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> -->
+
+                    <!-- <h2 class="sectionTitle">Education</h2>
+                    <div>
+                        <ul>
+                            <li>
+                                <div class="collapsible">
+                                    <div class="title">Fontys university
+                                    </div>
+                                </div>
+
+                                <div class="content">
+                                    <div class="info">I have obtained my bachelor degree in software engineering from <a target="_blank" href="https://fontys.edu/">Fontys university</a> in the Eindhoven, The Netherland. </div>
+                                </div>
+                                <div class="date">
+                                    <span>JAN 2019</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="collapsible">
+                                    <div class="title">Gamal Abdl el Nasser military high school </div>
+                                </div>
+
+                                <div class="content">
+                                    <div class="info">I have obtained my high school degree with a GPA of 4.0 in Alexandria, Egypt. </div>
+                                </div>
+                                <div class="date">
+                                    <span>JUN 2012</span>
                                 </div>
                             </li>
                         </ul>
-                    </div>
+                    </div> -->
                 </section>
 
                 <section id="experienceSection">
@@ -139,7 +207,7 @@ https://codepen.io/milacarrera -->
                                                 <div class="quote">
                                                     <q> You are a great colleague, 
                                                         you work hard, you work concentrated,
-                                                         you are smart, stubborn, ambitious and motivated.
+                                                        you are smart, stubborn, ambitious and motivated.
                                                     </q>
                                                 </div>
                                             </div>
@@ -311,37 +379,77 @@ https://codepen.io/milacarrera -->
                             </div>
                             <ul class="content">
                                 <li id="TechnicalSkills">
-                                    <div class="collapsible">
+                                    <div class="collapsible subSection">
                                         <div class="title">Technical Skills </div>
                                     </div>
 
                                     <div class="content">
+                                        <div class="collapsible x-subSection">
+                                            <div class="title">.NET </div>
+                                        </div>
+                                        <div class="content">
 
-                                        <p>HTML</p>
-                                        <div class="skillContainer">
-                                            <div class="skills html">90%</div>
+                                            <div class="bar  expert" data-skill="C#"></div>
+                                            <div class="bar  advanced" data-skill=".NET CORE"></div>
+                                            <div class="bar  advanced" data-skill="MVC"></div>
+                                            <div class="bar  intermediate" data-skill="TDD"></div>
+
+                                            <div class="bar  intermediate" data-skill="Azure"></div>
+                                            <div class="bar  basic" data-skill="CI/CD"></div>
+                                        </div>
+                                        <br>
+
+                                        <div class="collapsible x-subSection">
+                                            <div class="title">SQL SERVER </div>
+                                        </div>
+                                        <div class="content">
+                                            <div class="bar  advanced" data-skill="SQL"></div>
+                                            <div class="bar  intermediate" data-skill="SSIS"></div>
+                                        </div>
+                                        <br>
+
+                                        <div class="collapsible x-subSection">
+                                            <div class="title">WEB </div>
+                                        </div>
+                                        <div class="content">
+                                            <div class="bar  intermediate" data-skill="Java Script"></div>
+                                            <div class="bar  advanced" data-skill="CSS3"></div>
+                                            <div class="bar  advanced" data-skill="HTML5"></div>
                                         </div>
 
-                                        <p>CSS</p>
-                                        <div class="skillContainer">
-                                            <div class="skills css">80%</div>
+                                        <br>
+                                        <div class="collapsible x-subSection">
+                                            <div class="title">DATA SCIENCE </div>
+                                        </div>
+                                        <div class="content">
+                                            <div class="bar  intermediate" data-skill="Deep learning"></div>
+                                            <div class="bar  basic" data-skill="Python"></div>
+                                        </div>
+                                        <br>
+                                        <div class="collapsible x-subSection">
+                                            <div class="title">ANALYSIS </div>
+                                        </div>
+                                        <div class="content">
+
+                                            <div class="bar  advanced" data-skill="Team Work"></div>
+                                            <div class="bar  advanced" data-skill="Communication"></div>
+                                            <div class="bar  advanced" data-skill="Analysis"></div>
                                         </div>
 
-                                        <p>JavaScript</p>
-                                        <div class="skillContainer">
-                                            <div class="skills js">65%</div>
-                                        </div>
-
-                                        <p>PHP</p>
-                                        <div class="skillContainer">
-                                            <div class="skills php">60%</div>
-                                        </div>
                                     </div>
 
                                 </li>
                                 <li id="LanguageSkills">
-                                    <div class="collapsible">
+                                    <div class="collapsible subSection">
                                         <div class="title">Language Skills </div>
+                                    </div>
+
+                                    <div class="content">
+                                        <div class="bar  expert" data-skill="ARABIC"></div>
+                                        <div class="bar  expert" data-skill="ENGLISH"></div>
+                                        <div class="bar  advanced" data-skill="DUTCH"></div>
+                                        <div class="bar back basic" data-skill="FRENCH"></div>
+                                        <div class="bar back learning" data-skill="SPANISH"></div>
                                     </div>
                                 </li>
                             </ul>
@@ -377,7 +485,7 @@ https://codepen.io/milacarrera -->
                     <address>
                                 <!-- <h3>yousefelshafay@gmail.com</h3>
                                 <h3>(0031) 649374646</h3>
-                                 -->
+                                -->
                                 <div id="contactLinksContainer">
                                 <a href="mailto:yousefelshafay@gmail.com"><i class="fa fa-lg fa-google"></i></a>   
                                 <a href="https://api.whatsapp.com/send?phone=0031649373646" target="_blank"><i class="fa fa-lg fa-whatsapp" aria-hidden="true"></i></a>

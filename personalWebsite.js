@@ -1,37 +1,39 @@
-// side nav 
-var sidenavBox = document.querySelector('#sideNav');
-var sidebarBtn = document.querySelector('#btn-navMenu');
+// side nav
+var sidenavBox = document.querySelector("#sideNav");
+var sidebarBtn = document.querySelector("#btn-navMenu");
 var contentContainer = document.querySelector("#contentContainer");
+var timelineContentContainer = document.querySelector("#timelineContentContainer");
+var maxMobileScreenWidth = 500;
 
 var myScrollFunc = function() {
     var y = window.pageYOffset;
     if (y >= 450) {
-        sidebarBtn.classList.add('is-visible');
-        contentContainer.classList.add('is-visible');
-        sidebarBtn.classList.remove('is-not-visible');
-        contentContainer.classList.remove('is-not-visible');
+        sidebarBtn.classList.add("is-visible");
+        contentContainer.classList.add("is-visible");
+        sidebarBtn.classList.remove("is-not-visible");
+        contentContainer.classList.remove("is-not-visible");
     } else {
-        sidebarBtn.classList.add('is-not-visible');
-        contentContainer.classList.add('is-not-visible');
-        sidebarBtn.classList.remove('is-visible');
-        contentContainer.classList.remove('is-visible');
+        sidebarBtn.classList.add("is-not-visible");
+        contentContainer.classList.add("is-not-visible");
+        sidebarBtn.classList.remove("is-visible");
+        contentContainer.classList.remove("is-visible");
     }
 };
 
 window.addEventListener("scroll", myScrollFunc);
+if (window.innerWidth < maxMobileScreenWidth) {
 
-sidebarBtn.addEventListener('click', function(event) {
-    sidenavBox.style.width = "50vw";
-    sidenavBox.style.display = "block";
-    sidebarBtn.style.display = "none";
+    sidebarBtn.addEventListener("click", function(event) {
+        sidenavBox.style.width = "50vw";
+        sidenavBox.style.display = "block";
+        sidebarBtn.style.display = "none";
+    });
 
-});
-
-sidenavBox.addEventListener('click', function(event) {
-    sidenavBox.style.width = "0vw";
-    sidebarBtn.style.display = "block";
-
-});
+    sidenavBox.addEventListener("click", function(event) {
+        sidenavBox.style.width = "0vw";
+        sidebarBtn.style.display = "block";
+    });
+}
 
 
 var coll = document.getElementsByClassName("collapsible");
@@ -50,7 +52,7 @@ for (i = 0; i < coll.length; i++) {
 }
 
 
-// this function magnify the hero image on the website 
+// this function magnify the hero image on the website
 // REFERENCE https://www.w3schools.com/
 
 function magnify(imgID, zoom) {
@@ -67,7 +69,8 @@ function magnify(imgID, zoom) {
     /* Set background properties for the magnifier glass: */
     glass.style.backgroundImage = "url('" + img.src + "')";
     glass.style.backgroundRepeat = "no-repeat";
-    glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
+    glass.style.backgroundSize =
+        img.width * zoom + "px " + img.height * zoom + "px";
     bw = 3;
     w = glass.offsetWidth / 2;
     h = glass.offsetHeight / 2;
@@ -89,27 +92,29 @@ function magnify(imgID, zoom) {
         x = pos.x;
         y = pos.y;
         /* Prevent the magnifier glass from being positioned outside the image: */
-        if (x > img.width - (w / zoom)) {
-            x = img.width - (w / zoom);
+        if (x > img.width - w / zoom) {
+            x = img.width - w / zoom;
         }
         if (x < w / zoom) {
             x = w / zoom;
         }
-        if (y > img.height - (h / zoom)) {
-            y = img.height - (h / zoom);
+        if (y > img.height - h / zoom) {
+            y = img.height - h / zoom;
         }
         if (y < h / zoom) {
             y = h / zoom;
         }
         /* Set the position of the magnifier glass: */
-        glass.style.left = (x - w) + "px";
-        glass.style.top = (y - h) + "px";
+        glass.style.left = x - w + "px";
+        glass.style.top = y - h + "px";
         /* Display what the magnifier glass "sees": */
-        glass.style.backgroundPosition = "-" + ((x * zoom) - w + bw) + "px -" + ((y * zoom) - h + bw) + "px";
+        glass.style.backgroundPosition =
+            "-" + (x * zoom - w + bw) + "px -" + (y * zoom - h + bw) + "px";
     }
 
     function getCursorPos(e) {
-        var a, x = 0,
+        var a,
+            x = 0,
             y = 0;
         e = e || window.event;
         /* Get the x and y positions of the image: */
