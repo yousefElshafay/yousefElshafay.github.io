@@ -18,6 +18,11 @@
     background-color: #f0f0f0;
 }
 
+.timeline ul {
+    position: relative;
+    top: 25vh;
+}
+
 .timeline ul li {
     margin-bottom: 50px;
     list-style-type: none;
@@ -123,6 +128,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    list-style-type: none;
 }
 
 .quoteContainer {
@@ -161,7 +167,12 @@
 /* Dark Grey */
 
 body {
-    background: white;
+    background: linear-gradient(90deg, var(--primaryBackground-color) 21px, transparent 1%) center, linear-gradient(var(--primaryBackground-color) 21px, transparent 1%) center, lightgray;
+    background-size: 22px 22px;
+}
+
+html {
+    /* background: white; */
     /* Declare cube transition vairable */
     --cube-transition-duration: 1s;
     /* for the cube ztranslate property  */
@@ -211,7 +222,7 @@ body::-webkit-scrollbar {
 } */
 
 aside {
-    grid-area: content-right;
+    grid-area: sideNav;
     padding: 1vw 15vw 1vw 10vw;
     width: 20vw;
 }
@@ -227,6 +238,7 @@ aside:hover a {
 
 nav {
     margin: auto;
+    padding-top: 15vh;
 }
 
 .navItem {
@@ -249,12 +261,19 @@ nav {
     font-size: larger;
 }
 
+.activeNav a {
+    /* display: none; */
+    color: var(--primary-color, black);
+    opacity: 1 !important;
+    font-size: larger;
+}
+
 .container {
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
-    grid-template-rows: 2fr;
+    grid-template-rows: 1fr 4fr 1fr;
     grid-gap: 1em;
-    grid-template-areas: "content-left  content-middle content-right";
+    grid-template-areas: "header-left  header-middle sideNav" "content-left  content-middle sideNav" "footer-left  footer-middle footer-right";
     width: auto;
     height: 100vh;
 }
@@ -268,7 +287,7 @@ nav {
 
 #contentContainer {
     /* grid-column: 2; */
-    grid-area: content-middle;
+    /* grid-area: content-middle; */
 }
 
 
@@ -278,7 +297,7 @@ nav {
 /* Welcome Section */
 
 #welcomeSection {
-    display: none;
+    /* display: none; */
     text-align: center;
     height: 100%;
 }
@@ -333,33 +352,58 @@ q::after {
 }
  */
 
-
-/* eductionSection */
-
-#eductionSection {
+section {
     display: none;
+    /* transition: all 3s ease-in;
+    transform: translate(9999px);
+    opacity: 0; */
 }
+
+
+/* .hidden {
+    display: none;
+} */
+
+.activeSection {
+    /* transition: all 3s 1s ease-out;
+    transform: translate(0);
+    opacity: 1; */
+    transition: all 0.5s ease-in;
+    display: block;
+}
+
+
+/* educationSection */
+
+
+/* #educationSection {
+    display: none;
+} */
 
 
 /* experienceSection */
 
-#experienceSection {
+
+/* #experienceSection {
     display: none;
-}
+} */
 
 
 /* projects */
 
-#projectsSection {
+
+/* #projectsSection {
     display: none;
-}
+} */
 
 
 /* skillsAndHobbies */
 
+
+/* 
 #skillsAndHobbiesSection {
     display: none;
-}
+} */
 
 #skillsAndHobbiesSection .skillContainer {
     width: 100%;
@@ -442,20 +486,20 @@ q::after {
 
 /* contactme */
 
-#contactmeSection {
-    display: none;
+#contactSection {
+    /* display: none; */
     text-align: center;
 }
 
-#contactmeSection h3 {
+#contactSection h3 {
     opacity: 0.2;
 }
 
-#contactmeSection h3:hover {
+#contactSection h3:hover {
     opacity: 0.5;
 }
 
-#contactmeSection a {
+#contactSection a {
     text-decoration: none;
     font-size: 22px;
     color: var(--secondary-color, grey);
@@ -463,12 +507,13 @@ q::after {
     margin: auto;
 }
 
-#contactmeSection a:hover {
+#contactSection a:hover {
     color: var(--primary-color, black);
 }
 
 #contactLinksContainer {
-    margin-top: 10%;
+    display: flex;
+    margin-top: 25%;
 }
 
 
@@ -530,7 +575,11 @@ q::after {
     }
     .navItem a {
         opacity: 1;
+        color: var(--secondaryText-color, rgb(0, 0, 0));
+    }
+    .activeNav a {
         color: whitesmoke;
+
     }
     #sideNav {
         display: block;
@@ -729,8 +778,6 @@ q::after {
 
 /*  Rotating cube ANIMATION START */
 
-
-/* 
 .cubeContainer {
     width: 20%;
     height: 20%;
@@ -891,4 +938,4 @@ q::after {
 #cube .bottom {
     -webkit-transform: rotateX( -90deg) translateZ(var(--cube-Ztranslate));
     -moz-transform: rotateX( -90deg) translateZ(var(--cube-Ztranslate));
-} */
+}

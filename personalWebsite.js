@@ -51,6 +51,41 @@ for (i = 0; i < coll.length; i++) {
     });
 }
 
+var navItems = document.getElementsByClassName("navItem");
+// var navItems = document.querySelectorAll('.navItem')
+
+var activeSections = document.getElementsByClassName("activeSection");
+var y;
+
+for (y = 0; y < navItems.length; y++) {
+    navItems[y].addEventListener("click", function() {
+
+        var NavItemId = this.firstElementChild.id;
+
+        // get the specified section to display 
+        var sectionId = NavItemId.replace("NavItem", "Section")
+        content = document.querySelector("#" + sectionId);
+
+        // hide all active sections 
+        if (activeSections.length > 0) {
+            var activenavs = document.getElementsByClassName("activeNav");
+            removeClassName(activenavs, "activeNav")
+            removeClassName(activeSections, "activeSection");
+        }
+        // this.firstElementChild.classList.add("activeNav");
+        this.classList.add("activeNav");
+
+        content.classList.add("activeSection");
+
+    });
+}
+
+
+function removeClassName(elements, classname) {
+    [].forEach.call(elements, function(el) {
+        el.classList.remove(classname);
+    });
+}
 
 // this function magnify the hero image on the website
 // REFERENCE https://www.w3schools.com/
