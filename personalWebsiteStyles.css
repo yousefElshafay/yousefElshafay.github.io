@@ -262,10 +262,10 @@ nav {
 }
 
 .activeNav a {
-    /* display: none; */
-    color: var(--primary-color, black);
+    display: none;
+    /* color: var(--primary-color, black);
     opacity: 1 !important;
-    font-size: larger;
+    font-size: larger; */
 }
 
 .container {
@@ -579,7 +579,6 @@ section {
     }
     .activeNav a {
         color: whitesmoke;
-
     }
     #sideNav {
         display: block;
