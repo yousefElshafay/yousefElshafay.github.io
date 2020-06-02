@@ -1,0 +1,18 @@
+ //nav item  outside aside due to specificity issues has 
+ .navItem {
+     list-style: none;
+     text-decoration: none;
+     padding: 1em;
+     width: max-content;
+     padding-bottom: 7vh;
+     a {
+         position: absolute;
+         color: $secondary-color;
+         opacity: 0.2;
+         &:hover {
+             color: $primary-color;
+             opacity: 1;
+             font-size: larger;
+         }
+     }
+ }

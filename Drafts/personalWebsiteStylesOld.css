@@ -211,15 +211,18 @@ body::-webkit-scrollbar {
     background-repeat: no-repeat;
 }
 
+img {
+    cursor: none;
+}
 
-/* .img-magnifier-glass {
-    position: fixed;
-    border: 3px solid var(--primary-color);
+.img-magnifier-glass {
+    position: absolute;
+    border: 1px solid var(--primary-color);
     border-radius: 50%;
     cursor: none;
     width: 10vw;
     height: 10vw;
-} */
+}
 
 aside {
     grid-area: sideNav;
@@ -528,12 +531,20 @@ section {
 
 /* tablet view  */
 
-@media only screen and (min-width: 600px) and (max-width: 1000px) {}
+@media only screen and (min-width: 600px) and (max-width: 1000px) {
+    .img-magnifier-glass {
+        display: none;
+    }
+}
 
 
 /* mobile view  */
 
 @media only screen and (max-width: 600px) {
+    #BrasovMountainviewImg,
+    .img-magnifier-glass {
+        display: none;
+    }
     /*  Hero  image   */
     #BrasovMountainview {
         height: 100vh;

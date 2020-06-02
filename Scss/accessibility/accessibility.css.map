@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "accessibility.scss"
+    ],
+    "names": [],
+    "file": "accessibility.css"
+}

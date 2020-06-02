@@ -1,26 +1,10 @@
 // side nav
-var sidenavBox = document.querySelector("#sideNav");
-var sidebarBtn = document.querySelector("#btn-navMenu");
-var contentContainer = document.querySelector("#contentContainer");
-var timelineContentContainer = document.querySelector("#timelineContentContainer");
+const sidenavBox = document.querySelector("#sideNav");
+const sidebarBtn = document.querySelector("#btn-navMenu");
+const contentContainer = document.querySelector("#contentContainer");
+const timelineContentContainer = document.querySelector("#timelineContentContainer");
 var maxMobileScreenWidth = 500;
 
-var myScrollFunc = function() {
-    var y = window.pageYOffset;
-    if (y >= 450) {
-        sidebarBtn.classList.add("is-visible");
-        contentContainer.classList.add("is-visible");
-        sidebarBtn.classList.remove("is-not-visible");
-        contentContainer.classList.remove("is-not-visible");
-    } else {
-        sidebarBtn.classList.add("is-not-visible");
-        contentContainer.classList.add("is-not-visible");
-        sidebarBtn.classList.remove("is-visible");
-        contentContainer.classList.remove("is-visible");
-    }
-};
-
-window.addEventListener("scroll", myScrollFunc);
 if (window.innerWidth < maxMobileScreenWidth) {
 
     sidebarBtn.addEventListener("click", function(event) {
@@ -86,6 +70,29 @@ function removeClassName(elements, classname) {
         el.classList.remove(classname);
     });
 }
+
+
+// var myScrollFunc = function() {
+//     var y = window.pageYOffset;
+//     if (y >= 450) {
+//         sidebarBtn.classList.add("is-visible");
+//         contentContainer.classList.add("is-visible");
+//         sidebarBtn.classList.remove("is-not-visible");
+//         contentContainer.classList.remove("is-not-visible");
+//     } else {
+//         sidebarBtn.classList.add("is-not-visible");
+//         contentContainer.classList.add("is-not-visible");
+//         sidebarBtn.classList.remove("is-visible");
+//         contentContainer.classList.remove("is-visible");
+//     }
+// };
+
+// window.addEventListener("scroll", myScrollFunc);
+
+
+
+
+
 
 // this function magnify the hero image on the website
 // REFERENCE https://www.w3schools.com/

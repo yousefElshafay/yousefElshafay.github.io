@@ -1,0 +1,24 @@
+ //    aside section
+ aside {
+     grid-area: $sideNavGridPosition;
+     padding: 1vw 15vw 1vw 10vw;
+     width: 20vw;
+     a {
+         transition: all 0.5s ease-out;
+     }
+     &:hover {
+         a {
+             opacity: 0.5;
+             transition: all 0.3s ease-out;
+         }
+     }
+     nav {
+         margin: auto;
+         padding-top: 15vh;
+         .activeNav {
+             display: none;
+         }
+     }
+ }
+ 
+ @import "navItem/navItem.scss";

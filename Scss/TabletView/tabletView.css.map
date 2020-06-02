@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAE,kBAAkB;AAElB,MAAM,MAAM,MAAM,MAAM,SAAS,EAAE,KAAK,OAAO,SAAS,EAAE,MAAM;EAC5D,AAAA,oBAAoB,CAAC;IACjB,OAAO,EAAE,IAAI;GAChB",
+    "sources": [
+        "tabletView.scss"
+    ],
+    "names": [],
+    "file": "tabletView.css"
+}

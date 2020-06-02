@@ -1,0 +1,26 @@
+.quoteContainer {
+    height: auto;
+    overflow: hidden;
+    .quote {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: xx-large;
+        text-emphasis: bold;
+        padding: 1%;
+        padding-left: 15%;
+        .quoteOwner {
+            font-size: medium;
+            color: $primaryText-color;
+        }
+    }
+    .faded {
+        opacity: 0.4;
+        font-size: smaller;
+    }
+    .align-right {
+        float: right;
+    }
+    .align-left {
+        float: left;
+    }
+}

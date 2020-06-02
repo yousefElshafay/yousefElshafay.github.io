@@ -1,0 +1,27 @@
+/* variables css*/
+
+@import "VariablesAndGeneric/variables.scss";
+
+/* generic css*/
+
+@import "VariablesAndGeneric/generic.scss";
+
+/* desktop view  */
+
+@import "DesktopView/desktopView.scss";
+
+/* tablet view  */
+
+@import "TabletView/tabletView.scss";
+
+/*  mobile  view  */
+
+@import "MobileView/mobileView.scss";
+
+/* high quality  view devices */
+
+@import "HdDesktopView/hdDesktopView.scss";
+
+/* turn off cube animation for accesibility concern */
+
+@import "accessibility/accessibility.scss";
