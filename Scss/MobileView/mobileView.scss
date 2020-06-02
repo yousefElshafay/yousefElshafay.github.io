@@ -185,7 +185,7 @@
          outline: none;
      }
      .collapsible:before {
-         background-image: url("/Assests/ExpandArrow.png");
+         background-image: url("/Assests/Images/ExpandArrow.png");
          background-size: cover;
          background-repeat: no-repeat;
          float: right;
@@ -204,7 +204,7 @@
          padding: 5% 0px;
      }
      .active:before {
-         background-image: url("/Assests/CollapseArrow.png");
+         background-image: url("/Assests/Images/CollapseArrow.png");
          content: "";
      }
      .active .content {

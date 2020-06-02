@@ -109,7 +109,7 @@ img {
 }
 
 #BrasovMountainview {
-  background-image: url("/Assests/BrasovMountainview2.png");
+  background-image: url("/Assests/Images/BrasovMountainview2.png");
   height: 100vh;
   width: 100vw;
   -o-object-fit: cover;

@@ -131,7 +131,7 @@ img {
 }
 
 #BrasovMountainview {
-  background-image: url("/Assests/BrasovMountainview2.png");
+  background-image: url("/Assests/Images/BrasovMountainview2.png");
   height: 100vh;
   width: 100vw;
   -o-object-fit: cover;
@@ -755,7 +755,7 @@ body::-webkit-scrollbar {
     outline: none;
   }
   .collapsible:before {
-    background-image: url("/Assests/ExpandArrow.png");
+    background-image: url("/Assests/Images/ExpandArrow.png");
     background-size: cover;
     background-repeat: no-repeat;
     float: right;
@@ -775,7 +775,7 @@ body::-webkit-scrollbar {
     padding: 5% 0px;
   }
   .active:before {
-    background-image: url("/Assests/CollapseArrow.png");
+    background-image: url("/Assests/Images/CollapseArrow.png");
     content: "";
   }
   .active .content {
