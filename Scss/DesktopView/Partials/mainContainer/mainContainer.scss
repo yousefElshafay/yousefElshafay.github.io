@@ -60,6 +60,11 @@ body::-webkit-scrollbar {
             }
         }
     }
+    @keyframes load {
+        from {
+            width: 0%
+        }
+    }
     #skillsAndHobbiesSection {
         .skillContainer {
             width: 100%;
