@@ -1,0 +1,67 @@
+.timeline {
+    &::before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 3px;
+        background-color: #f0f0f0;
+    }
+    grid-area: timeline;
+    // display: flex;
+    ul {
+        position: relative;
+        top: 25vh;
+        li {
+            margin-bottom: 5vw;
+            list-style-type: none;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            .date {
+                transition: all 0.5s ease-in;
+                font-weight: normal;
+                position: relative;
+                right: 120%;
+                opacity: 0.2;
+                background-color: #f1f1f1;
+                color: gray;
+                width: max-content;
+                text-align: center;
+                padding: 5px 10px;
+                border-radius: 10px;
+            }
+            &:hover .date {
+                opacity: 1;
+            }
+            &:hover .point {
+                background-color: #070318;
+                border: 4px #f7f7f7 solid;
+                opacity: 1;
+            }
+            &:nth-child(odd) .content {
+                padding-left: 0;
+            }
+            &:nth-child(odd) .date {
+                padding-right: 0;
+            }
+            &:nth-child(even) .content {
+                padding-right: 0;
+            }
+            &:nth-child(even) .date {
+                padding-left: 0;
+            }
+        }
+    }
+    .point {
+        min-width: 20px;
+        height: 20px;
+        background-color: darken($primaryBackground-color, 0.5);
+        border-radius: 100%;
+        z-index: 2;
+        border: 3px #dddddd solid;
+        position: absolute;
+        left: -5%;
+        opacity: 0.6;
+        transition: all 0.5s ease-in;
+    }
+}

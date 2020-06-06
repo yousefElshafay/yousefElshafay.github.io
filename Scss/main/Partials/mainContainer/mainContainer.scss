@@ -1,0 +1,282 @@
+body {
+    background: linear-gradient(90deg, $primaryBackground-color 21px, transparent 1%) center, linear-gradient($primaryBackground-color 21px, transparent 1%) center, lightgray;
+    background-size: 22px 22px;
+}
+
+body::-webkit-scrollbar {
+    width: 0 !important
+}
+
+// grid container 
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(20%, 1fr));
+    grid-template-rows: 1fr 2fr 2fr 1fr;
+    grid-gap: 1em;
+    grid-template-areas: "timeline header header sideNav" "timeline  content-main  content-main sideNav" "timeline  content-main  content-main sideNav" "timeline  footer footer sideNav";
+    width: auto;
+    height: 100vh;
+    @include sm {
+        grid-template-columns: 4fr 1fr;
+        grid-template-rows: 0.25fr 2fr;
+        grid-template-areas: "header-left  header-right""content   content";
+        #contentContainer {
+            grid-area: content;
+            overflow: scroll;
+            transition: 1s ease-in-out;
+        }
+    }
+    //commons
+    .emphasis {
+        text-transform: uppercase;
+        background: orange;
+        font-size: larger;
+        color: rgb(41, 41, 41);
+        padding: 3px;
+    }
+    section {
+        display: none;
+        @include sm {
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                position: relative;
+                transition: all 0.5s linear;
+                top: 0;
+                li {
+                    position: relative;
+                    padding: 3% 5%;
+                    color: $primaryText-color;
+                    background: white;
+                    border-top: 2px solid $primary-color;
+                    box-shadow: 2px 1px 3px #030821;
+                    margin-bottom: 5%;
+                    width: 100%;
+                    ul {
+                        li {
+                            border-top: none;
+                            margin-bottom: 0px;
+                        }
+                    }
+                }
+            }
+            .sectionTitle {
+                text-align: center;
+                margin-bottom: 10%;
+            }
+            .title {
+                text-transform: uppercase;
+                font-weight: 700;
+                color: $primaryText-color;
+                font-size: larger;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+            .Subtitle {
+                color: $secondaryText-color;
+            }
+            .countryCode {
+                font-size: x-small;
+                color: $secondaryText-color;
+            }
+            .info {
+                color: $primaryText-color;
+                padding: 1em 0;
+                p {
+                    padding-bottom: 1em;
+                }
+                &::first-letter {
+                    text-transform: capitalize;
+                    line-height: 1.7;
+                }
+            }
+            .date {
+                text-align: start;
+            }
+            .date span {
+                right: 0px;
+                color: $secondaryText-color;
+                font-weight: bold;
+            }
+            .collapsible {
+                cursor: pointer;
+                width: 100%;
+                border: none;
+                outline: none;
+                &:before {
+                    background-image: url("/Assests/Images/ExpandArrow.png");
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    float: right;
+                    width: 1.5em;
+                    height: 1.5em;
+                    content: "";
+                }
+                &~.content {
+                    display: none;
+                    transition: max-height 0.75s cubic-bezier(0, 1, 0, 1);
+                    overflow: hidden;
+                    padding: 2% 0px;
+                }
+            }
+            .active:before {
+                background-image: url("/Assests/Images/CollapseArrow.png");
+                content: "";
+                .content {
+                    display: block;
+                    transition: max-height 0.75s cubic-bezier(0, 1, 0, 1);
+                }
+                .date {
+                    margin-top: 1vh;
+                }
+            }
+            .subSection {
+                background: #e6e6e6;
+                padding: 10px;
+                border-radius: 5px;
+                .quote {
+                    margin-top: 3%;
+                    text-align: center;
+                    font-size: larger;
+                    background: #f3f3f3;
+                    padding: 10px;
+                    border-radius: 5px;
+                    q {
+                        background: navajowhite;
+                    }
+                }
+                .collapsible:before {
+                    width: 1em;
+                    height: 1em;
+                }
+            }
+            .x-subSection {
+                @extend .subSection;
+                width: 90% !important;
+                opacity: 0.8;
+            }
+        }
+    }
+    .timeline {
+        @include sm {
+            display: none;
+        }
+    }
+    .activeSection {
+        transition: all 0.5s ease-in;
+        display: block;
+    }
+    #welcomeSection {
+        /* display: none; */
+        text-align: center;
+        height: 100%;
+        transition: all 1s ease-out;
+        padding-top: 5%;
+        #personalProfilePic {
+            border-radius: 50%;
+            @include sm {
+                width: 50%;
+            }
+        }
+        &:hover {
+            transition: all 1s ease-in;
+            opacity: 1;
+        }
+        #WelcomeParagraph {
+            width: 50%;
+            margin: auto;
+            margin-top: 3vh;
+            color: $secondaryText-color;
+            text-align: center;
+            font-size: larger;
+            & q::before,
+            q::after {
+                display: none;
+            }
+            @include sm {
+                width: 80%;
+                text-align: justify;
+                margin: auto;
+                margin-top: 5%;
+            }
+        }
+    }
+    @keyframes load {
+        from {
+            width: 0%
+        }
+    }
+    #skillsAndHobbiesSection {
+        .skillContainer {
+            width: 100%;
+        }
+        .bar {
+            background-color: #EEE;
+            padding: 2px;
+            border-radius: 15px;
+            margin-bottom: 5px;
+            font-size: 14px;
+            white-space: nowrap;
+            overflow: hidden;
+            color: #FFF;
+            font-weight: bold;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+            &::before {
+                content: attr(data-skill);
+                background-color: $primary-color;
+                display: inline-block;
+                padding: 5px 0 5px 10px;
+                border-radius: inherit;
+                animation: load 2s 0s;
+                -webkit-animation: load 2s 0s;
+                -moz-animation: load 2s 0s;
+                -o-animation: load 2s 0s;
+            }
+        }
+        .learning::before {
+            width: calc(20% - 10px);
+        }
+        .basic::before {
+            width: calc(40% - 10px);
+        }
+        .intermediate::before {
+            width: calc(60% - 10px);
+        }
+        .advanced::before {
+            width: calc(80% - 10px);
+        }
+        .expert::before {
+            width: calc(100% - 10px);
+        }
+    }
+    #contactSection {
+        /* display: none; */
+        text-align: center;
+        h3 {
+            opacity: 0.2;
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+        a {
+            text-decoration: none;
+            font-size: 22px;
+            color: $secondary-color;
+            width: 25%;
+            margin: auto;
+            &:hover {
+                color: $primary-color;
+            }
+        }
+        #contactLinksContainer {
+            display: flex;
+            margin-top: 25%;
+            @include sm {
+                display: grid;
+                grid-gap: 50%;
+                // margin-top: 0px;
+            }
+        }
+    }
+}

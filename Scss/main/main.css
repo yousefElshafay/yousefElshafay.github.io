@@ -1,4 +1,3 @@
-/* main css */
 /* Declare cube transition vairable */
 /* for the cube ztranslate property  */
 /* color schema  */
@@ -854,12 +853,4 @@ body::-webkit-scrollbar {
   -webkit-transform: rotateX(-90deg) translateZ(1em);
   -moz-transform: rotateX(-90deg) translateZ(1em);
 }
-
-/* turn off cube animation for accesibility concern */
-@media (prefers-reduced-motion: reduce) {
-  #cube {
-    -webkit-animation: none;
-            animation: none;
-  }
-}
-/*# sourceMappingURL=personalWebsitStyles.css.map */
+/*# sourceMappingURL=main.css.map */

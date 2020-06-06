@@ -1,0 +1,63 @@
+/* Declare cube transition vairable */
+
+$cube-transition-duration: 1s;
+
+/* for the cube ztranslate property  */
+
+$cube-Ztranslate: 1em;
+$cube-ZtranslateOnHover: 2em;
+// side nav location in a the grid
+$sideNavGridPosition:sideNav;
+
+/* color schema  */
+
+$secondaryBackground-color: black;
+$primaryBackground-color: white;
+$primaryText-color: black;
+$secondaryText-color: dimgray;
+$primary-color: rgb(2, 2, 36);
+$secondary-color: rgb(143, 143, 143);
+$primaryBorder-color: white;
+$secondaryBorder-color: rgb(0, 0, 0);
+$primaryHover-color: rgb(53, 53, 53);
+$font-family: "Roboto",
+sans-serif;
+$screen-sm-min: 300px;
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+// Tablets and small desktops
+$screen-lg-min: 992px;
+// Large tablets and desktops
+$screen-xl-min: 1200px;
+@mixin sm {
+    @media (min-width: #{$screen-sm-min}) and (max-width:#{$screen-md-min}) {
+        @content;
+    }
+}
+
+// Medium devices
+@mixin md {
+    @media (min-width: #{$screen-md-min}) and (max-width:#{$screen-lg-min}) {
+        @content;
+    }
+}
+
+// Large devices
+@mixin lg {
+    @media (min-width: #{$screen-lg-min}) and (max-width:#{$screen-xl-min}) {
+        @content;
+    }
+}
+
+// Extra large devices
+@mixin xl {
+    @media (min-width: #{$screen-xl-min}) {
+        @content;
+    }
+}
+
+@mixin rwd($screen) {
+    @media (min-width: $screen+'px') {
+        @content;
+    }
+}

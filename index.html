@@ -16,6 +16,8 @@ https://codepen.io/milacarrera -->
     <!-- my css -->
     <link rel="stylesheet" href="/Scss/personalWebsitStyles.css">
 
+    <!-- Add sal.js stylesheet -->
+    <link rel="stylesheet" href="node_modules/sal.js/dist/sal.css">
     <!-- font awesome cdn  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -36,7 +38,7 @@ https://codepen.io/milacarrera -->
 
     </div>
     <main>
-        <div class="container">
+        <div class="container" data-sal="fade" style="--sal-duration: 1.5s;  --sal-delay: 0.5s;">
             <!-- <div class="quote">
                 <p>life is a daring adventure of nothing at all </p>
             </div> -->
@@ -50,10 +52,7 @@ https://codepen.io/milacarrera -->
                     <div class="top"></div>
                     <div class="bottom"></div>
                 </div>
-            </div>
-
- -->
-
+            </div> -->
 
             <!-- The sidebar -->
             <div id="btn-navMenu">
@@ -269,7 +268,7 @@ https://codepen.io/milacarrera -->
                                     </div>
                                     <div class="subSection">
                                         <div class="collapsible">
-                                            <div class="Subtitle">References</div>
+                                            <div class="Subtitle">Reference</div>
                                         </div>
                                         <div class="content">
                                             <div class="info">
@@ -361,7 +360,6 @@ https://codepen.io/milacarrera -->
                                     <div class="info">
                                         <p> Creating a low cost read and write braille display for visually impaired individuals. This device would be powered by Web-services. This is an ongoing project/startup. We won the audience award for this project
                                             during the 2017 ictalentAward.nl. at FONTYS University.
-
                                         </p>
                                         <div class="subSection">
                                             <div class="collapsible">
@@ -384,7 +382,7 @@ https://codepen.io/milacarrera -->
                 </section>
 
                 <section id="skillsAndHobbiesSection">
-
+                    <h2 class="sectionTitle">Skills & Hobbies</h2>
                     <ul>
                         <li id="SkillsSubSection">
                             <div class="collapsible">
@@ -517,9 +515,15 @@ https://codepen.io/milacarrera -->
 <!-- link js  -->
 <script src="/Js/personalWebsite.js">
 </script>
+<script src="node_modules/sal.js/dist/sal.js"></script>
+
 <script>
     magnify("BrasovMountainviewImg", 1.5);
-
+    // call sal js 
+    sal({
+        threshold: 0.8,
+        once: false,
+    });
     // magnify("MylifeInArt", 4);
 </script>
 
