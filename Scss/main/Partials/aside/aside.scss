@@ -20,6 +20,19 @@
          //     left: 230px;
          // }
      }
+     @include md {
+         display: none;
+     }
+ }
+ 
+ #sideNavZone {
+     grid-area: sideNavZone;
+     &:hover+#sideNav {
+         a {
+             opacity: 0.5;
+             transition: all 0.3s ease-out;
+         }
+     }
  }
  
  //    aside section
@@ -62,6 +75,9 @@
                  color: $secondaryText-color;
              }
          }
+     }
+     @include md {
+         grid-area: $sideNavGridPosition;
      }
  }
  

@@ -2,7 +2,7 @@
 const sidenavBox = document.querySelector("#sideNav");
 const sidebarBtn = document.querySelector("#btn-navMenu");
 const contentContainer = document.querySelector("#contentContainer");
-const timelineContentContainer = document.querySelector("#timelineContentContainer");
+const timelines = document.getElementsByClassName("timeline");
 var maxMobileScreenWidth = 500;
 
 if (window.innerWidth < maxMobileScreenWidth) {
@@ -17,6 +17,10 @@ if (window.innerWidth < maxMobileScreenWidth) {
         sidenavBox.style.width = "0vw";
         sidebarBtn.style.display = "block";
     });
+
+    // remove all timeline classes in mobile view 
+    removeClassName(timelines, "timeline");
+
 }
 
 
@@ -40,6 +44,7 @@ var navItems = document.getElementsByClassName("navItem");
 
 var activeSections = document.getElementsByClassName("activeSection");
 var y;
+
 
 for (y = 0; y < navItems.length; y++) {
     navItems[y].addEventListener("click", function() {

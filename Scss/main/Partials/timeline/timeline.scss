@@ -38,18 +38,18 @@
                 border: 4px #f7f7f7 solid;
                 opacity: 1;
             }
-            &:nth-child(odd) .content {
-                padding-left: 0;
-            }
-            &:nth-child(odd) .date {
-                padding-right: 0;
-            }
-            &:nth-child(even) .content {
-                padding-right: 0;
-            }
-            &:nth-child(even) .date {
-                padding-left: 0;
-            }
+            // &:nth-child(odd) .content {
+            //     padding-left: 0;
+            // }
+            // &:nth-child(odd) .date {
+            //     padding-right: 0;
+            // }
+            // &:nth-child(even) .content {
+            //     padding-right: 0;
+            // }
+            // &:nth-child(even) .date {
+            //     padding-left: 0;
+            // }
         }
     }
     .point {

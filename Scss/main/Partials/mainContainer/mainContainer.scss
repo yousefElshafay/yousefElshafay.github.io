@@ -10,18 +10,31 @@ body::-webkit-scrollbar {
 // grid container 
 .container {
     display: grid;
-    grid-template-columns: repeat(4, minmax(20%, 1fr));
+    grid-template-columns: 1fr 3fr 3fr 1fr 1fr;
     grid-template-rows: 1fr 2fr 2fr 1fr;
     grid-gap: 1em;
-    grid-template-areas: "timeline header header sideNav" "timeline  content-main  content-main sideNav" "timeline  content-main  content-main sideNav" "timeline  footer footer sideNav";
+    grid-template-areas: "timeline content-main  content-main sideNavZone sideNav" "timeline  content-main  content-main sideNavZone sideNav" "timeline  content-main  content-main  sideNavZone sideNav" "timeline  footer-left footer sideNavZone sideNav";
     width: auto;
     height: 100vh;
+    #contentContainer {
+        grid-area: content-main;
+        transition: 1s ease-in-out;
+    }
+    @include md {
+        grid-template-columns: 0.5fr 1fr 2fr 1fr;
+        grid-template-rows: 1fr 2fr 1fr;
+        grid-template-areas: "timeline content-main content-main  sideNav" "timeline  content-main content-main   sideNav" "timeline content-main content-main  sideNav";
+        #contentContainer {
+            grid-area: content-main;
+        }
+    }
     @include sm {
         grid-template-columns: 4fr 1fr;
         grid-template-rows: 0.25fr 2fr;
-        grid-template-areas: "header-left  header-right""content   content";
+        grid-template-areas: "header-left  header-right""content-main   content-main";
+        grid-gap: 0px;
         #contentContainer {
-            grid-area: content;
+            // grid-area: content-main;
             overflow: scroll;
             transition: 1s ease-in-out;
         }
@@ -33,6 +46,13 @@ body::-webkit-scrollbar {
         font-size: larger;
         color: rgb(41, 41, 41);
         padding: 3px;
+    }
+    .Fade-Text {
+        color: #6f6f6f;
+        text-transform: uppercase;
+    }
+    .center {
+        text-align: center;
     }
     section {
         display: none;
@@ -105,7 +125,7 @@ body::-webkit-scrollbar {
                 border: none;
                 outline: none;
                 &:before {
-                    background-image: url("/Assests/Images/ExpandArrow.png");
+                    background-image: url("/Assets/Images/ExpandArrow.png");
                     background-size: cover;
                     background-repeat: no-repeat;
                     float: right;
@@ -121,7 +141,7 @@ body::-webkit-scrollbar {
                 }
             }
             .active:before {
-                background-image: url("/Assests/Images/CollapseArrow.png");
+                background-image: url("/Assets/Images/CollapseArrow.png");
                 content: "";
                 .content {
                     display: block;
@@ -158,11 +178,11 @@ body::-webkit-scrollbar {
             }
         }
     }
-    .timeline {
-        @include sm {
-            display: none;
-        }
-    }
+    // .timeline {
+    //     @include sm {
+    //         display: none;
+    //     }
+    // }
     .activeSection {
         transition: all 0.5s ease-in;
         display: block;
@@ -278,5 +298,17 @@ body::-webkit-scrollbar {
                 // margin-top: 0px;
             }
         }
+    }
+}
+
+.info {
+    transition: letter-spacing 2s;
+}
+
+.letterSpacing {
+    letter-spacing: -5px;
+    opacity: 0.1;
+    a {
+        letter-spacing: -5px;
     }
 }

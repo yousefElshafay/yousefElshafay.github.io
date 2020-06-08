@@ -22,8 +22,8 @@
             -moz-transform-style: preserve-3d;
             -moz-animation: rotatecube 10s infinite;
             div {
-                width: 2em;
-                height: 2em;
+                width: 1em;
+                height: 1em;
                 display: block;
                 position: absolute;
                 border: 1px solid $primaryBorder-color;
@@ -190,4 +190,18 @@
     #cube .bottom {
         -webkit-transform: rotateX( -90deg) translateZ($cube-Ztranslate);
         -moz-transform: rotateX( -90deg) translateZ($cube-Ztranslate);
+    }
+    
+    // #cube .animate {
+    //     -webkit-transform: translateZ($cube-Ztranslate *5);
+    //     -moz-transform: translateZ($cube-Ztranslate *5);
+    //     #cube {
+    //         animation: none;
+    //     }
+    // }
+    .small-cube {
+        z-index: -1;
+        div {
+            font-size: 25px !important;
+        }
     }

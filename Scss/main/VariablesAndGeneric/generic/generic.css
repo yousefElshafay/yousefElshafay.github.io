@@ -14,4 +14,12 @@ html {
   overflow: -moz-scrollbars-none;
   -ms-overflow-style: none;
 }
+
+a,
+a:hover,
+a:visited,
+a:link,
+a:active {
+  text-decoration: none;
+}
 /*# sourceMappingURL=generic.css.map */

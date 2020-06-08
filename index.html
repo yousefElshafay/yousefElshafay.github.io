@@ -26,11 +26,12 @@ https://codepen.io/milacarrera -->
 <body>
     <div class="brasovMountainViewContainer">
         <!-- <div id="BrasovMountainview"></div> -->
-        <img src="/Assests/Images/BrasovMountainview2.png" id="BrasovMountainviewImg" width="100%" height="100%" alt="Girl">
+        <img src="/Assets/Images/BrasovMountainview2.png" id="BrasovMountainviewImg" width="100%" height="100%" alt="Girl">
 
         <div class="quoteContainer">
             <p class="quote"> life is either a daring adventure
-                <span class="align-right faded"> or nothing at all <br><span class="quoteOwner"> Helen Keller <span></span>
+                <span class="align-right faded"> or nothing at all <br><span class="quoteOwner"> Helen Keller
+                        <span></span>
             </p>
         </div>
         <div id="BrasovMountainview"></div>
@@ -43,7 +44,8 @@ https://codepen.io/milacarrera -->
                 <p>life is a daring adventure of nothing at all </p>
             </div> -->
 
-            <!-- <div class="cubeContainer">
+            <div class="cubeContainer">
+
                 <div id="cube">
                     <div class="front"></div>
                     <div class="back"></div>
@@ -52,7 +54,7 @@ https://codepen.io/milacarrera -->
                     <div class="top"></div>
                     <div class="bottom"></div>
                 </div>
-            </div> -->
+            </div>
 
             <!-- The sidebar -->
             <div id="btn-navMenu">
@@ -61,6 +63,7 @@ https://codepen.io/milacarrera -->
                 <div id="bottom"></div>
             </div>
 
+            <div id="sideNavZone"></div>
             <aside id="sideNav" class="sidenavbar">
                 <nav>
                     <ul>
@@ -83,88 +86,26 @@ https://codepen.io/milacarrera -->
                 </nav>
             </aside>
 
-            <div id="contentContainer">
+            <div id="contentContainer" data-sal="slide-right" style="--sal-duration: 1.5s;  --sal-delay: 0.5s;">
 
                 <section id="welcomeSection" class="activeSection">
                     <!-- personal image  -->
-                    <img id="personalProfilePic" src="/Assests/Images/PersonalProfile.jpeg" alt="">
+                    <img id="personalProfilePic" src="/Assets/Images/PersonalProfile.jpeg" alt="">
                     <p id="WelcomeParagraph">
-                        <q> <span class="emphasis">Welcome </span> to my personal website, as u may have noticed iam a big fan of experiencing new thing in life, and getting the most i can out of it, i hope to also help others along the way.
-                    </q>
+                        <q> <span class="emphasis">Welcome </span> to my personal website, as u may have noticed iam a
+                            big fan of experiencing new thing in life, and getting the most i can out of it, i hope to
+                            also help others along the way.
+                        </q>
                     </p>
 
-                    <!-- <img src="Assests/MylifeInArt.png" id="MylifeInArt" width="100%" height="100%" alt="Girl"> -->
+                    <!-- <img src="Assets/MylifeInArt.png" id="MylifeInArt" width="100%" height="100%" alt="Girl"> -->
 
                 </section>
 
+
                 <section id="educationSection">
-
                     <div class="timeline">
-
-                        <ul>
-                            <li>
-                                <div class="content">
-                                </div>
-                                <div class="point"></div>
-                                <div class="date">
-                                    <h4>January 2020</h4>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="content">
-                                </div>
-                                <div class="point"></div>
-                                <div class="date">
-                                    <h4>July 2019</h4>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="content">
-                                </div>
-                                <div class="point"></div>
-                                <div class="date">
-                                    <h4>March 2019</h4>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-
-
-                    <!-- <div id="timelineContentContainer">
                         <h2 class="sectionTitle">Education</h2>
-                        <div>
-                            <ul>
-                                <li>
-                                    <div class="collapsible">
-                                        <div class="title">Fontys university
-                                        </div>
-                                    </div>
-
-                                    <div class="content">
-                                        <div class="info">I have obtained my bachelor degree in software engineering from <a target="_blank" href="https://fontys.edu/">Fontys university</a> in the Eindhoven, The Netherland. </div>
-                                    </div>
-                                    <div class="date">
-                                        <span>JAN 2019</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="collapsible">
-                                        <div class="title">Gamal Abdl el Nasser military high school </div>
-                                    </div>
-
-                                    <div class="content">
-                                        <div class="info">I have obtained my high school degree with a GPA of 4.0 in Alexandria, Egypt. </div>
-                                    </div>
-                                    <div class="date">
-                                        <span>JUN 2012</span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div> -->
-
-                    <h2 class="sectionTitle">Education</h2>
-                    <div>
                         <ul>
                             <li>
                                 <div class="collapsible">
@@ -175,18 +116,22 @@ https://codepen.io/milacarrera -->
                                 <div class="content">
                                     <div class="info">I have obtained my bachelor degree in software engineering from <a target="_blank" href="https://fontys.edu/">Fontys university</a> in the Eindhoven, The Netherland. </div>
                                 </div>
+                                <div class="point"></div>
+
                                 <div class="date">
                                     <span>JAN 2019</span>
                                 </div>
                             </li>
+
                             <li>
-                                <div class="collapsible">
+                                <div class="collapsible ">
                                     <div class="title">Gamal Abdl el Nasser military high school </div>
                                 </div>
 
                                 <div class="content">
                                     <div class="info">I have obtained my high school degree with a GPA of 4.0 in Alexandria, Egypt. </div>
                                 </div>
+                                <div class="point"></div>
                                 <div class="date">
                                     <span>JUN 2012</span>
                                 </div>
@@ -208,7 +153,9 @@ https://codepen.io/milacarrera -->
                                 </div>
                                 <div class="content">
                                     <div class="info">
-                                        Full stack software engineer at certwell, developing new features for <a target="_blank" href="https://www.certwell.com/">certwell</a> digital products following the agile methodology.
+                                        <p>
+                                            Full stack software engineer at certwell, developing new features for <a target="_blank" href="https://www.certwell.com/">certwell</a> digital products following the agile methodology.
+                                        </p>
                                     </div>
                                     <div class="subSection">
                                         <div class="collapsible">
@@ -216,10 +163,13 @@ https://codepen.io/milacarrera -->
                                         </div>
                                         <div class="content">
                                             <div class="info ">
-                                                <a target="_blank" href="https://www.linkedin.com/in/toeter/">Jouke Toeter</a> <span class="Subtitle">General Manager @Certwell</span>
+                                                <a target="_blank" href="https://www.linkedin.com/in/toeter/">Jouke
+                                                    Toeter</a> <span class="Subtitle">General Manager @Certwell</span>
                                                 <br>
                                                 <div class="quote">
-                                                    <q> You are a great colleague, 
+                                                    <q>
+                                                        <!-- " Je bent een fijne collega, je werkt hard, je werkt geconcentreerd, bent slim, eigenwijs, ambitieus en gemotiveerd." -->
+                                                        You are a great colleague,
                                                         you work hard, you work concentrated,
                                                         you are smart, stubborn, ambitious and motivated.
                                                     </q>
@@ -239,7 +189,9 @@ https://codepen.io/milacarrera -->
                                 </div>
                                 <div class="content">
                                     <div class="info">
-                                        During my graduation internship at <a target="_blank" href="https://www.accenture.com/nl-en">Accenture</a>, i developed a proof of concept for an anamoly detection system using modern deep learning technologies.
+                                        <p>
+                                            During my graduation internship at <a target="_blank" href="https://www.accenture.com/nl-en">Accenture</a>, i developed a proof of concept for an anomaly detection system using modern deep learning technologies.
+                                        </p>
                                     </div>
                                     <!-- <div class="subSection">
                                         <div class="collapsible">
@@ -263,8 +215,10 @@ https://codepen.io/milacarrera -->
                                 </div>
                                 <div class="content">
                                     <div class="info">
-                                        The internship assignment at <a target="_blank" href="https://www.itpinternational.com/"> ITP Caribbean</a> was to research the most optimal way for data replication between two different database environments where
-                                        the schema is different between the two databases and to create a prototype that handles these differences.
+                                        <p>
+                                            The internship assignment at <a target="_blank" href="https://www.itpinternational.com/"> ITP Caribbean</a> was to research the most optimal way for data replication between two different database environments
+                                            where the schema is different between the two databases and to create a prototype that handles these differences.
+                                        </p>
                                     </div>
                                     <div class="subSection">
                                         <div class="collapsible">
@@ -272,7 +226,9 @@ https://codepen.io/milacarrera -->
                                         </div>
                                         <div class="content">
                                             <div class="info">
-                                                <a target="_blank" href="https://www.linkedin.com/in/jasegers/">Jan Segers</a> <span class="Subtitle">General Manager @ITP-Carribean</span>
+                                                <a target="_blank" href="https://www.linkedin.com/in/jasegers/">Jan
+                                                    Segers</a> <span class="Subtitle">General Manager
+                                                    @ITP-Carribean</span>
                                                 <br>
                                                 <div class="quote">
                                                     <q> YOUSSEF IS YOUNG , AMBITIOUS , FAST LEARNER </q>
@@ -299,7 +255,12 @@ https://codepen.io/milacarrera -->
                                 </div>
                                 <div class="content">
                                     <div class="info">
-                                        <p> migration project using .net core </p>
+                                        <p> this project was initiated to compare the in house development IDE used by certwell(polar studio) and the new .NET core framework developed by Microsoft. The project demonstrated that key feature present in the
+                                            in house IDE such as security and stability of generated web applications is also present when developing with the new .NET core framework, after showcasing the project and the findings regarding the comparison
+                                            between the in-house IDE and .NET core, Certwell management decided to migrate from the in-house IDE.
+                                        </p>
+                                        <div class="Fade-Text center">@.NetCore @C# @MVC </div>
+
                                     </div>
                                     <div class="subSection">
                                         <div class="collapsible">
@@ -307,13 +268,25 @@ https://codepen.io/milacarrera -->
                                         </div>
                                         <div class="content">
                                             <div class="info ">
-                                                <a target="_blank" href="">Jacco Kooie</a> <span class="Subtitle">IT Manager @Certwell</span>
+                                                <a target="_blank" href="">Jacco Kooie</a> <span class="Subtitle">IT
+                                                    Manager @Certwell</span>
                                                 <br>
                                                 <div class="quote">
-                                                    <q> 
+                                                    <q>
+                                                        <!-- Youssef heeft bij ons gewerkt vanaf 15 april 2019 tot en met 14 april 2020. Hij heeft zich snel ingeleerd in onze eigen ontwikkeltools (Polar Studio) en heeft laten zien dat hij de materie snel onder de knie krijgt. Hij is een vlugge leerling en is niet snel tevreden met een resultaat. Hij heeft bij ons in een aantal sprints meegeholpen onze software te ontwikkelen, waarbij hij grotendeels zelfstandig werkzaam was. Youssef steeds op zoek naar mogelijkheden om het bedrijf te helpen de processen te verbeteren.
+                                                            Van onze medewerkers laat Youssef de meeste ondernemingsgeest zien. -->
+                                                        Youssef has worked with us from 15 april 2019 till 14 april
+                                                        2020. He quickly learned our own development tools( polar
+                                                        studio) and mastered it. He is a quick learner and is not easily
+                                                        satisfied with a result. He helped us develop our software in a
+                                                        number of sprints, in which he worked largely independently.
+                                                        Youssef is always looking for opportunities to help the company
+                                                        improve its processes.Out of all our employees ,shows youssef
+                                                        the most entrepreneurial spirit.
                                                     </q>
                                                 </div>
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -321,14 +294,19 @@ https://codepen.io/milacarrera -->
 
                             <li>
                                 <div class="collapsible">
-                                    <div class="title">Anamoly detection system </div>
+                                    <div class="title">Anomaly detection system </div>
                                     <div class="date">
                                         <span>SEP 2018 - JAN 2019</span>
                                     </div>
                                 </div>
                                 <div class="content">
                                     <div class="info">
+                                        during my graduation internship at the SAP department within accenture,i developed a proof of concept project for one of accenture clients in the infrastructure sector the netherlands. the proof of concept consist of three main component, a self developed
+                                        machine learning api,that receives and image via http and returns wether or not this image contain a certain anomaly. the image and the processed result by the api, is stored in a database which is showcased in
+                                        a front end application. the restful api was developed with keras and tensorflow as the machine learning framework and served by flask(python). the front end application was developed by UI5 SAP own front end development
+                                        language.
                                     </div>
+                                    <div class="Fade-Text center"> @Tensorflow @Python @UI5 </div>
                                 </div>
                             </li>
 
@@ -344,10 +322,11 @@ https://codepen.io/milacarrera -->
                                         <p>
                                             The internship assignment at ITP Caribbean was to research the most optimal way for data replication between two different database environments where the schema is different between the two databases and creating a prototype that handles these differences.
                                         </p>
+                                        <div class="Fade-Text center"> @SSIS @Sql-Server </div>
+
                                     </div>
                                 </div>
                             </li>
-
 
                             <li>
                                 <div class="collapsible">
@@ -359,15 +338,18 @@ https://codepen.io/milacarrera -->
                                 <div class="content">
                                     <div class="info">
                                         <p> Creating a low cost read and write braille display for visually impaired individuals. This device would be powered by Web-services. This is an ongoing project/startup. We won the audience award for this project
-                                            during the 2017 ictalentAward.nl. at FONTYS University.
+                                            during the 2017 fontysictalent.nl at FONTYS University.
                                         </p>
+                                        <div class="Fade-Text center"> @Analysis @public-Speaking </div>
+
                                         <div class="subSection">
                                             <div class="collapsible">
                                                 <div class="Subtitle">Reference</div>
                                             </div>
                                             <div class="content">
                                                 <div class="info">
-                                                    <a target="_blank" href="https://www.fontysictalent.nl/nl/voorgaande-edities/ictalent-2017/">Fontys ICT talent awards </a>
+                                                    <a target="_blank" href="https://www.fontysictalent.nl/nl/voorgaande-edities/ictalent-2017/">Fontys
+                                                        ICT talent awards </a>
                                                     <br>
                                                     <iframe width="100%" height="100%" src="https://www.youtube.com/embed/rypb-N6uA2c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                                 </div>
@@ -377,6 +359,32 @@ https://codepen.io/milacarrera -->
                                 </div>
                             </li>
 
+                            <li>
+                                <div class="collapsible">
+                                    <div class="title">INTERACTIVE HALL</div>
+                                    <div class="date">
+                                        <span>SEP 2016 - JAN 2017</span>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <div class="info">
+                                        <p>
+                                            during my minor,i worked with a nursery home to develop an interactive hall to help stimulate patient with amnesia to move using light, sensors and classical music. I created a small test attached in the reference section.
+                                        </p>
+                                        <div class="Fade-Text center"> @Arduino @Hue-Light </div>
+
+                                        <div class="subSection">
+                                            <div class="collapsible">
+                                                <div class="Subtitle">Reference</div>
+                                            </div>
+                                            <div class="content">
+                                                <div class="info">
+                                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/OwROhwUwkaw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </section>
@@ -450,7 +458,6 @@ https://codepen.io/milacarrera -->
                                         </div>
 
                                     </div>
-
                                 </li>
                                 <li id="LanguageSkills">
                                     <div class="collapsible subSection">
@@ -478,15 +485,47 @@ https://codepen.io/milacarrera -->
                                     <div class="collapsible subSection">
                                         <div class="title">Martial art </div>
                                     </div>
+                                    <div class="content">
+                                        <p>
+                                            <strong> “A brave man, a real fighter is not measured by how many times he
+                                                falls, but how many times he stands up.”– Rickson Gracie
+                                            </strong>
+                                        </p>
+                                        <br> I started martial art around 2016.By far the best decision i ever made for my career and wellbeing.Martial art teaches you persistance, hard work and being calm in stressfull situation. I practise currently
+                                        muay thai and brazilian jiu jitsu.
+
+                                    </div>
                                 </li>
                                 <li>
                                     <div class="collapsible subSection">
                                         <div class="title">Cooking</div>
                                     </div>
+                                    <div class="content">
+                                        <p> <strong> “no one is born a great cook, one learns by doing.”
+                                                ― Julia Child
+                                            </strong>
+                                        </p>
+                                        <br> food is not just nutrition,food is culture, food brings back childhood memories.
+                                        <br> I enjoy cooking, so much so that i worked as a part time chef
+                                        <a href="https://www.happyitaly.nl/where/eindhoven" target="_blank">@happy italy </a> Eindhoven for one and half year.
+                                    </div>
                                 </li>
                                 <li>
                                     <div class="collapsible subSection">
                                         <div class="title">Traveling</div>
+                                    </div>
+                                    <div class="content">
+                                        <p>
+                                            <strong> “life is either a daring adventure or nothing at all” ― HELEN
+                                                KELLER
+                                            </strong>
+                                        </p>
+                                        <br> <strong>VISITED :</strong>
+                                        <div class="Fade-Text ">
+                                            @Netherlands @Belgium @Germany @France @Romania @Aruba @Morocco -- </div>
+
+                                        <br> <strong>TO VISIT : </strong>
+                                        <div class="Fade-Text "> @Peru @Spain @Finland @Iceland -- </div>
                                     </div>
                                 </li>
                             </ul>
@@ -496,16 +535,19 @@ https://codepen.io/milacarrera -->
 
                 <section id="contactSection">
                     <address>
-                                <!-- <h3>yousefelshafay@gmail.com</h3>
+                        <!-- <h3>yousefelshafay@gmail.com</h3>
                                 <h3>(0031) 649374646</h3>
                                 -->
-                                <div id="contactLinksContainer">
-                                <a href="mailto:yousefelshafay@gmail.com"><i class="fa fa-lg fa-google"></i></a>   
-                                <a href="https://api.whatsapp.com/send?phone=0031649373646" target="_blank"><i class="fa fa-lg fa-whatsapp" aria-hidden="true"></i></a>
-                                <a href="https://www.linkedin.com/in/yousefelshafay/" target="_blank"><i class="fa fa-lg fa-linkedin"></i></a>
-                                <a href="/Assests/CV/YoussefElshafayCV2020.pdf" download><i class="fa fa-lg fa-download" aria-hidden="true"></i></a> 
-                            </div>
-                        </address>
+                        <div id="contactLinksContainer">
+                            <a href="mailto:yousefelshafay@gmail.com"><i class="fa fa-lg fa-google"></i></a>
+                            <a href="https://api.whatsapp.com/send?phone=0031649373646" target="_blank"><i
+                                    class="fa fa-lg fa-whatsapp" aria-hidden="true"></i></a>
+                            <a href="https://www.linkedin.com/in/yousefelshafay/" target="_blank"><i
+                                    class="fa fa-lg fa-linkedin"></i></a>
+                            <a href="/Assets/CV/YoussefElshafayCV2020.pdf" download><i class="fa fa-lg fa-download"
+                                    aria-hidden="true"></i></a>
+                        </div>
+                    </address>
                 </section>
             </div>
         </div>
