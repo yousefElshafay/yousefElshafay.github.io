@@ -1,101 +1,116 @@
 // side nav
 const sidenavBox = document.querySelector("#sideNav");
-const sidebarBtn = document.querySelector("#btn-navMenu");
+const sidebarBtn = document.querySelector("#SideNavBtn");
 const contentContainer = document.querySelector("#contentContainer");
 const timelines = document.getElementsByClassName("timeline");
 var maxMobileScreenWidth = 500;
+var maxTabletScreenWidth = 800;
+var SidenavBoxWidth = "25vw";
 
-if (window.innerWidth < maxMobileScreenWidth) {
+if (window.innerWidth < maxTabletScreenWidth) {
 
+    if (window.innerWidth < maxMobileScreenWidth) {
+        // remove all timeline classes in mobile view
+        removeClassName(timelines, ['timeline']);
+        SidenavBoxWidth = "50vw";
+    }
     sidebarBtn.addEventListener("click", function(event) {
-        sidenavBox.style.width = "50vw";
-        sidenavBox.style.display = "block";
-        sidebarBtn.style.display = "none";
+        if (sidebarBtn.classList.contains("fa-bars")) {
+            OpenSideNav(SidenavBoxWidth);
+        } else {
+            CloseSideNav();
+        }
     });
 
     sidenavBox.addEventListener("click", function(event) {
-        sidenavBox.style.width = "0vw";
-        sidebarBtn.style.display = "block";
+        CloseSideNav();
     });
 
-    // remove all timeline classes in mobile view 
-    removeClassName(timelines, "timeline");
-
+    // if user clicks any where on screen close sidenav box 
+    contentContainer.addEventListener("click", function(event) {
+        CloseSideNav();
+    });
 }
 
+function CloseSideNav() {
+    sidenavBox.style.width = "0vw";
+    sidebarBtn.classList.remove("fa-window-close");
+    sidebarBtn.classList.add("fa-bars");
+}
 
+function OpenSideNav(SidenavBoxWidth) {
+    sidenavBox.style.width = SidenavBoxWidth;
+    sidenavBox.style.display = "block";
+    sidebarBtn.classList.remove("fa-bars");
+    sidebarBtn.classList.add("fa-window-close");
+}
+// var contents = document.getElementsByClassName("content");
 var coll = document.getElementsByClassName("collapsible");
 var i;
 
 for (i = 0; i < coll.length; i++) {
     coll[i].addEventListener("click", function() {
+        // removeClassName(contents, ['visible'])
         this.classList.toggle("active");
         var content = this.nextElementSibling;
+
+        // if (content.classList.contains("visible") || content.classList.contains("hidden")) {
+        //     if (content.classList.contains("visible")) {
+        //         content.classList.add("hidden");
+        //         content.classList.remove("visible");
+        //     } else {
+        //         content.classList.remove("hidden");
+        //         content.classList.add("visible");
+        //     }
+        // }
+
+
         if (content.style.display === "block") {
             content.style.display = "none";
         } else {
             content.style.display = "block";
         }
+
     });
 }
 
 var navItems = document.getElementsByClassName("navItem");
-// var navItems = document.querySelectorAll('.navItem')
-
 var activeSections = document.getElementsByClassName("activeSection");
 var y;
 
 
 for (y = 0; y < navItems.length; y++) {
     navItems[y].addEventListener("click", function() {
-
         var NavItemId = this.firstElementChild.id;
 
-        // get the specified section to display 
+        // get the specified section to display
         var sectionId = NavItemId.replace("NavItem", "Section")
         content = document.querySelector("#" + sectionId);
 
-        // hide all active sections 
+        // hide all active sections
         if (activeSections.length > 0) {
             var activenavs = document.getElementsByClassName("activeNav");
-            removeClassName(activenavs, "activeNav")
-            removeClassName(activeSections, "activeSection");
+            removeClassName(activenavs, ['activeNav'])
+            removeClassName(activeSections, ['activeSection']);
         }
         // this.firstElementChild.classList.add("activeNav");
         this.classList.add("activeNav");
-
         content.classList.add("activeSection");
 
     });
 }
 
-
-function removeClassName(elements, classname) {
-    [].forEach.call(elements, function(el) {
-        el.classList.remove(classname);
-    });
+function removeClassName(elements, classnames) {
+    if (elements != null) {
+        while (elements.length > 0) {
+            {
+                for (var y = 0; y < classnames.length; y++) {
+                    elements[0].classList.remove(classnames[y]);
+                }
+            }
+        }
+    }
 }
-
-
-// var myScrollFunc = function() {
-//     var y = window.pageYOffset;
-//     if (y >= 450) {
-//         sidebarBtn.classList.add("is-visible");
-//         contentContainer.classList.add("is-visible");
-//         sidebarBtn.classList.remove("is-not-visible");
-//         contentContainer.classList.remove("is-not-visible");
-//     } else {
-//         sidebarBtn.classList.add("is-not-visible");
-//         contentContainer.classList.add("is-not-visible");
-//         sidebarBtn.classList.remove("is-visible");
-//         contentContainer.classList.remove("is-visible");
-//     }
-// };
-
-// window.addEventListener("scroll", myScrollFunc);
-
-
-
 
 
 

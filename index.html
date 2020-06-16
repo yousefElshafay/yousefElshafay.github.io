@@ -24,8 +24,7 @@ https://codepen.io/milacarrera -->
 </head>
 
 <body>
-    <div class="brasovMountainViewContainer">
-        <!-- <div id="BrasovMountainview"></div> -->
+    <!-- <div class="brasovMountainViewContainer">
         <img src="/Assets/Images/BrasovMountainview2.png" id="BrasovMountainviewImg" width="100%" height="100%" alt="Girl">
 
         <div class="quoteContainer">
@@ -37,7 +36,7 @@ https://codepen.io/milacarrera -->
         <div id="BrasovMountainview"></div>
 
 
-    </div>
+    </div> -->
     <main>
         <div class="container" data-sal="fade" style="--sal-duration: 1.5s;  --sal-delay: 0.5s;">
             <!-- <div class="quote">
@@ -56,17 +55,26 @@ https://codepen.io/milacarrera -->
                 </div>
             </div> -->
 
+            <i id="SideNavBtn" class="fa fa-2x fa-bars" aria-hidden="true"></i>
+
             <!-- The sidebar -->
-            <div id="btn-navMenu">
-                <div id="top"></div>
+            <!-- <div id="btn-navMenu"> -->
+            <!-- <div id="top"></div>
                 <div id="middle"></div>
-                <div id="bottom"></div>
-            </div>
+                <div id="bottom"></div> -->
+            <!-- <i id="SideNavBtn" class="fa fa-2x fa-bars" aria-hidden="true"></i> -->
+
+            <!-- </div> -->
 
             <div id="sideNavZone"></div>
             <aside id="sideNav" class="sidenavbar">
                 <nav>
+                    <!-- <button id="SideNavCloseBtn" onclick="closeSideNav()"><i class="fa fa-2x fa-window-close" aria-hidden="true"></i>
+                    </button> -->
                     <ul>
+                        <li class="navItem activeNav">
+                            <a id="welcomeNavItem ">Home</a>
+                        </li>
                         <li class="navItem">
                             <a id="educationNavItem">Education</a>
                         </li>
@@ -91,12 +99,14 @@ https://codepen.io/milacarrera -->
                 <section id="welcomeSection" class="activeSection">
                     <!-- personal image  -->
                     <img id="personalProfilePic" src="/Assets/Images/PersonalProfile.jpeg" alt="">
+
                     <p id="WelcomeParagraph">
                         <q> <span class="emphasis">Welcome </span> to my personal website, as u may have noticed iam a
                             big fan of experiencing new thing in life, and getting the most i can out of it, i hope to
                             also help others along the way.
                         </q>
                     </p>
+
 
                     <!-- <img src="Assets/MylifeInArt.png" id="MylifeInArt" width="100%" height="100%" alt="Girl"> -->
 
@@ -109,91 +119,101 @@ https://codepen.io/milacarrera -->
                         <ul>
                             <li>
                                 <div class="collapsible">
-                                    <div class="title">Fontys university
+                                    <div class="title">
+                                        <div class="point"></div>
+                                        Fontys university
+                                    </div>
+                                    <div class="date">
+                                        <span>JAN 2019</span>
                                     </div>
                                 </div>
 
-                                <div class="content">
-                                    <div class="info">I have obtained my bachelor degree in software engineering from <a target="_blank" href="https://fontys.edu/">Fontys university</a> in the Eindhoven, The Netherland. </div>
-                                </div>
-                                <div class="point"></div>
-
-                                <div class="date">
-                                    <span>JAN 2019</span>
+                                <div class="content ">
+                                    <div class="info"> Received my bachelor degree in software engineering @<a target="_blank" href="https://fontys.edu/">Fontys university</a> in the Eindhoven, The Netherland. </div>
                                 </div>
                             </li>
 
                             <li>
                                 <div class="collapsible ">
-                                    <div class="title">Gamal Abdl el Nasser military high school </div>
+                                    <div class="title">
+                                        <div class="point"></div>
+                                        G.A.N military high school
+                                    </div>
+                                    <div class="date">
+                                        <span>JUN 2012</span>
+                                    </div>
                                 </div>
 
-                                <div class="content">
-                                    <div class="info">I have obtained my high school degree with a GPA of 4.0 in Alexandria, Egypt. </div>
+                                <div class="content ">
+                                    <div class="info"> Received my high school degree with a GPA of 4.0 in Alexandria,Egypt. </div>
                                 </div>
-                                <div class="point"></div>
-                                <div class="date">
-                                    <span>JUN 2012</span>
-                                </div>
+
                             </li>
                         </ul>
                     </div>
                 </section>
 
                 <section id="experienceSection">
-                    <h2 class="sectionTitle">Experience</h2>
-                    <div>
-                        <ul>
-                            <li>
-                                <div class="collapsible">
-                                    <div class="title">Certwell <span class="countryCode">- NL</span></div>
-                                    <div class="date">
-                                        <span>April 2019 - April 2020</span>
-                                    </div>
-                                </div>
-                                <div class="content">
-                                    <div class="info">
-                                        <p>
-                                            Full stack software engineer at certwell, developing new features for <a target="_blank" href="https://www.certwell.com/">certwell</a> digital products following the agile methodology.
-                                        </p>
-                                    </div>
-                                    <div class="subSection">
-                                        <div class="collapsible">
-                                            <div class="Subtitle">Reference</div>
+                    <div class="timeline">
+
+                        <h2 class="sectionTitle">Experience</h2>
+                        <div>
+                            <ul>
+                                <li>
+                                    <div class="collapsible">
+                                        <div class="title">
+                                            <div class="point"></div>
+                                            Certwell <span class="countryCode">- NL</span></div>
+                                        <div class="date">
+                                            <span>April 2019 - April 2020</span>
                                         </div>
-                                        <div class="content">
-                                            <div class="info ">
-                                                <a target="_blank" href="https://www.linkedin.com/in/toeter/">Jouke
+                                    </div>
+                                    <div class="content ">
+                                        <div class="info">
+                                            <p>
+                                                Full stack software engineer <a target="_blank" href="https://www.certwell.com/">@Certwell</a>, developing new features for certwell digital products following the agile methodology.
+                                            </p>
+                                        </div>
+                                        <div class="subSection">
+                                            <div class="collapsible">
+                                                <div class="Subtitle">Reference</div>
+                                            </div>
+                                            <div class="content">
+                                                <div class="info ">
+                                                    <a target="_blank" href="https://www.linkedin.com/in/toeter/">Jouke
                                                     Toeter</a> <span class="Subtitle">General Manager @Certwell</span>
-                                                <br>
-                                                <div class="quote">
-                                                    <q>
+                                                    <br>
+                                                    <div class="quote">
+                                                        <q>
                                                         <!-- " Je bent een fijne collega, je werkt hard, je werkt geconcentreerd, bent slim, eigenwijs, ambitieus en gemotiveerd." -->
                                                         You are a great colleague,
                                                         you work hard, you work concentrated,
                                                         you are smart, stubborn, ambitious and motivated.
                                                     </q>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </li>
 
-                            <li>
-                                <div class="collapsible">
-                                    <div class="title">Accenture <span class="countryCode">- NL</span></div>
-                                    <div class="date">
-                                        <span>SEP 2018 - JAN 2019</span>
+                                </li>
+
+                                <li>
+                                    <div class="collapsible">
+                                        <div class="title">
+                                            <div class="point"></div>
+                                            Accenture <span class="countryCode">- NL</span></div>
+                                        <div class="date">
+                                            <span>SEP 2018 - JAN 2019</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="content">
-                                    <div class="info">
-                                        <p>
-                                            During my graduation internship at <a target="_blank" href="https://www.accenture.com/nl-en">Accenture</a>, i developed a proof of concept for an anomaly detection system using modern deep learning technologies.
-                                        </p>
-                                    </div>
-                                    <!-- <div class="subSection">
+                                    <div class="content ">
+                                        <div class="info">
+                                            <p>
+                                                During my graduation internship <a target="_blank" href="https://www.accenture.com/nl-en">@Accenture</a>, i developed a proof of concept for an anomaly detection system using modern deep learning technologies.
+                                            </p>
+                                        </div>
+                                        <!-- <div class="subSection">
                                         <div class="collapsible">
                                             <div class="Subtitle">References</div>
                                         </div>
@@ -203,337 +223,357 @@ https://codepen.io/milacarrera -->
                                             </div>
                                         </div>
                                     </div> -->
-                                </div>
-                            </li>
+                                    </div>
+                                </li>
 
-                            <li>
-                                <div class="collapsible">
-                                    <div class="title">ITP Carribean <span class="countryCode">- ARUBA</span> </div>
-                                    <div class="date">
-                                        <span>SEP 2017 - JAN 2018</span>
-                                    </div>
-                                </div>
-                                <div class="content">
-                                    <div class="info">
-                                        <p>
-                                            The internship assignment at <a target="_blank" href="https://www.itpinternational.com/"> ITP Caribbean</a> was to research the most optimal way for data replication between two different database environments
-                                            where the schema is different between the two databases and to create a prototype that handles these differences.
-                                        </p>
-                                    </div>
-                                    <div class="subSection">
-                                        <div class="collapsible">
-                                            <div class="Subtitle">Reference</div>
+                                <li>
+                                    <div class="collapsible">
+                                        <div class="title">
+                                            <div class="point"></div>
+                                            ITP Carribean <span class="countryCode">- AW</span> </div>
+                                        <div class="date">
+                                            <span>SEP 2017 - JAN 2018</span>
                                         </div>
-                                        <div class="content">
-                                            <div class="info">
-                                                <a target="_blank" href="https://www.linkedin.com/in/jasegers/">Jan
+                                    </div>
+                                    <div class="content ">
+                                        <div class="info">
+                                            <p>
+                                                The internship assignment <a target="_blank" href="https://www.itpinternational.com/">@ITP Caribbean</a> was to research the most optimal way for data replication between two different database environments
+                                                where the schema is different between the two databases and to create a prototype that handles these differences.
+                                            </p>
+                                        </div>
+                                        <div class="subSection">
+                                            <div class="collapsible">
+                                                <div class="Subtitle">Reference</div>
+                                            </div>
+                                            <div class="content">
+                                                <div class="info">
+                                                    <a target="_blank" href="https://www.linkedin.com/in/jasegers/">Jan
                                                     Segers</a> <span class="Subtitle">General Manager
                                                     @ITP-Carribean</span>
-                                                <br>
-                                                <div class="quote">
-                                                    <q> YOUSSEF IS YOUNG , AMBITIOUS , FAST LEARNER </q>
+                                                    <br>
+                                                    <div class="quote">
+                                                        <q> YOUSSEF IS YOUNG , AMBITIOUS , FAST LEARNER </q>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </li>
-                        </ul>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </section>
 
                 <section id="projectsSection">
-                    <h2 class="sectionTitle">Projects</h2>
-                    <div>
-                        <ul>
-                            <li>
-                                <div class="collapsible">
-                                    <div class="title">C-Register System migration </div>
-                                    <div class="date">
-                                        <span>December 2019 - March 2020</span>
-                                    </div>
-                                </div>
-                                <div class="content">
-                                    <div class="info">
-                                        <p> this project was initiated to compare the in house development IDE used by certwell(polar studio) and the new .NET core framework developed by Microsoft. The project demonstrated that key feature present in the
-                                            in house IDE such as security and stability of generated web applications is also present when developing with the new .NET core framework, after showcasing the project and the findings regarding the comparison
-                                            between the in-house IDE and .NET core, Certwell management decided to migrate from the in-house IDE.
-                                        </p>
-                                        <div class="Fade-Text center">@.NetCore @C# @MVC </div>
 
-                                    </div>
-                                    <div class="subSection">
-                                        <div class="collapsible">
-                                            <div class="Subtitle">Reference</div>
+                    <div class="timeline">
+
+                        <h2 class="sectionTitle">Projects</h2>
+                        <div>
+                            <ul>
+                                <li>
+                                    <div class="collapsible">
+                                        <div class="title">C-Register System migration </div>
+                                        <div class="date">
+                                            <span>December 2019 - March 2020</span>
                                         </div>
-                                        <div class="content">
-                                            <div class="info ">
-                                                <a target="_blank" href="">Jacco Kooie</a> <span class="Subtitle">IT
+                                    </div>
+                                    <div class="content ">
+                                        <div class="info">
+                                            <p> this project was initiated to compare the in house development IDE used by certwell(polar studio) and the new .NET core framework developed by Microsoft. The project demonstrated that key feature present in
+                                                the in house IDE such as security and stability of generated web applications is also present when developing with the new .NET core framework, after showcasing the project and the findings regarding the
+                                                comparison between the in-house IDE and .NET core, Certwell management decided to migrate from the in-house IDE.
+                                            </p>
+                                            <div class="Fade-Text center">@.NetCore @C# @MVC </div>
+
+                                        </div>
+                                        <div class="subSection">
+                                            <div class="collapsible">
+                                                <div class="Subtitle">Reference</div>
+                                            </div>
+                                            <div class="content">
+                                                <div class="info ">
+                                                    <a target="_blank" href="">Jacco Kooie</a> <span class="Subtitle">IT
                                                     Manager @Certwell</span>
-                                                <br>
-                                                <div class="quote">
-                                                    <q>
+                                                    <br>
+                                                    <div class="quote">
+                                                        <q>
                                                         <!-- Youssef heeft bij ons gewerkt vanaf 15 april 2019 tot en met 14 april 2020. Hij heeft zich snel ingeleerd in onze eigen ontwikkeltools (Polar Studio) en heeft laten zien dat hij de materie snel onder de knie krijgt. Hij is een vlugge leerling en is niet snel tevreden met een resultaat. Hij heeft bij ons in een aantal sprints meegeholpen onze software te ontwikkelen, waarbij hij grotendeels zelfstandig werkzaam was. Youssef steeds op zoek naar mogelijkheden om het bedrijf te helpen de processen te verbeteren.
                                                             Van onze medewerkers laat Youssef de meeste ondernemingsgeest zien. -->
                                                         Youssef has worked with us from 15 april 2019 till 14 april
                                                         2020. He quickly learned our own development tools( polar
                                                         studio) and mastered it. He is a quick learner and is not easily
                                                         satisfied with a result. He helped us develop our software in a
-                                                        number of sprints, in which he worked largely independently.
+                                                        number of sprints, in which he worked largely independent.
                                                         Youssef is always looking for opportunities to help the company
                                                         improve its processes.Out of all our employees ,shows youssef
                                                         the most entrepreneurial spirit.
                                                     </q>
+                                                    </div>
                                                 </div>
+
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="point"></div>
+                                </li>
+
+                                <li>
+                                    <div class="collapsible">
+                                        <div class="title">Anomaly detection system </div>
+                                        <div class="date">
+                                            <span>SEP 2018 - JAN 2019</span>
+                                        </div>
+                                    </div>
+                                    <div class="content ">
+                                        <div class="info">
+                                            during my graduation internship at the SAP department within accenture,i developed a proof of concept project for one of accenture clients in the infrastructure sector the netherlands. the proof of concept consist of three main component, a self developed
+                                            machine learning api,that receives and image via http and returns wether or not this image contain a certain anomaly. the image and the processed result by the api, is stored in a database which is showcased
+                                            in a front end application. the restful api was developed with keras and tensorflow as the machine learning framework and served by flask(python). the front end application was developed by UI5 SAP own front
+                                            end development language.
+                                        </div>
+                                        <div class="Fade-Text center"> @Tensorflow @Python @UI5 </div>
+                                    </div>
+                                    <div class="point"></div>
+                                </li>
+
+                                <li>
+                                    <div class="collapsible">
+                                        <div class="title">Data Base replicator </div>
+                                        <div class="date">
+                                            <span>SEP 2017 - JAN 2018</span>
+                                        </div>
+                                    </div>
+                                    <div class="content ">
+                                        <div class="info">
+                                            <p>
+                                                The internship assignment at ITP Caribbean was to research the most optimal way for data replication between two different database environments where the schema is different between the two databases and creating a prototype that handles these differences.
+                                            </p>
+                                            <div class="Fade-Text center"> @SSIS @Sql-Server </div>
 
                                         </div>
                                     </div>
-                                </div>
-                            </li>
+                                    <div class="point"></div>
 
-                            <li>
-                                <div class="collapsible">
-                                    <div class="title">Anomaly detection system </div>
-                                    <div class="date">
-                                        <span>SEP 2018 - JAN 2019</span>
-                                    </div>
-                                </div>
-                                <div class="content">
-                                    <div class="info">
-                                        during my graduation internship at the SAP department within accenture,i developed a proof of concept project for one of accenture clients in the infrastructure sector the netherlands. the proof of concept consist of three main component, a self developed
-                                        machine learning api,that receives and image via http and returns wether or not this image contain a certain anomaly. the image and the processed result by the api, is stored in a database which is showcased in
-                                        a front end application. the restful api was developed with keras and tensorflow as the machine learning framework and served by flask(python). the front end application was developed by UI5 SAP own front end development
-                                        language.
-                                    </div>
-                                    <div class="Fade-Text center"> @Tensorflow @Python @UI5 </div>
-                                </div>
-                            </li>
+                                </li>
 
-                            <li>
-                                <div class="collapsible">
-                                    <div class="title">Data Base replicator </div>
-                                    <div class="date">
-                                        <span>SEP 2017 - JAN 2018</span>
+                                <li>
+                                    <div class="collapsible">
+                                        <div class="title">B-MAGISTER </div>
+                                        <div class="date">
+                                            <span>SEP 2016 - PRESENT</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="content">
-                                    <div class="info">
-                                        <p>
-                                            The internship assignment at ITP Caribbean was to research the most optimal way for data replication between two different database environments where the schema is different between the two databases and creating a prototype that handles these differences.
-                                        </p>
-                                        <div class="Fade-Text center"> @SSIS @Sql-Server </div>
+                                    <div class="content ">
+                                        <div class="info">
+                                            <p> Creating a low cost read and write braille display for visually impaired individuals. This device would be powered by Web-services. This is an ongoing project/startup. We won the audience award for this project
+                                                during the 2017 fontysictalent.nl at FONTYS University.
+                                            </p>
+                                            <div class="Fade-Text center"> @Analysis @public-Speaking </div>
 
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="collapsible">
-                                    <div class="title">B-MAGISTER </div>
-                                    <div class="date">
-                                        <span>SEP 2016 - PRESENT</span>
-                                    </div>
-                                </div>
-                                <div class="content">
-                                    <div class="info">
-                                        <p> Creating a low cost read and write braille display for visually impaired individuals. This device would be powered by Web-services. This is an ongoing project/startup. We won the audience award for this project
-                                            during the 2017 fontysictalent.nl at FONTYS University.
-                                        </p>
-                                        <div class="Fade-Text center"> @Analysis @public-Speaking </div>
-
-                                        <div class="subSection">
-                                            <div class="collapsible">
-                                                <div class="Subtitle">Reference</div>
-                                            </div>
-                                            <div class="content">
-                                                <div class="info">
-                                                    <a target="_blank" href="https://www.fontysictalent.nl/nl/voorgaande-edities/ictalent-2017/">Fontys
+                                            <div class="subSection">
+                                                <div class="collapsible">
+                                                    <div class="Subtitle">Reference</div>
+                                                </div>
+                                                <div class="content">
+                                                    <div class="info">
+                                                        <a target="_blank" href="https://www.fontysictalent.nl/nl/voorgaande-edities/ictalent-2017/">Fontys
                                                         ICT talent awards </a>
-                                                    <br>
-                                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/rypb-N6uA2c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                        <br>
+                                                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/rypb-N6uA2c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </li>
+                                    <div class="point"></div>
 
-                            <li>
-                                <div class="collapsible">
-                                    <div class="title">INTERACTIVE HALL</div>
-                                    <div class="date">
-                                        <span>SEP 2016 - JAN 2017</span>
+                                </li>
+
+                                <li>
+                                    <div class="collapsible">
+                                        <div class="title">INTERACTIVE HALL</div>
+                                        <div class="date">
+                                            <span>SEP 2016 - JAN 2017</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="content">
-                                    <div class="info">
-                                        <p>
-                                            during my minor,i worked with a nursery home to develop an interactive hall to help stimulate patient with amnesia to move using light, sensors and classical music. I created a small test attached in the reference section.
-                                        </p>
-                                        <div class="Fade-Text center"> @Arduino @Hue-Light </div>
+                                    <div class="content ">
+                                        <div class="info">
+                                            <p>
+                                                during my minor,i worked with a nursery home to develop an interactive hall to help stimulate patient with amnesia to move using light, sensors and classical music. I created a small test attached in the reference section.
+                                            </p>
+                                            <div class="Fade-Text center"> @Arduino @Hue-Light </div>
 
-                                        <div class="subSection">
-                                            <div class="collapsible">
-                                                <div class="Subtitle">Reference</div>
-                                            </div>
-                                            <div class="content">
-                                                <div class="info">
-                                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/OwROhwUwkaw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                                                    </div>
+                                            <div class="subSection">
+                                                <div class="collapsible">
+                                                    <div class="Subtitle">Reference</div>
+                                                </div>
+                                                <div class="content">
+                                                    <div class="info">
+                                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/OwROhwUwkaw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                                                        </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="point"></div>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="skillsAndHobbiesSection">
+                    <div class="timeline">
+
+                        <h2 class="sectionTitle">Skills & Hobbies</h2>
+                        <ul>
+                            <li id="SkillsSubSection">
+                                <div class="collapsible">
+                                    <div class="title">
+                                        <h2>Skills</h2>
+                                    </div>
                                 </div>
+                                <ul class="content">
+                                    <li id="TechnicalSkills">
+                                        <div class="collapsible subSection">
+                                            <div class="title">Technical Skills </div>
+                                        </div>
+
+                                        <div class="content">
+                                            <div class="collapsible x-subSection">
+                                                <div class="title">.NET </div>
+                                            </div>
+                                            <div class="content">
+
+                                                <div class="bar  expert" data-skill="C#"></div>
+                                                <div class="bar  advanced" data-skill=".NET CORE"></div>
+                                                <div class="bar  advanced" data-skill="MVC"></div>
+                                                <div class="bar  intermediate" data-skill="TDD"></div>
+
+                                                <div class="bar  intermediate" data-skill="Azure"></div>
+                                                <div class="bar  basic" data-skill="CI/CD"></div>
+                                            </div>
+                                            <br>
+
+                                            <div class="collapsible x-subSection">
+                                                <div class="title">SQL SERVER </div>
+                                            </div>
+                                            <div class="content">
+                                                <div class="bar  advanced" data-skill="SQL"></div>
+                                                <div class="bar  intermediate" data-skill="SSIS"></div>
+                                            </div>
+                                            <br>
+
+                                            <div class="collapsible x-subSection">
+                                                <div class="title">WEB </div>
+                                            </div>
+                                            <div class="content">
+                                                <div class="bar  intermediate" data-skill="Java Script"></div>
+                                                <div class="bar  advanced" data-skill="CSS3"></div>
+                                                <div class="bar  advanced" data-skill="HTML5"></div>
+                                            </div>
+
+                                            <br>
+                                            <div class="collapsible x-subSection">
+                                                <div class="title">DATA SCIENCE </div>
+                                            </div>
+                                            <div class="content">
+                                                <div class="bar  intermediate" data-skill="Deep learning"></div>
+                                                <div class="bar  basic" data-skill="Python"></div>
+                                            </div>
+                                            <br>
+                                            <div class="collapsible x-subSection">
+                                                <div class="title">ANALYSIS </div>
+                                            </div>
+                                            <div class="content">
+
+                                                <div class="bar  advanced" data-skill="Team Work"></div>
+                                                <div class="bar  advanced" data-skill="Communication"></div>
+                                                <div class="bar  advanced" data-skill="Analysis"></div>
+                                            </div>
+
+                                        </div>
+                                    </li>
+                                    <li id="LanguageSkills">
+                                        <div class="collapsible subSection">
+                                            <div class="title">Language Skills </div>
+                                        </div>
+
+                                        <div class="content">
+                                            <div class="bar  expert" data-skill="ARABIC"></div>
+                                            <div class="bar  expert" data-skill="ENGLISH"></div>
+                                            <div class="bar  advanced" data-skill="DUTCH"></div>
+                                            <div class="bar  basic" data-skill="FRENCH"></div>
+                                            <div class="bar  learning" data-skill="SPANISH"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li id="HobbiesSubSection">
+                                <div class="collapsible">
+                                    <div class="title">
+                                        <h2>Hobbies</h2>
+                                    </div>
+                                </div>
+                                <ul class="content">
+                                    <li>
+                                        <div class="collapsible subSection">
+                                            <div class="title">Martial art </div>
+                                        </div>
+                                        <div class="content">
+                                            <p>
+                                                <strong> “A brave man, a real fighter is not measured by how many times he
+                                                falls, but how many times he stands up.”– Rickson Gracie
+                                            </strong>
+                                            </p>
+                                            <br> I started martial art around 2016.By far the best decision i ever made for my career and wellbeing.Martial art teaches you persistance, hard work and being calm in stressfull situation. I practise currently
+                                            muay thai and brazilian jiu jitsu.
+
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="collapsible subSection">
+                                            <div class="title">Cooking</div>
+                                        </div>
+                                        <div class="content">
+                                            <p> <strong> “no one is born a great cook, one learns by doing.”
+                                                ― Julia Child
+                                            </strong>
+                                            </p>
+                                            <br> food is not just nutrition,food is culture, food brings back childhood memories.
+                                            <br> I enjoy cooking, so much so that i worked as a part time chef
+                                            <a href="https://www.happyitaly.nl/where/eindhoven" target="_blank">@happy italy </a> Eindhoven for one and half year.
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="collapsible subSection">
+                                            <div class="title">Traveling</div>
+                                        </div>
+                                        <div class="content">
+                                            <p>
+                                                <strong> “life is either a daring adventure or nothing at all” ― HELEN
+                                                KELLER
+                                            </strong>
+                                            </p>
+                                            <br> <strong>VISITED :</strong>
+                                            <div class="Fade-Text ">
+                                                @Netherlands @Belgium @Germany @France @Romania @Aruba @Morocco -- </div>
+
+                                            <br> <strong>TO VISIT : </strong>
+                                            <div class="Fade-Text "> @Peru @Spain @Finland @Iceland -- </div>
+                                        </div>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </div>
                 </section>
 
-                <section id="skillsAndHobbiesSection">
-                    <h2 class="sectionTitle">Skills & Hobbies</h2>
-                    <ul>
-                        <li id="SkillsSubSection">
-                            <div class="collapsible">
-                                <div class="title">
-                                    <h2>Skills</h2>
-                                </div>
-                            </div>
-                            <ul class="content">
-                                <li id="TechnicalSkills">
-                                    <div class="collapsible subSection">
-                                        <div class="title">Technical Skills </div>
-                                    </div>
-
-                                    <div class="content">
-                                        <div class="collapsible x-subSection">
-                                            <div class="title">.NET </div>
-                                        </div>
-                                        <div class="content">
-
-                                            <div class="bar  expert" data-skill="C#"></div>
-                                            <div class="bar  advanced" data-skill=".NET CORE"></div>
-                                            <div class="bar  advanced" data-skill="MVC"></div>
-                                            <div class="bar  intermediate" data-skill="TDD"></div>
-
-                                            <div class="bar  intermediate" data-skill="Azure"></div>
-                                            <div class="bar  basic" data-skill="CI/CD"></div>
-                                        </div>
-                                        <br>
-
-                                        <div class="collapsible x-subSection">
-                                            <div class="title">SQL SERVER </div>
-                                        </div>
-                                        <div class="content">
-                                            <div class="bar  advanced" data-skill="SQL"></div>
-                                            <div class="bar  intermediate" data-skill="SSIS"></div>
-                                        </div>
-                                        <br>
-
-                                        <div class="collapsible x-subSection">
-                                            <div class="title">WEB </div>
-                                        </div>
-                                        <div class="content">
-                                            <div class="bar  intermediate" data-skill="Java Script"></div>
-                                            <div class="bar  advanced" data-skill="CSS3"></div>
-                                            <div class="bar  advanced" data-skill="HTML5"></div>
-                                        </div>
-
-                                        <br>
-                                        <div class="collapsible x-subSection">
-                                            <div class="title">DATA SCIENCE </div>
-                                        </div>
-                                        <div class="content">
-                                            <div class="bar  intermediate" data-skill="Deep learning"></div>
-                                            <div class="bar  basic" data-skill="Python"></div>
-                                        </div>
-                                        <br>
-                                        <div class="collapsible x-subSection">
-                                            <div class="title">ANALYSIS </div>
-                                        </div>
-                                        <div class="content">
-
-                                            <div class="bar  advanced" data-skill="Team Work"></div>
-                                            <div class="bar  advanced" data-skill="Communication"></div>
-                                            <div class="bar  advanced" data-skill="Analysis"></div>
-                                        </div>
-
-                                    </div>
-                                </li>
-                                <li id="LanguageSkills">
-                                    <div class="collapsible subSection">
-                                        <div class="title">Language Skills </div>
-                                    </div>
-
-                                    <div class="content">
-                                        <div class="bar  expert" data-skill="ARABIC"></div>
-                                        <div class="bar  expert" data-skill="ENGLISH"></div>
-                                        <div class="bar  advanced" data-skill="DUTCH"></div>
-                                        <div class="bar  basic" data-skill="FRENCH"></div>
-                                        <div class="bar  learning" data-skill="SPANISH"></div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                        <li id="HobbiesSubSection">
-                            <div class="collapsible">
-                                <div class="title">
-                                    <h2>Hobbies</h2>
-                                </div>
-                            </div>
-                            <ul class="content">
-                                <li>
-                                    <div class="collapsible subSection">
-                                        <div class="title">Martial art </div>
-                                    </div>
-                                    <div class="content">
-                                        <p>
-                                            <strong> “A brave man, a real fighter is not measured by how many times he
-                                                falls, but how many times he stands up.”– Rickson Gracie
-                                            </strong>
-                                        </p>
-                                        <br> I started martial art around 2016.By far the best decision i ever made for my career and wellbeing.Martial art teaches you persistance, hard work and being calm in stressfull situation. I practise currently
-                                        muay thai and brazilian jiu jitsu.
-
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="collapsible subSection">
-                                        <div class="title">Cooking</div>
-                                    </div>
-                                    <div class="content">
-                                        <p> <strong> “no one is born a great cook, one learns by doing.”
-                                                ― Julia Child
-                                            </strong>
-                                        </p>
-                                        <br> food is not just nutrition,food is culture, food brings back childhood memories.
-                                        <br> I enjoy cooking, so much so that i worked as a part time chef
-                                        <a href="https://www.happyitaly.nl/where/eindhoven" target="_blank">@happy italy </a> Eindhoven for one and half year.
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="collapsible subSection">
-                                        <div class="title">Traveling</div>
-                                    </div>
-                                    <div class="content">
-                                        <p>
-                                            <strong> “life is either a daring adventure or nothing at all” ― HELEN
-                                                KELLER
-                                            </strong>
-                                        </p>
-                                        <br> <strong>VISITED :</strong>
-                                        <div class="Fade-Text ">
-                                            @Netherlands @Belgium @Germany @France @Romania @Aruba @Morocco -- </div>
-
-                                        <br> <strong>TO VISIT : </strong>
-                                        <div class="Fade-Text "> @Peru @Spain @Finland @Iceland -- </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </section>
-
                 <section id="contactSection">
+                    <!-- <h2 class="sectionTitle">Contact</h2> -->
+
                     <address>
                         <!-- <h3>yousefelshafay@gmail.com</h3>
                                 <h3>(0031) 649374646</h3>
@@ -562,12 +602,14 @@ https://codepen.io/milacarrera -->
 <script src="/Js/sal.js"></script>
 
 <script>
-    magnify("BrasovMountainviewImg", 1.5);
+    // magnify("BrasovMountainviewImg", 1.5);
     // call sal js 
-    sal({
-        threshold: 0.8,
-        once: false,
-    });
+    sal();
+
+    // sal({
+    //     threshold: 0.8,
+    //     once: false,
+    // });
     // magnify("MylifeInArt", 4);
 </script>
 

@@ -10,7 +10,7 @@ body::-webkit-scrollbar {
 // grid container 
 .container {
     display: grid;
-    grid-template-columns: 1fr 3fr 3fr 1fr 1fr;
+    grid-template-columns: 0.5fr 3fr 3fr 0.5fr 1fr;
     grid-template-rows: 1fr 2fr 2fr 1fr;
     grid-gap: 1em;
     grid-template-areas: "timeline content-main  content-main sideNavZone sideNav" "timeline  content-main  content-main sideNavZone sideNav" "timeline  content-main  content-main  sideNavZone sideNav" "timeline  footer-left footer sideNavZone sideNav";
@@ -21,8 +21,9 @@ body::-webkit-scrollbar {
         transition: 1s ease-in-out;
     }
     @include md {
-        grid-template-columns: 0.5fr 1fr 2fr 1fr;
+        grid-template-columns: 0.5fr 1fr 2fr 0.5fr;
         grid-template-rows: 1fr 2fr 1fr;
+        grid-gap: 0px;
         grid-template-areas: "timeline content-main content-main  sideNav" "timeline  content-main content-main   sideNav" "timeline content-main content-main  sideNav";
         #contentContainer {
             grid-area: content-main;
@@ -31,10 +32,9 @@ body::-webkit-scrollbar {
     @include sm {
         grid-template-columns: 4fr 1fr;
         grid-template-rows: 0.25fr 2fr;
-        grid-template-areas: "header-left  header-right""content-main   content-main";
+        grid-template-areas: "header-left  sideNav""content-main   content-main";
         grid-gap: 0px;
         #contentContainer {
-            // grid-area: content-main;
             overflow: scroll;
             transition: 1s ease-in-out;
         }
@@ -54,9 +54,17 @@ body::-webkit-scrollbar {
     .center {
         text-align: center;
     }
+    .collapsible {
+        white-space: nowrap;
+    }
     section {
         display: none;
         @include sm {
+            .collapsible {
+                width: auto;
+                margin-right: 0px;
+                white-space: inherit;
+            }
             ul {
                 list-style-type: none;
                 margin: 0;
@@ -65,7 +73,6 @@ body::-webkit-scrollbar {
                 transition: all 0.5s linear;
                 top: 0;
                 li {
-                    position: relative;
                     padding: 3% 5%;
                     color: $primaryText-color;
                     background: white;
@@ -178,38 +185,39 @@ body::-webkit-scrollbar {
             }
         }
     }
-    // .timeline {
-    //     @include sm {
-    //         display: none;
-    //     }
-    // }
     .activeSection {
-        transition: all 0.5s ease-in;
         display: block;
+        animation: fadeIn ease-in-out 2s;
+        @include sm {
+            animation-duration: 0.5s;
+        }
     }
     #welcomeSection {
         /* display: none; */
         text-align: center;
         height: 100%;
-        transition: all 1s ease-out;
         padding-top: 5%;
+        transition: all 1s ease-out;
         #personalProfilePic {
             border-radius: 50%;
             @include sm {
                 width: 50%;
             }
         }
-        &:hover {
-            transition: all 1s ease-in;
-            opacity: 1;
-        }
         #WelcomeParagraph {
             width: 50%;
             margin: auto;
-            margin-top: 3vh;
+            margin-top: -2vh;
             color: $secondaryText-color;
             text-align: center;
             font-size: larger;
+            background: linear-gradient(90deg, $primaryBackground-color 21px, transparent 1%) center, linear-gradient($primaryBackground-color 21px, transparent 1%) center, lightgray;
+            background-size: 22px 22px;
+            z-index: 100;
+            padding: 1em;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
             & q::before,
             q::after {
                 display: none;
@@ -227,7 +235,18 @@ body::-webkit-scrollbar {
             width: 0%
         }
     }
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
     #skillsAndHobbiesSection {
+        .content {
+            display: none;
+        }
         .skillContainer {
             width: 100%;
         }
@@ -236,7 +255,6 @@ body::-webkit-scrollbar {
             padding: 2px;
             border-radius: 15px;
             margin-bottom: 5px;
-            font-size: 14px;
             white-space: nowrap;
             overflow: hidden;
             color: #FFF;
@@ -295,20 +313,15 @@ body::-webkit-scrollbar {
             @include sm {
                 display: grid;
                 grid-gap: 50%;
-                // margin-top: 0px;
             }
         }
     }
 }
 
-.info {
-    transition: letter-spacing 2s;
+.hidden {
+    display: none !important;
 }
 
-.letterSpacing {
-    letter-spacing: -5px;
-    opacity: 0.1;
-    a {
-        letter-spacing: -5px;
-    }
+.visible {
+    display: block !important;
 }
