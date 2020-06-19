@@ -61,36 +61,12 @@
     }
 }
 
-// .SideNavBtn {
-//     color: whitesmoke;
-// }
 .fa-window-close {
-    color: white;
+    color: white !important;
+    ;
     z-index: 100;
 }
 
-// .closeBtn {
-//     div {
-//         height: 0.1vw;
-//         width: 10vw;
-//         background: white;
-//         // font-size: larger;
-//     }
-// }
-// #top {
-//     transform: rotate(45deg);
-//     top: -3px;
-//     left: 8px;
-// }
-// #middle {
-//     width: 0%;
-//     opacity: 0;
-// }
-// #bottom {
-//     transform: rotate(-45deg);
-//     top: 39px;
-//     left: 8px;
-// }
 #sideNavZone {
     grid-area: sideNavZone;
     &:hover+#sideNav {

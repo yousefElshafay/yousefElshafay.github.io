@@ -20,7 +20,7 @@
         position: relative;
         top: 15vh;
         li {
-            margin-bottom: 5vw;
+            margin-bottom: 2vw;
             list-style-type: none;
             display: flex;
             flex-direction: row;
@@ -69,7 +69,7 @@
                 position: absolute;
                 left: 30%;
                 right: 15%;
-                top: 28%;
+                top: 5%;
                 height: max-content;
                 width: 50vw;
                 z-index: 100;
@@ -87,16 +87,16 @@
         .active {
             .title {
                 opacity: 1;
-            }
-            .point {
-                @extend .activePoint;
+                .point {
+                    @extend .activePoint;
+                }
             }
             .content {
                 display: block;
             }
-            &~.date {
+            .date {
                 opacity: 1;
-                width: 20vw;
+                // width: 20vw;
             }
         }
         .activePoint {

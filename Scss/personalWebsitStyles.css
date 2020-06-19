@@ -57,7 +57,7 @@ a:active {
 }
 
 .timeline ul li {
-  margin-bottom: 5vw;
+  margin-bottom: 2vw;
   list-style-type: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -116,7 +116,7 @@ a:active {
   position: absolute;
   left: 30%;
   right: 15%;
-  top: 28%;
+  top: 5%;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
@@ -145,12 +145,11 @@ a:active {
   display: block;
 }
 
-.timeline ul .active ~ .date {
+.timeline ul .active .date {
   opacity: 1;
-  width: 20vw;
 }
 
-.timeline ul .activePoint, .timeline ul li:hover .point, .timeline ul .active .point {
+.timeline ul .activePoint, .timeline ul li:hover .point, .timeline ul .active .title .point {
   background-color: #070318;
   border: 4px #f7f7f7 solid;
   opacity: 1;
@@ -353,7 +352,7 @@ img {
 }
 
 .fa-window-close {
-  color: white;
+  color: white !important;
   z-index: 100;
 }
 
@@ -520,10 +519,10 @@ body::-webkit-scrollbar {
 
 .container .emphasis {
   text-transform: uppercase;
-  background: orange;
-  font-size: larger;
-  color: #292929;
-  padding: 3px;
+  background: #05031f;
+  color: white;
+  padding: 1px 5px;
+  margin: 0.5em;
 }
 
 .container .Fade-Text {
@@ -718,6 +717,7 @@ body::-webkit-scrollbar {
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  line-height: 1.4em;
 }
 
 .container #welcomeSection #WelcomeParagraph q::before,
@@ -727,10 +727,18 @@ body::-webkit-scrollbar {
 
 @media (min-width: 310px) and (max-width: 435px) {
   .container #welcomeSection #WelcomeParagraph {
-    width: 80%;
-    text-align: justify;
+    width: 100%;
     margin: auto;
     margin-top: 5%;
+  }
+  .container #welcomeSection #WelcomeParagraph q br {
+    display: none;
+  }
+}
+
+@media (min-width: 435px) and (max-width: 768px) {
+  .container #welcomeSection #WelcomeParagraph {
+    width: 100%;
   }
 }
 
@@ -764,15 +772,15 @@ body::-webkit-scrollbar {
   }
 }
 
-.container #skillsAndHobbiesSection .content {
+.container #skillsSection .content {
   display: none;
 }
 
-.container #skillsAndHobbiesSection .skillContainer {
+.container #skillsSection .skillContainer {
   width: 100%;
 }
 
-.container #skillsAndHobbiesSection .bar {
+.container #skillsSection .bar {
   background-color: #EEE;
   padding: 2px;
   border-radius: 15px;
@@ -784,7 +792,7 @@ body::-webkit-scrollbar {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
-.container #skillsAndHobbiesSection .bar::before {
+.container #skillsSection .bar::before {
   content: attr(data-skill);
   background-color: #020224;
   display: inline-block;
@@ -796,23 +804,23 @@ body::-webkit-scrollbar {
   -o-animation: load 2s 0s;
 }
 
-.container #skillsAndHobbiesSection .learning::before {
+.container #skillsSection .learning::before {
   width: calc(20% - 10px);
 }
 
-.container #skillsAndHobbiesSection .basic::before {
+.container #skillsSection .basic::before {
   width: calc(40% - 10px);
 }
 
-.container #skillsAndHobbiesSection .intermediate::before {
+.container #skillsSection .intermediate::before {
   width: calc(60% - 10px);
 }
 
-.container #skillsAndHobbiesSection .advanced::before {
+.container #skillsSection .advanced::before {
   width: calc(80% - 10px);
 }
 
-.container #skillsAndHobbiesSection .expert::before {
+.container #skillsSection .expert::before {
   width: calc(100% - 10px);
 }
 
@@ -854,6 +862,21 @@ body::-webkit-scrollbar {
     display: grid;
     grid-gap: 50%;
   }
+  .container #contactSection #contactLinksContainer .fa-2x {
+    font-size: 1.5em;
+  }
+}
+
+.fa {
+  color: #8f8f8f;
+}
+
+.fa:hover {
+  color: inherit;
+}
+
+.float-right {
+  float: right;
 }
 
 .hidden {

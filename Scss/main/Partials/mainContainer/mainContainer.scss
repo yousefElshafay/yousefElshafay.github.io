@@ -42,10 +42,11 @@ body::-webkit-scrollbar {
     //commons
     .emphasis {
         text-transform: uppercase;
-        background: orange;
-        font-size: larger;
-        color: rgb(41, 41, 41);
-        padding: 3px;
+        background: rgb(5, 3, 31);
+        // font-size: larger;
+        color: white;
+        padding: 1px 5px;
+        margin: 0.5em;
     }
     .Fade-Text {
         color: #6f6f6f;
@@ -218,15 +219,23 @@ body::-webkit-scrollbar {
             border-radius: 5px;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
             transition: 0.3s;
+            line-height: 1.4em;
             & q::before,
             q::after {
                 display: none;
             }
             @include sm {
-                width: 80%;
-                text-align: justify;
+                width: 100%;
                 margin: auto;
                 margin-top: 5%;
+                q {
+                    br {
+                        display: none;
+                    }
+                }
+            }
+            @include md {
+                width: 100%;
             }
         }
     }
@@ -243,7 +252,7 @@ body::-webkit-scrollbar {
             opacity: 1;
         }
     }
-    #skillsAndHobbiesSection {
+    #skillsSection {
         .content {
             display: none;
         }
@@ -313,9 +322,24 @@ body::-webkit-scrollbar {
             @include sm {
                 display: grid;
                 grid-gap: 50%;
+                .fa-2x {
+                    font-size: 1.5em;
+                }
             }
         }
     }
+}
+
+.fa {
+    color: $secondary-color;
+}
+
+.fa:hover {
+    color: inherit;
+}
+
+.float-right {
+    float: right;
 }
 
 .hidden {

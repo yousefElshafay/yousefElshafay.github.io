@@ -12,7 +12,7 @@ https://codepen.io/milacarrera -->
     <title>Document</title>
 
     <!--  google fontys to be embedded -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap">
     <!-- my css -->
     <link rel="stylesheet" href="/Scss/personalWebsitStyles.css">
 
@@ -30,21 +30,22 @@ https://codepen.io/milacarrera -->
         <div class="quoteContainer">
             <p class="quote"> life is either a daring adventure
                 <span class="align-right faded"> or nothing at all <br><span class="quoteOwner"> Helen Keller
-                        <span></span>
+                <span></span>
             </p>
         </div>
         <div id="BrasovMountainview"></div>
-
-
     </div> -->
-    <main>
+
+    <div class="workhero"></div>
+    <div class="lifehero"></div>
+
+    <main id="WorkContent">
         <div class="container" data-sal="fade" style="--sal-duration: 1.5s;  --sal-delay: 0.5s;">
             <!-- <div class="quote">
                 <p>life is a daring adventure of nothing at all </p>
             </div> -->
 
             <!-- <div class="cubeContainer">
-
                 <div id="cube">
                     <div class="front"></div>
                     <div class="back"></div>
@@ -63,7 +64,6 @@ https://codepen.io/milacarrera -->
                 <div id="middle"></div>
                 <div id="bottom"></div> -->
             <!-- <i id="SideNavBtn" class="fa fa-2x fa-bars" aria-hidden="true"></i> -->
-
             <!-- </div> -->
 
             <div id="sideNavZone"></div>
@@ -81,11 +81,14 @@ https://codepen.io/milacarrera -->
                         <li class="navItem">
                             <a id="experienceNavItem">Experience</a>
                         </li>
+                        <!-- <li class="navItem">
+                            <a id="referenceNavItem">Reference</a>
+                        </li> -->
                         <li class="navItem">
                             <a id="projectsNavItem">Projects</a>
                         </li>
                         <li class="navItem">
-                            <a id="skillsAndHobbiesNavItem">Skills & Hobbies</a>
+                            <a id="skillsNavItem">Skills</a>
                         </li>
                         <li class="navItem">
                             <a id="contactNavItem">Contact</a>
@@ -101,15 +104,14 @@ https://codepen.io/milacarrera -->
                     <img id="personalProfilePic" src="/Assets/Images/PersonalProfile.jpeg" alt="">
 
                     <p id="WelcomeParagraph">
-                        <q> <span class="emphasis">Welcome </span> to my personal website, as u may have noticed iam a
-                            big fan of experiencing new thing in life, and getting the most i can out of it, i hope to
-                            also help others along the way.
+                        <q>  
+                            <span class="emphasis " >Welcome </span>
+                             my name is <strong> youssef elshafay.</strong>
+                            <br>
+                            I am a <strong>Software Engineer </strong> located in the <strong>Netherland</strong> with a passion for<strong> Neuroscience & Pyschology</strong>.          
                         </q>
                     </p>
-
-
                     <!-- <img src="Assets/MylifeInArt.png" id="MylifeInArt" width="100%" height="100%" alt="Girl"> -->
-
                 </section>
 
 
@@ -129,7 +131,12 @@ https://codepen.io/milacarrera -->
                                 </div>
 
                                 <div class="content ">
-                                    <div class="info"> Received my bachelor degree in software engineering @<a target="_blank" href="https://fontys.edu/">Fontys university</a> in the Eindhoven, The Netherland. </div>
+
+                                    <div class="info">
+                                        Bachelor degree in Software Engineering from <a target="_blank" href="https://fontys.edu/">Fontys university</a> in Eindhoven, The Netherland.
+                                    </div>
+                                    <a href="/Assets/Diploma/HBO Bachelor HBO-ICT (Information & Communication Technology) (1).pdf" download><i class="fa fa-2x fa-download float-right"
+                                        aria-hidden="true"></i></a>
                                 </div>
                             </li>
 
@@ -145,7 +152,7 @@ https://codepen.io/milacarrera -->
                                 </div>
 
                                 <div class="content ">
-                                    <div class="info"> Received my high school degree with a GPA of 4.0 in Alexandria,Egypt. </div>
+                                    <div class="info"> High school degree with a GPA of 4.0 in Alexandria,Egypt. </div>
                                 </div>
 
                             </li>
@@ -239,7 +246,6 @@ https://codepen.io/milacarrera -->
                                         <div class="info">
                                             <p>
                                                 The internship assignment <a target="_blank" href="https://www.itpinternational.com/">@ITP Caribbean</a> was to research the most optimal way for data replication between two different database environments
-                                                where the schema is different between the two databases and to create a prototype that handles these differences.
                                             </p>
                                         </div>
                                         <div class="subSection">
@@ -265,10 +271,9 @@ https://codepen.io/milacarrera -->
                     </div>
                 </section>
 
+
                 <section id="projectsSection">
-
                     <div class="timeline">
-
                         <h2 class="sectionTitle">Projects</h2>
                         <div>
                             <ul>
@@ -282,8 +287,7 @@ https://codepen.io/milacarrera -->
                                     <div class="content ">
                                         <div class="info">
                                             <p> this project was initiated to compare the in house development IDE used by certwell(polar studio) and the new .NET core framework developed by Microsoft. The project demonstrated that key feature present in
-                                                the in house IDE such as security and stability of generated web applications is also present when developing with the new .NET core framework, after showcasing the project and the findings regarding the
-                                                comparison between the in-house IDE and .NET core, Certwell management decided to migrate from the in-house IDE.
+                                                the in house IDE such as security and stability of generated web applications is also present when developing with the new .NET core framework.
                                             </p>
                                             <div class="Fade-Text center">@.NetCore @C# @MVC </div>
 
@@ -328,7 +332,7 @@ https://codepen.io/milacarrera -->
                                     </div>
                                     <div class="content ">
                                         <div class="info">
-                                            during my graduation internship at the SAP department within accenture,i developed a proof of concept project for one of accenture clients in the infrastructure sector the netherlands. the proof of concept consist of three main component, a self developed
+                                            during my graduation internship at the SAP department within Accenture,i developed a proof of concept project for one of accenture clients in the infrastructure sector the netherlands. the proof of concept consist of three main component, a self developed
                                             machine learning api,that receives and image via http and returns wether or not this image contain a certain anomaly. the image and the processed result by the api, is stored in a database which is showcased
                                             in a front end application. the restful api was developed with keras and tensorflow as the machine learning framework and served by flask(python). the front end application was developed by UI5 SAP own front
                                             end development language.
@@ -367,8 +371,8 @@ https://codepen.io/milacarrera -->
                                     </div>
                                     <div class="content ">
                                         <div class="info">
-                                            <p> Creating a low cost read and write braille display for visually impaired individuals. This device would be powered by Web-services. This is an ongoing project/startup. We won the audience award for this project
-                                                during the 2017 fontysictalent.nl at FONTYS University.
+                                            <p> Creating a low cost read and write braille display for visually impaired individuals. This device would be powered by web-services. This is an ongoing project/startup. We won the audience award for this project
+                                                during the 2017th fontysictalent.
                                             </p>
                                             <div class="Fade-Text center"> @Analysis @public-Speaking </div>
 
@@ -417,17 +421,16 @@ https://codepen.io/milacarrera -->
                                         </div>
                                     </div>
                                     <div class="point"></div>
-
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </section>
 
-                <section id="skillsAndHobbiesSection">
+                <section id="skillsSection">
                     <div class="timeline">
 
-                        <h2 class="sectionTitle">Skills & Hobbies</h2>
+                        <h2 class="sectionTitle">Skills</h2>
                         <ul>
                             <li id="SkillsSubSection">
                                 <div class="collapsible">
@@ -437,8 +440,11 @@ https://codepen.io/milacarrera -->
                                 </div>
                                 <ul class="content">
                                     <li id="TechnicalSkills">
+                                        <div class="point"></div>
+
                                         <div class="collapsible subSection">
-                                            <div class="title">Technical Skills </div>
+                                            <div class="title">Technical Skills
+                                            </div>
                                         </div>
 
                                         <div class="content">
@@ -497,8 +503,11 @@ https://codepen.io/milacarrera -->
                                         </div>
                                     </li>
                                     <li id="LanguageSkills">
+                                        <div class="point"></div>
+
                                         <div class="collapsible subSection">
-                                            <div class="title">Language Skills </div>
+                                            <div class="title">Language Skills
+                                            </div>
                                         </div>
 
                                         <div class="content">
@@ -507,62 +516,6 @@ https://codepen.io/milacarrera -->
                                             <div class="bar  advanced" data-skill="DUTCH"></div>
                                             <div class="bar  basic" data-skill="FRENCH"></div>
                                             <div class="bar  learning" data-skill="SPANISH"></div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li id="HobbiesSubSection">
-                                <div class="collapsible">
-                                    <div class="title">
-                                        <h2>Hobbies</h2>
-                                    </div>
-                                </div>
-                                <ul class="content">
-                                    <li>
-                                        <div class="collapsible subSection">
-                                            <div class="title">Martial art </div>
-                                        </div>
-                                        <div class="content">
-                                            <p>
-                                                <strong> “A brave man, a real fighter is not measured by how many times he
-                                                falls, but how many times he stands up.”– Rickson Gracie
-                                            </strong>
-                                            </p>
-                                            <br> I started martial art around 2016.By far the best decision i ever made for my career and wellbeing.Martial art teaches you persistance, hard work and being calm in stressfull situation. I practise currently
-                                            muay thai and brazilian jiu jitsu.
-
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="collapsible subSection">
-                                            <div class="title">Cooking</div>
-                                        </div>
-                                        <div class="content">
-                                            <p> <strong> “no one is born a great cook, one learns by doing.”
-                                                ― Julia Child
-                                            </strong>
-                                            </p>
-                                            <br> food is not just nutrition,food is culture, food brings back childhood memories.
-                                            <br> I enjoy cooking, so much so that i worked as a part time chef
-                                            <a href="https://www.happyitaly.nl/where/eindhoven" target="_blank">@happy italy </a> Eindhoven for one and half year.
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="collapsible subSection">
-                                            <div class="title">Traveling</div>
-                                        </div>
-                                        <div class="content">
-                                            <p>
-                                                <strong> “life is either a daring adventure or nothing at all” ― HELEN
-                                                KELLER
-                                            </strong>
-                                            </p>
-                                            <br> <strong>VISITED :</strong>
-                                            <div class="Fade-Text ">
-                                                @Netherlands @Belgium @Germany @France @Romania @Aruba @Morocco -- </div>
-
-                                            <br> <strong>TO VISIT : </strong>
-                                            <div class="Fade-Text "> @Peru @Spain @Finland @Iceland -- </div>
                                         </div>
                                     </li>
                                 </ul>
@@ -579,38 +532,174 @@ https://codepen.io/milacarrera -->
                                 <h3>(0031) 649374646</h3>
                                 -->
                         <div id="contactLinksContainer">
-                            <a href="mailto:yousefelshafay@gmail.com"><i class="fa fa-lg fa-google"></i></a>
+                            <a href="mailto:yousefelshafay@gmail.com"><i class="fa fa-2x fa-google"></i></a>
                             <a href="https://api.whatsapp.com/send?phone=0031649373646" target="_blank"><i
-                                    class="fa fa-lg fa-whatsapp" aria-hidden="true"></i></a>
+                                    class="fa fa-2x fa-whatsapp" aria-hidden="true"></i></a>
                             <a href="https://www.linkedin.com/in/yousefelshafay/" target="_blank"><i
-                                    class="fa fa-lg fa-linkedin"></i></a>
-                            <a href="/Assets/CV/YoussefElshafayCV2020.pdf" download><i class="fa fa-lg fa-download"
+                                    class="fa fa-2x fa-linkedin"></i></a>
+                            <a href="/Assets/CV/YoussefElshafayCV2020.pdf" download><i class="fa fa-2x fa-download"
                                     aria-hidden="true"></i></a>
                         </div>
                     </address>
                 </section>
+                <!-- <section id="referenceSection">
+                    <div class="timeline">
+                        <h2 class="sectionTitle">Reference</h2>
+                        <div>
+                            <ul>
+                                <li>
+                                    <div class="collapsible">
+                                        <div class="title">
+                                            <div class="point"></div>
+                                            Jouke Toeter General Manager @Certwell <span class="countryCode">- NL</span></div>
+                                        <div class="date">
+                                            <span>April 2019 - April 2020</span>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <div class="info ">
+                                            <a target="_blank" href="https://www.linkedin.com/in/toeter/">Jouke
+                                                        Toeter</a> <span class="Subtitle">General Manager @Certwell</span>
+                                            <br>
+                                            <div class="quote">
+                                                <q>
+                                                            You are a great colleague,
+                                                            you work hard, you work concentrated,
+                                                            you are smart, stubborn, ambitious and motivated.
+                                                        </q>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="collapsible">
+                                        <div class="title">
+                                            <div class="point"></div>
+                                            Jacco Kooie IT Manager @Certwell<span class="countryCode">- NL</span></div>
+                                        <div class="date">
+                                            <span>April 2019 - April 2020</span>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <div class="info ">
+                                            <a target="_blank" href="">Jacco Kooie</a> <span class="Subtitle">IT
+                                                    Manager @Certwell</span>
+                                            <br>
+                                            <div class="quote">
+                                                <q>
+                                                        Youssef has worked with us from 15 april 2019 till 14 april
+                                                        2020. He quickly learned our own development tools( polar
+                                                        studio) and mastered it. He is a quick learner and is not easily
+                                                        satisfied with a result. He helped us develop our software in a
+                                                        number of sprints, in which he worked largely independent.
+                                                        Youssef is always looking for opportunities to help the company
+                                                        improve its processes.Out of all our employees ,shows youssef
+                                                        the most entrepreneurial spirit.
+                                                    </q>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="collapsible">
+                                        <div class="title">
+                                            <div class="point"></div>
+                                            Jan Segers General Manager @ITP-Carribean <span class="countryCode">- AW</span> </div>
+                                        <div class="date">
+                                            <span>SEP 2017 - JAN 2018</span>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <div class="info">
+                                            <a target="_blank" href="https://www.linkedin.com/in/jasegers/">Jan
+                                                        Segers</a> <span class="Subtitle">General Manager
+                                                        @ITP-Carribean</span>
+                                            <br>
+                                            <div class="quote">
+                                                <q> YOUSSEF IS YOUNG , AMBITIOUS , FAST LEARNER </q>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section> -->
+
             </div>
         </div>
+    </main>
+
+    <main id="LifeContent" style="display:none;">
+        <li id="HobbiesSubSection">
+            <div class="collapsible">
+                <div class="title">
+                    <h2>Hobbies</h2>
+                </div>
+            </div>
+            <ul class="content">
+                <li>
+                    <div class="collapsible subSection">
+                        <div class="title">Martial art </div>
+                    </div>
+                    <div class="content">
+                        <p>
+                            <strong> “A brave man, a real fighter is not measured by how many times he
+                            falls, but how many times he stands up.”– Rickson Gracie
+                        </strong>
+                        </p>
+                        <br> I started martial art around 2016.By far the best decision i ever made for my career and wellbeing.Martial art teaches you persistance, hard work and being calm in stressfull situation. I practise currently muay thai and brazilian
+                        jiu jitsu.
+
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible subSection">
+                        <div class="title">Cooking</div>
+                    </div>
+                    <div class="content">
+                        <p> <strong> “no one is born a great cook, one learns by doing.”
+                            ― Julia Child
+                        </strong>
+                        </p>
+                        <br> food is not just nutrition,food is culture, food brings back childhood memories.
+                        <br> I enjoy cooking, so much so that i worked as a part time chef
+                        <a href="https://www.happyitaly.nl/where/eindhoven" target="_blank">@happy italy </a> Eindhoven for one and half year.
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible subSection">
+                        <div class="title">Traveling</div>
+                    </div>
+                    <div class="content">
+                        <p>
+                            <strong> “life is either a daring adventure or nothing at all” ― HELEN
+                            KELLER
+                        </strong>
+                        </p>
+                        <br> <strong>VISITED :</strong>
+                        <div class="Fade-Text ">
+                            @Netherlands @Belgium @Germany @France @Romania @Aruba @Morocco -- </div>
+
+                        <br> <strong>TO VISIT : </strong>
+                        <div class="Fade-Text "> @Peru @Spain @Finland @Iceland -- </div>
+                    </div>
+                </li>
+            </ul>
+        </li>
     </main>
 </body>
 
 <!-- link js  -->
-<script src="/Js/personalWebsite.js">
-</script>
-<!-- <script src="/node_modules/sal.js/dist/sal.js"></script> -->
-
+<script src="/Js/personalWebsite.js"></script>
 <script src="/Js/sal.js"></script>
 
 <script>
     // magnify("BrasovMountainviewImg", 1.5);
     // call sal js 
     sal();
-
-    // sal({
-    //     threshold: 0.8,
-    //     once: false,
-    // });
-    // magnify("MylifeInArt", 4);
 </script>
 
 </html>
