@@ -1,6 +1,6 @@
 #btn-navMenu {
     display: none;
-    z-index: 5;
+    z-index: 2;
     margin-top: 50%;
     right: 5%;
     cursor: pointer;
@@ -44,7 +44,7 @@
 
 #SideNavBtn {
     display: none;
-    z-index: 5;
+    z-index: 3;
     margin-top: 25%;
     cursor: pointer;
     transition: 0.5s ease-in-out;
@@ -63,8 +63,7 @@
 
 .fa-window-close {
     color: white !important;
-    ;
-    z-index: 100;
+    z-index: 3;
 }
 
 #sideNavZone {
@@ -96,7 +95,10 @@ aside {
         margin: auto;
         padding-top: 15vh;
         ul {
-            position: absolute;
+            display: flex;
+            li {
+                margin-left: 10vw;
+            }
         }
         .activeNav {
             display: none;
@@ -107,7 +109,7 @@ aside {
         height: 100%;
         width: 0;
         position: fixed;
-        z-index: 1;
+        z-index: 2;
         top: 0;
         right: 0;
         background-color: $secondaryBackground-color;
@@ -119,6 +121,13 @@ aside {
             .navItem a {
                 opacity: 1;
                 color: $secondaryText-color;
+            }
+            ul {
+                display: block;
+                position: absolute;
+                li {
+                    margin-left: 1vw;
+                }
             }
         }
     }

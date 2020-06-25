@@ -6,10 +6,11 @@
      width: max-content;
      padding-bottom: 7vh;
      white-space: nowrap;
+     text-transform: uppercase;
      a {
          position: absolute;
          color: $secondary-color;
-         opacity: 0.2;
+         opacity: 0.5;
          &:hover {
              color: $primary-color;
              opacity: 1;

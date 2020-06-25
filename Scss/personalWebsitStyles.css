@@ -42,22 +42,19 @@ a:active {
   background-color: #f0f0f0;
 }
 
-.timeline .sectionTitle {
-  position: relative;
-  top: 10vh;
-  left: 10vh;
-  text-transform: uppercase;
-  text-align: center;
-  opacity: 0.2;
-}
-
 .timeline ul {
   position: relative;
-  top: 15vh;
+  top: 20vh;
+}
+
+@media (min-width: 435px) and (max-width: 768px) {
+  .timeline ul {
+    top: 15vh;
+  }
 }
 
 .timeline ul li {
-  margin-bottom: 2vw;
+  margin-bottom: 5vh;
   list-style-type: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -100,28 +97,41 @@ a:active {
 .timeline ul li .title {
   -webkit-transition: all 0.5s ease-in;
   transition: all 0.5s ease-in;
-  opacity: 0.1;
+  opacity: 0.3;
   padding: 1em;
-  font-size: larger;
   text-transform: uppercase;
+}
+
+@media (min-width: 435px) and (max-width: 768px) {
+  .timeline ul li .title {
+    font-size: initial;
+  }
 }
 
 .timeline ul li .content {
   display: none;
+  position: absolute;
+  left: 25%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: minmax(-webkit-fit-content, 60vw);
+  width: minmax(-moz-fit-content, 60vw);
+  width: minmax(fit-content, 60vw);
+}
+
+@media (min-width: 435px) and (max-width: 768px) {
+  .timeline ul li .content {
+    width: 60vw;
+    top: 15%;
+    margin-left: 5vw;
+  }
 }
 
 .timeline ul li .card, .timeline ul li .content {
   background: linear-gradient(90deg, white 21px, transparent 1%) center, linear-gradient(white 21px, transparent 1%) center, lightgray;
   background-size: 22px 22px;
-  position: absolute;
-  left: 30%;
-  right: 15%;
-  top: 5%;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  width: 50vw;
-  z-index: 100;
+  z-index: 1;
   padding: 1em;
   border-radius: 5px;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -130,26 +140,14 @@ a:active {
   transition: 0.3s;
 }
 
-.timeline ul li .info {
+.timeline ul .info {
   -webkit-transition: all 0.5s ease-in;
   transition: all 0.5s ease-in;
   border-radius: 5px;
   padding: 1em;
 }
 
-.timeline ul .active .title {
-  opacity: 1;
-}
-
-.timeline ul .active .content {
-  display: block;
-}
-
-.timeline ul .active .date {
-  opacity: 1;
-}
-
-.timeline ul .activePoint, .timeline ul li:hover .point, .timeline ul .active .title .point {
+.timeline ul .activePoint, .timeline ul li:hover .point, .timeline ul .active .title .point, .timeline .active .title ul .point {
   background-color: #070318;
   border: 4px #f7f7f7 solid;
   opacity: 1;
@@ -167,6 +165,26 @@ a:active {
   opacity: 0.6;
   -webkit-transition: all 0.5s ease-in;
   transition: all 0.5s ease-in;
+}
+
+.timeline ul .point .clickMeIcon {
+  position: absolute;
+  z-index: 10;
+  -webkit-transform: rotate(75deg);
+          transform: rotate(75deg);
+  right: 150%;
+}
+
+.timeline .active .title {
+  opacity: 1;
+}
+
+.timeline .active .content {
+  display: block;
+}
+
+.timeline .active .date {
+  opacity: 1;
 }
 
 img {
@@ -279,7 +297,7 @@ img {
 
 #btn-navMenu {
   display: none;
-  z-index: 5;
+  z-index: 2;
   margin-top: 50%;
   right: 5%;
   cursor: pointer;
@@ -302,9 +320,9 @@ img {
 @media (min-width: 310px) and (max-width: 435px) {
   #btn-navMenu {
     display: block;
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 4;
-    -ms-grid-column: 5;
+    -ms-grid-row: 4;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 3;
     grid-area: sideNav;
   }
 }
@@ -312,9 +330,9 @@ img {
 @media (min-width: 435px) and (max-width: 768px) {
   #btn-navMenu {
     display: block;
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 4;
-    -ms-grid-column: 5;
+    -ms-grid-row: 4;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 3;
     grid-area: sideNav;
   }
   #btn-navMenu div {
@@ -324,7 +342,7 @@ img {
 
 #SideNavBtn {
   display: none;
-  z-index: 5;
+  z-index: 3;
   margin-top: 25%;
   cursor: pointer;
   -webkit-transition: 0.5s ease-in-out;
@@ -334,9 +352,9 @@ img {
 @media (min-width: 310px) and (max-width: 435px) {
   #SideNavBtn {
     display: block;
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 4;
-    -ms-grid-column: 5;
+    -ms-grid-row: 4;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 3;
     grid-area: sideNav;
   }
 }
@@ -344,22 +362,19 @@ img {
 @media (min-width: 435px) and (max-width: 768px) {
   #SideNavBtn {
     display: block;
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 4;
-    -ms-grid-column: 5;
+    -ms-grid-row: 4;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 3;
     grid-area: sideNav;
   }
 }
 
 .fa-window-close {
   color: white !important;
-  z-index: 100;
+  z-index: 3;
 }
 
 #sideNavZone {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 4;
-  -ms-grid-column: 4;
   grid-area: sideNavZone;
 }
 
@@ -370,9 +385,9 @@ img {
 }
 
 aside {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 4;
-  -ms-grid-column: 5;
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
   grid-area: sideNav;
   cursor: pointer;
 }
@@ -394,7 +409,13 @@ aside nav {
 }
 
 aside nav ul {
-  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+aside nav ul li {
+  margin-left: 10vw;
 }
 
 aside nav .activeNav {
@@ -403,17 +424,17 @@ aside nav .activeNav {
 
 @media (min-width: 0px) and (max-width: 768px) {
   aside {
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 4;
-    -ms-grid-column: 5;
+    -ms-grid-row: 4;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 3;
     grid-area: sideNav;
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     top: 0;
     right: 0;
-    background-color: black;
+    background-color: #000000e8;
     overflow-x: hidden;
     -webkit-transition: 0.5s;
     transition: 0.5s;
@@ -426,6 +447,13 @@ aside nav .activeNav {
     opacity: 1;
     color: dimgray;
   }
+  aside nav ul {
+    display: block;
+    position: absolute;
+  }
+  aside nav ul li {
+    margin-left: 1vw;
+  }
 }
 
 .navItem {
@@ -437,12 +465,13 @@ aside nav .activeNav {
   width: max-content;
   padding-bottom: 7vh;
   white-space: nowrap;
+  text-transform: uppercase;
 }
 
 .navItem a {
   position: absolute;
   color: #8f8f8f;
-  opacity: 0.2;
+  opacity: 0.5;
 }
 
 .navItem a:hover {
@@ -451,9 +480,19 @@ aside nav .activeNav {
   font-size: larger;
 }
 
+/* Declare cube transition vairable */
+/* for the cube ztranslate property  */
+/* color schema  */
 body {
-  background: linear-gradient(90deg, white 21px, transparent 1%) center, linear-gradient(white 21px, transparent 1%) center, lightgray;
+  background: linear-gradient(90deg, whitesmoke 21px, transparent 1%) center, linear-gradient(whitesmoke 21px, transparent 1%) center, lightgray;
   background-size: 22px 22px;
+}
+
+@media (min-width: 310px) and (max-width: 435px) {
+  body {
+    background: linear-gradient(90deg, white 21px, transparent 1%) center, linear-gradient(white 21px, transparent 1%) center, lightgray;
+    background-size: 22px 22px;
+  }
 }
 
 body::-webkit-scrollbar {
@@ -463,12 +502,12 @@ body::-webkit-scrollbar {
 .container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 0.5fr 3fr 3fr 0.5fr 1fr;
-      grid-template-columns: 0.5fr 3fr 3fr 0.5fr 1fr;
-  -ms-grid-rows: 1fr 2fr 2fr 1fr;
-      grid-template-rows: 1fr 2fr 2fr 1fr;
+  -ms-grid-columns: 0.5fr 3fr 3fr 0.5fr;
+      grid-template-columns: 0.5fr 3fr 3fr 0.5fr;
+  -ms-grid-rows: 1fr 2fr 2fr 2fr;
+      grid-template-rows: 1fr 2fr 2fr 2fr;
   grid-gap: 1em;
-      grid-template-areas: "timeline content-main  content-main sideNavZone sideNav" "timeline  content-main  content-main sideNavZone sideNav" "timeline  content-main  content-main  sideNavZone sideNav" "timeline  footer-left footer sideNavZone sideNav";
+      grid-template-areas: "timeline content-main  content-main nav" "timeline  content-main  content-main nav" "timeline  content-main  content-main nav " "timeline sideNav sideNav sideNav ";
   width: auto;
   height: 100vh;
 }
@@ -485,8 +524,8 @@ body::-webkit-scrollbar {
 
 @media (min-width: 435px) and (max-width: 768px) {
   .container {
-    -ms-grid-columns: 0.5fr 1fr 2fr 0.5fr;
-        grid-template-columns: 0.5fr 1fr 2fr 0.5fr;
+    -ms-grid-columns: 0.3fr 1fr 2fr 0.3fr;
+        grid-template-columns: 0.3fr 1fr 2fr 0.3fr;
     -ms-grid-rows: 1fr 2fr 1fr;
         grid-template-rows: 1fr 2fr 1fr;
     grid-gap: 0px;
@@ -528,6 +567,7 @@ body::-webkit-scrollbar {
 .container .Fade-Text {
   color: #6f6f6f;
   text-transform: uppercase;
+  margin-top: 1vh;
 }
 
 .container .center {
@@ -542,7 +582,35 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+.container section .quote {
+  margin-top: 3%;
+  text-align: center;
+  font-size: larger;
+  background: #f3f3f3;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.container section .quote q {
+  background: navajowhite;
+}
+
+.container section .sectionTitle {
+  position: relative;
+  top: 10vh;
+  text-transform: uppercase;
+  text-align: center;
+  opacity: 0.2;
+}
+
 @media (min-width: 310px) and (max-width: 435px) {
+  .container section {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    grid-area: content-main;
+  }
   .container section .collapsible {
     width: auto;
     margin-right: 0px;
@@ -574,12 +642,13 @@ body::-webkit-scrollbar {
   .container section .sectionTitle {
     text-align: center;
     margin-bottom: 10%;
+    position: inherit;
+    opacity: 1;
   }
   .container section .title {
     text-transform: uppercase;
     font-weight: 700;
     color: black;
-    font-size: larger;
     font-weight: bold;
     margin-bottom: 5px;
   }
@@ -592,7 +661,7 @@ body::-webkit-scrollbar {
   }
   .container section .info {
     color: black;
-    padding: 1em 0;
+    padding: 2% 0;
   }
   .container section .info p {
     padding-bottom: 1em;
@@ -648,17 +717,6 @@ body::-webkit-scrollbar {
     padding: 10px;
     border-radius: 5px;
   }
-  .container section .subSection .quote, .container section .x-subSection .quote {
-    margin-top: 3%;
-    text-align: center;
-    font-size: larger;
-    background: #f3f3f3;
-    padding: 10px;
-    border-radius: 5px;
-  }
-  .container section .subSection .quote q, .container section .x-subSection .quote q {
-    background: navajowhite;
-  }
   .container section .subSection .collapsible:before, .container section .x-subSection .collapsible:before {
     width: 1em;
     height: 1em;
@@ -671,8 +729,23 @@ body::-webkit-scrollbar {
 
 .container .activeSection {
   display: block;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: content-main;
   -webkit-animation: fadeIn ease-in-out 2s;
           animation: fadeIn ease-in-out 2s;
+}
+
+@media (min-width: 435px) and (max-width: 768px) {
+  .container .activeSection {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    grid-area: content-main;
+  }
 }
 
 @media (min-width: 310px) and (max-width: 435px) {
@@ -742,42 +815,15 @@ body::-webkit-scrollbar {
   }
 }
 
-@-webkit-keyframes load {
-  from {
-    width: 0%;
-  }
-}
-
-@keyframes load {
-  from {
-    width: 0%;
-  }
-}
-
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 .container #skillsSection .content {
   display: none;
 }
 
 .container #skillsSection .skillContainer {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .container #skillsSection .bar {
@@ -853,7 +899,7 @@ body::-webkit-scrollbar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 25%;
+  margin-top: 20%;
 }
 
 @media (min-width: 310px) and (max-width: 435px) {
@@ -867,24 +913,57 @@ body::-webkit-scrollbar {
   }
 }
 
+@-webkit-keyframes load {
+  from {
+    width: 0%;
+  }
+}
+
+@keyframes load {
+  from {
+    width: 0%;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .fa {
   color: #8f8f8f;
 }
 
 .fa:hover {
-  color: inherit;
+  color: #020224;
 }
 
 .float-right {
   float: right;
 }
 
-.hidden {
-  display: none !important;
+@media (min-width: 310px) and (max-width: 435px) {
+  .hide-sm {
+    display: none;
+  }
 }
 
-.visible {
-  display: block !important;
+.skillContainer {
+  display: block;
+  widows: 50vw;
 }
 
 .cubeContainer {

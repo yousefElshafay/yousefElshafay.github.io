@@ -1,6 +1,11 @@
+@import "../../VariablesAndGeneric/variables/variables.scss";
 body {
-    background: linear-gradient(90deg, $primaryBackground-color 21px, transparent 1%) center, linear-gradient($primaryBackground-color 21px, transparent 1%) center, lightgray;
+    background: linear-gradient(90deg, whitesmoke 21px, transparent 1%) center, linear-gradient(whitesmoke 21px, transparent 1%) center, lightgray;
     background-size: 22px 22px;
+    @include sm {
+        background: linear-gradient(90deg, $primaryBackground-color 21px, transparent 1%) center, linear-gradient($primaryBackground-color 21px, transparent 1%) center, lightgray;
+        background-size: 22px 22px;
+    }
 }
 
 body::-webkit-scrollbar {
@@ -10,10 +15,10 @@ body::-webkit-scrollbar {
 // grid container 
 .container {
     display: grid;
-    grid-template-columns: 0.5fr 3fr 3fr 0.5fr 1fr;
-    grid-template-rows: 1fr 2fr 2fr 1fr;
+    grid-template-columns: 0.5fr 3fr 3fr 0.5fr;
+    grid-template-rows: 1fr 2fr 2fr 2fr;
     grid-gap: 1em;
-    grid-template-areas: "timeline content-main  content-main sideNavZone sideNav" "timeline  content-main  content-main sideNavZone sideNav" "timeline  content-main  content-main  sideNavZone sideNav" "timeline  footer-left footer sideNavZone sideNav";
+    grid-template-areas: "timeline content-main  content-main nav" "timeline  content-main  content-main nav" "timeline  content-main  content-main nav " "timeline sideNav sideNav sideNav ";
     width: auto;
     height: 100vh;
     #contentContainer {
@@ -21,7 +26,7 @@ body::-webkit-scrollbar {
         transition: 1s ease-in-out;
     }
     @include md {
-        grid-template-columns: 0.5fr 1fr 2fr 0.5fr;
+        grid-template-columns: 0.3fr 1fr 2fr 0.3fr;
         grid-template-rows: 1fr 2fr 1fr;
         grid-gap: 0px;
         grid-template-areas: "timeline content-main content-main  sideNav" "timeline  content-main content-main   sideNav" "timeline content-main content-main  sideNav";
@@ -51,6 +56,7 @@ body::-webkit-scrollbar {
     .Fade-Text {
         color: #6f6f6f;
         text-transform: uppercase;
+        margin-top: 1vh;
     }
     .center {
         text-align: center;
@@ -60,7 +66,27 @@ body::-webkit-scrollbar {
     }
     section {
         display: none;
+        .quote {
+            margin-top: 3%;
+            text-align: center;
+            font-size: larger;
+            background: #f3f3f3;
+            padding: 10px;
+            border-radius: 5px;
+            q {
+                background: navajowhite;
+            }
+        }
+        .sectionTitle {
+            position: relative;
+            top: 10vh;
+            // left: 10vh;
+            text-transform: uppercase;
+            text-align: center;
+            opacity: 0.2;
+        }
         @include sm {
+            grid-area: content-main;
             .collapsible {
                 width: auto;
                 margin-right: 0px;
@@ -92,12 +118,14 @@ body::-webkit-scrollbar {
             .sectionTitle {
                 text-align: center;
                 margin-bottom: 10%;
+                position: inherit;
+                opacity: 1;
             }
             .title {
                 text-transform: uppercase;
                 font-weight: 700;
                 color: $primaryText-color;
-                font-size: larger;
+                // font-size: larger;
                 font-weight: bold;
                 margin-bottom: 5px;
             }
@@ -110,7 +138,7 @@ body::-webkit-scrollbar {
             }
             .info {
                 color: $primaryText-color;
-                padding: 1em 0;
+                padding: 2% 0;
                 p {
                     padding-bottom: 1em;
                 }
@@ -163,17 +191,17 @@ body::-webkit-scrollbar {
                 background: #e6e6e6;
                 padding: 10px;
                 border-radius: 5px;
-                .quote {
-                    margin-top: 3%;
-                    text-align: center;
-                    font-size: larger;
-                    background: #f3f3f3;
-                    padding: 10px;
-                    border-radius: 5px;
-                    q {
-                        background: navajowhite;
-                    }
-                }
+                //  .quote {
+                //      margin-top: 3%;
+                //      text-align: center;
+                //      font-size: larger;
+                //      background: #f3f3f3;
+                //      padding: 10px;
+                //      border-radius: 5px;
+                //      q {
+                //          background: navajowhite;
+                //      }
+                //  }
                 .collapsible:before {
                     width: 1em;
                     height: 1em;
@@ -188,7 +216,11 @@ body::-webkit-scrollbar {
     }
     .activeSection {
         display: block;
+        grid-area: content-main;
         animation: fadeIn ease-in-out 2s;
+        @include md {
+            grid-area: content-main;
+        }
         @include sm {
             animation-duration: 0.5s;
         }
@@ -239,25 +271,30 @@ body::-webkit-scrollbar {
             }
         }
     }
-    @keyframes load {
-        from {
-            width: 0%
-        }
-    }
-    @keyframes fadeIn {
-        0% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
-    }
     #skillsSection {
+        // .sectionTitle {
+        //     position: relative;
+        //     top: 10vh;
+        //     left: 10vh;
+        //     text-transform: uppercase;
+        //     text-align: center;
+        //     opacity: 0.2;
+        // }
         .content {
             display: none;
         }
+        // .collapsible {
+        //     background: linear-gradient(90deg, $primaryBackground-color 21px, transparent 1%) center, linear-gradient($primaryBackground-color 21px, transparent 1%) center, lightgray;
+        //     background-size: 22px 22px;
+        //     z-index: 1;
+        //     padding: 1em;
+        //     border-radius: 5px;
+        //     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        //     transition: 0.3s;
+        // }
         .skillContainer {
             width: 100%;
+            display: flex;
         }
         .bar {
             background-color: #EEE;
@@ -297,6 +334,25 @@ body::-webkit-scrollbar {
             width: calc(100% - 10px);
         }
     }
+    // #testimonialsSection {
+    //     @include sm {
+    //         .quote {
+    //             margin-top: 3%;
+    //             text-align: center;
+    //             font-size: larger;
+    //             // background: #f3f3f3;
+    //             padding: 10px;
+    //             border-radius: 5px;
+    //         }
+    //         .collapsible:before {
+    //             width: 1em;
+    //             height: 1em;
+    //         }
+    //     }
+    //     q {
+    //         background: navajowhite;
+    //     }
+    // }
     #contactSection {
         /* display: none; */
         text-align: center;
@@ -318,7 +374,7 @@ body::-webkit-scrollbar {
         }
         #contactLinksContainer {
             display: flex;
-            margin-top: 25%;
+            margin-top: 20%;
             @include sm {
                 display: grid;
                 grid-gap: 50%;
@@ -328,6 +384,19 @@ body::-webkit-scrollbar {
             }
         }
     }
+    @keyframes load {
+        from {
+            width: 0%
+        }
+    }
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
 }
 
 .fa {
@@ -335,17 +404,21 @@ body::-webkit-scrollbar {
 }
 
 .fa:hover {
-    color: inherit;
+    color: $primary-color;
 }
 
 .float-right {
     float: right;
 }
 
-.hidden {
-    display: none !important;
-}
-
-.visible {
-    display: block !important;
+// .hidden {
+//     display: none !important;
+// }
+// .visible {
+//     display: block !important;
+// }
+@include sm {
+    .hide-sm {
+        display: none;
+    }
 }

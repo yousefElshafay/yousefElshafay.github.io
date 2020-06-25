@@ -8,19 +8,15 @@
     }
     grid-area: timeline;
     // display: flex;
-    .sectionTitle {
-        position: relative;
-        top: 10vh;
-        left: 10vh;
-        text-transform: uppercase;
-        text-align: center;
-        opacity: 0.2;
-    }
     ul {
         position: relative;
-        top: 15vh;
+        top: 20vh;
+        @include md {
+            top: 15vh;
+        }
+        // right: 15vh;
         li {
-            margin-bottom: 2vw;
+            margin-bottom: 5vh;
             list-style-type: none;
             display: flex;
             flex-direction: row;
@@ -53,51 +49,42 @@
             // }
             .title {
                 transition: all 0.5s ease-in;
-                opacity: 0.1;
+                opacity: 0.3;
                 padding: 1em;
-                font-size: larger;
+                // font-size: larger;
                 text-transform: uppercase;
+                @include md {
+                    font-size: initial;
+                }
             }
             .content {
                 display: none;
                 // background: #efefef;
+                position: absolute;
+                left: 25%;
+                height: max-content;
+                width: minmax(fit-content, 60vw);
                 @extend .card;
+                @include md {
+                    width: 60vw;
+                    top: 15%;
+                    margin-left: 5vw;
+                }
             }
             .card {
                 background: linear-gradient(90deg, $primaryBackground-color 21px, transparent 1%) center, linear-gradient($primaryBackground-color 21px, transparent 1%) center, lightgray;
                 background-size: 22px 22px;
-                position: absolute;
-                left: 30%;
-                right: 15%;
-                top: 5%;
-                height: max-content;
-                width: 50vw;
-                z-index: 100;
+                z-index: 1;
                 padding: 1em;
                 border-radius: 5px;
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
                 transition: 0.3s;
             }
-            .info {
-                transition: all 0.5s ease-in;
-                border-radius: 5px;
-                padding: 1em;
-            }
         }
-        .active {
-            .title {
-                opacity: 1;
-                .point {
-                    @extend .activePoint;
-                }
-            }
-            .content {
-                display: block;
-            }
-            .date {
-                opacity: 1;
-                // width: 20vw;
-            }
+        .info {
+            transition: all 0.5s ease-in;
+            border-radius: 5px;
+            padding: 1em;
         }
         .activePoint {
             background-color: #070318;
@@ -115,6 +102,37 @@
             left: -0.85%;
             opacity: 0.6;
             transition: all 0.5s ease-in;
+            .clickMeIcon {
+                position: absolute;
+                z-index: 10;
+                transform: rotate(75deg);
+                right: 150%;
+            }
+        }
+    }
+    .active {
+        .title {
+            opacity: 1;
+            .point {
+                @extend .activePoint;
+            }
+        }
+        .content {
+            display: block;
+        }
+        .date {
+            opacity: 1;
+            // width: 20vw;
         }
     }
 }
+
+// .card {
+//     background: linear-gradient(90deg, $primaryBackground-color 21px, transparent 1%) center, linear-gradient($primaryBackground-color 21px, transparent 1%) center, lightgray;
+//     background-size: 22px 22px;
+//     z-index: 1;
+//     padding: 1em;
+//     border-radius: 5px;
+//     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+//     transition: 0.3s;
+// }
