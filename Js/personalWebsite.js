@@ -1,4 +1,5 @@
 // side nav
+const body = document.querySelector("body");
 const sidenavBox = document.querySelector("#sideNav");
 const sidebarBtn = document.querySelector("#SideNavBtn");
 const contentContainer = document.querySelector("#contentContainer");
@@ -56,9 +57,18 @@ function OpenSideNav(SidenavBoxWidth) {
     sidebarBtn.classList.remove("fa-bars");
     sidebarBtn.classList.add("fa-window-close");
 }
+// contentContainer.addEventListener("click", function(event) {
+
+//     if (activeCollapsables.length > 0) {
+//         hideElements(contents);
+//     }
+
+// });
 // var contents = document.getElementsByClassName("content");
 var coll = document.getElementsByClassName("collapsible");
 var i;
+
+
 
 for (i = 0; i < coll.length; i++) {
     coll[i].addEventListener("click", function() {
@@ -130,6 +140,8 @@ for (i = 0; i < coll.length; i++) {
 
             }
         } else {
+
+
             //remove click me icon from page 
             // var siblings = getSiblings(this);
 
