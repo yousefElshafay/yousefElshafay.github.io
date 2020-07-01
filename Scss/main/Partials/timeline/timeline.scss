@@ -25,9 +25,7 @@
                 transition: all 0.5s ease-in;
                 font-weight: normal;
                 position: relative;
-                // right: 120%;
                 opacity: 0.1;
-                // background-color: #f1f1f1;
                 color: gray;
                 width: max-content;
                 text-align: center;
@@ -44,14 +42,10 @@
                 background-color: #070318;
                 border: 4px #f7f7f7 solid;
             }
-            // &:hover .title {
-            //     opacity: 1;
-            // }
             .title {
                 transition: all 0.5s ease-in;
                 opacity: 0.3;
                 padding: 1em;
-                // font-size: larger;
                 text-transform: uppercase;
                 @include md {
                     font-size: initial;
@@ -59,11 +53,10 @@
             }
             .content {
                 display: none;
-                // background: #efefef;
                 position: absolute;
                 left: 25%;
                 height: max-content;
-                width: minmax(fit-content, 60vw);
+                width: 50vw;
                 @extend .card;
                 @include md {
                     width: 60vw;
@@ -122,17 +115,6 @@
         }
         .date {
             opacity: 1;
-            // width: 20vw;
         }
     }
 }
-
-// .card {
-//     background: linear-gradient(90deg, $primaryBackground-color 21px, transparent 1%) center, linear-gradient($primaryBackground-color 21px, transparent 1%) center, lightgray;
-//     background-size: 22px 22px;
-//     z-index: 1;
-//     padding: 1em;
-//     border-radius: 5px;
-//     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-//     transition: 0.3s;
-// }

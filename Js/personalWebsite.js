@@ -5,7 +5,14 @@ const contentContainer = document.querySelector("#contentContainer");
 const timelines = document.getElementsByClassName("timeline");
 const clickMeIcon = document.getElementsByClassName("clickMeIcon");
 const contents = document.getElementsByClassName("content");
+const x_subSections = document.getElementsByClassName("x_subSection");
+
+const x_subSectionContents = document.querySelectorAll(".x_subSection ~ .content");
 const activeCollapsables = document.getElementsByClassName("active");
+const T_skillNavBar = document.getElementById("T_skillNavBar");
+const L_skillNavBar = document.getElementById("L_skillNavBar");
+const active_subSection = document.getElementsByClassName("active_subSection");
+
 var maxMobileScreenWidth = 500;
 var maxTabletScreenWidth = 800;
 var SidenavBoxWidth = "25vw";
@@ -59,25 +66,65 @@ for (i = 0; i < coll.length; i++) {
         var content = this.nextElementSibling;
         // hideElements(clickMeIcon)
 
-
         if (window.innerWidth > maxMobileScreenWidth) {
             hideElements(clickMeIcon)
                 // this.classList.toggle("active");
             if (ActiveSectionId == "skillsSection") {
-                if (content.style.display === "flex") {
-                    content.style.display = "none";
-                } else {
+
+
+                if (this.id == T_skillNavBar.id) {
+                    T_skillNavBar.classList.add("active_SkillContainer");
+                    L_skillNavBar.classList.remove("active_SkillContainer");
+                    L_skillNavBar.nextElementSibling.style.display = "none";
+
                     content.style.display = "flex";
+                    content.style.width = "fit-content";
+
+                    content.classList.add("align-skill-content");
+
                 }
+                if ((this.id == L_skillNavBar.id)) {
+                    L_skillNavBar.classList.add("active_SkillContainer");
+                    T_skillNavBar.classList.remove("active_SkillContainer");
+                    T_skillNavBar.nextElementSibling.style.display = "none";
+
+                    content.style.marginTop = "25vh";
+                    content.classList.add("pad-one-em");
+                    content.classList.add("margin-left-none");
+
+                    content.style.display = "block";
+
+                }
+
+
+                if (this.classList.contains("x_subSection")) {
+
+                    hideElements(x_subSectionContents);
+
+                    if (typeof(active_subSection) != 'undefined' & active_subSection.length > 0) {
+                        removeClassName(active_subSection, ['active_subSection']);
+                    }
+                    this.classList.add("active_subSection");
+
+
+
+                    content.classList.add("pad-one-em");
+                    content.classList.add("margin-left-none");
+
+                    content.classList.add("top");
+                    content.style.display = "block";
+                }
+
+
             } else {
 
                 if (this.classList.contains("active")) {
-                    this.classList.remove("active")
+                    this.classList.remove("active");
                     content.style.display = "none";
                 } else {
                     removeClassName(activeCollapsables, ['active'])
                     hideElements(contents);
-                    this.classList.add("active")
+                    this.classList.add("active");
                     content.style.display = "block";
                 }
 
@@ -112,7 +159,7 @@ for (y = 0; y < navItems.length; y++) {
         // hide all active sections
         if (activeSections.length > 0) {
             var activenavs = document.getElementsByClassName("activeNav");
-            removeClassName(activenavs, ['activeNav'])
+            removeClassName(activenavs, ['activeNav']);
             removeClassName(activeSections, ['activeSection']);
         }
         // this.firstElementChild.classList.add("activeNav");
@@ -140,23 +187,7 @@ function hideElements(elements) {
     }
 }
 
-// function getSiblings(element) {
 
-//     // Setup siblings array and get the first sibling
-//     var siblings = [];
-//     var sibling = element.parentNode.firstChild;
-
-//     // Loop through each sibling and push to the array
-//     while (sibling) {
-//         if (sibling.nodeType === 1 && sibling !== element) {
-//             siblings.push(sibling);
-//         }
-//         sibling = sibling.nextSibling
-//     }
-
-//     return siblings;
-
-// };
 
 
 // this function magnify the hero image on the website
