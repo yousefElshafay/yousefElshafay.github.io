@@ -267,7 +267,7 @@ body::-webkit-scrollbar {
             }
         }
         @include rwd(700,
-        2000) {
+        3000) {
             ul {
                 position: absolute;
                 display: flex !important;

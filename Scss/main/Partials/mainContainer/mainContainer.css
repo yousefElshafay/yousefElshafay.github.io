@@ -337,7 +337,7 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-@media (min-width: 700px) and (max-width: 2000px) {
+@media (min-width: 700px) and (max-width: 3000px) {
   .container #skillsSection ul {
     position: absolute;
     display: -webkit-box !important;

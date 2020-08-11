@@ -7,12 +7,14 @@ const timelines = document.getElementsByClassName("timeline");
 const clickMeIcon = document.getElementsByClassName("clickMeIcon");
 const contents = document.getElementsByClassName("content");
 const x_subSections = document.getElementsByClassName("x_subSection");
+const skillsSectionTitle = document.querySelector("#skillsSection").children[0].children[0];
 
 const x_subSectionContents = document.querySelectorAll(".x_subSection ~ .content");
 const activeCollapsables = document.getElementsByClassName("active");
 const T_skillNavBar = document.getElementById("T_skillNavBar");
 const L_skillNavBar = document.getElementById("L_skillNavBar");
 const active_subSection = document.getElementsByClassName("active_subSection");
+
 
 var maxMobileScreenWidth = 500;
 var maxTabletScreenWidth = 800;
@@ -177,6 +179,15 @@ for (y = 0; y < navItems.length; y++) {
         // this.firstElementChild.classList.add("activeNav");
         this.classList.add("activeNav");
         content.classList.add("activeSection");
+
+        // hide skill section title in case we are on bigger screens
+        if (window.innerWidth > maxMobileScreenWidth) {
+            if (ActiveSectionId == "skillsSection") {
+                if (skillsSectionTitle != undefined) {
+                    skillsSectionTitle.style.display = "none";
+                }
+            }
+        }
 
     });
 }
