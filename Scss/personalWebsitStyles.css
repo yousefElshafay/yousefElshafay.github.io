@@ -73,7 +73,7 @@ a:active {
   transition: all 0.5s ease-in;
   font-weight: normal;
   position: relative;
-  opacity: 0.1;
+  opacity: 0.6;
   color: gray;
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -97,7 +97,7 @@ a:active {
 .timeline ul li .title {
   -webkit-transition: all 0.5s ease-in;
   transition: all 0.5s ease-in;
-  opacity: 0.3;
+  opacity: 0.7;
   padding: 1em;
   text-transform: uppercase;
 }
