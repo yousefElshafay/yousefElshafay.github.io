@@ -514,6 +514,18 @@ body {
   }
 }
 
+@media (min-width: 768px) and (max-width: 1200px) {
+  body {
+    font-size: larger !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    font-size: x-large !important;
+  }
+}
+
 body::-webkit-scrollbar {
   width: 0 !important;
 }

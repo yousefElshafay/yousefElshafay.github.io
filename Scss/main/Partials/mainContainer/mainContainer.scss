@@ -9,6 +9,9 @@ body {
     @include lg {
         font-size: larger !important;
     }
+    @include xl {
+        font-size: x-large !important;
+    }
 }
 
 body::-webkit-scrollbar {
