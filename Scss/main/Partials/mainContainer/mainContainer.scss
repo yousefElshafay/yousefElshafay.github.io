@@ -8,9 +8,15 @@ body {
     }
     @include lg {
         font-size: larger !important;
+        .fa-2x {
+            font-size: 3em !important;
+        }
     }
     @include xl {
         font-size: x-large !important;
+        .fa-2x {
+            font-size: 3em !important;
+        }
     }
 }
 
