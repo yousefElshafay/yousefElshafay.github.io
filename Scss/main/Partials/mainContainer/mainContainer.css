@@ -13,6 +13,12 @@ body {
   }
 }
 
+@media (min-width: 768px) and (max-width: 1200px) {
+  body {
+    font-size: larger !important;
+  }
+}
+
 body::-webkit-scrollbar {
   width: 0 !important;
 }
