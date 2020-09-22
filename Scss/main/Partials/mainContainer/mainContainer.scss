@@ -6,12 +6,12 @@ body {
         background: linear-gradient(90deg, $primaryBackground-color 21px, transparent 1%) center, linear-gradient($primaryBackground-color 21px, transparent 1%) center, lightgray;
         background-size: 22px 22px;
     }
-    @include lg {
-        font-size: larger !important;
-        .fa-2x {
-            font-size: 3em !important;
-        }
-    }
+    // @include lg {
+    //     font-size: larger !important;
+    //     .fa-2x {
+    //         font-size: 3em !important;
+    //     }
+    // }
     @include xl {
         font-size: larger !important;
         .fa-2x {

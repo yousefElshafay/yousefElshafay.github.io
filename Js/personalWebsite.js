@@ -84,6 +84,8 @@ for (i = 0; i < coll.length; i++) {
             if (ActiveSectionId == "skillsSection") {
 
 
+
+
                 if (this.id == T_skillNavBar.id) {
                     T_skillNavBar.classList.add("active_SkillContainer");
                     L_skillNavBar.classList.remove("active_SkillContainer");
@@ -129,6 +131,11 @@ for (i = 0; i < coll.length; i++) {
 
 
             } else {
+
+                T_skillNavBar.classList.remove("active_SkillContainer");
+                L_skillNavBar.classList.remove("active_SkillContainer");
+                removeClassName(active_subSection, ['active_subSection']);
+
 
                 if (this.classList.contains("active")) {
                     this.classList.remove("active");
