@@ -518,11 +518,17 @@ body {
   body {
     font-size: larger !important;
   }
+  body .fa-2x {
+    font-size: 3em !important;
+  }
 }
 
 @media (min-width: 1200px) {
   body {
-    font-size: x-large !important;
+    font-size: larger !important;
+  }
+  body .fa-2x {
+    font-size: 3em !important;
   }
 }
 
