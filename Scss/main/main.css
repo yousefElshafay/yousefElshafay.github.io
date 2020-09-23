@@ -513,7 +513,7 @@ body {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1600px) {
   body {
     font-size: larger !important;
   }
@@ -1074,13 +1074,13 @@ body::-webkit-scrollbar {
   border-bottom: 3px solid;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1600px) {
   .align-skill-content {
     left: 60vh !important;
   }
 }
 
-@media (min-width: 768px) and (max-width: 1200px) {
+@media (min-width: 768px) and (max-width: 1600px) {
   .align-skill-content {
     left: 40vh !important;
   }

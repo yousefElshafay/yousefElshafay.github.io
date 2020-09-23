@@ -2,6 +2,7 @@
 body {
     background: linear-gradient(90deg, whitesmoke 21px, transparent 1%) center, linear-gradient(whitesmoke 21px, transparent 1%) center, lightgray;
     background-size: 22px 22px;
+    font-family: Arial, Helvetica, sans-serif;
     @include sm {
         background: linear-gradient(90deg, $primaryBackground-color 21px, transparent 1%) center, linear-gradient($primaryBackground-color 21px, transparent 1%) center, lightgray;
         background-size: 22px 22px;
