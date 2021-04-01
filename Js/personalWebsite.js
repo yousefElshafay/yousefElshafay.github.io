@@ -102,7 +102,7 @@ for (i = 0; i < coll.length; i++) {
                     T_skillNavBar.classList.remove("active_SkillContainer");
                     T_skillNavBar.nextElementSibling.style.display = "none";
 
-                    content.style.marginTop = "25vh";
+                    content.style.marginTop = "25vw";
                     content.classList.add("pad-one-em");
                     content.classList.add("margin-left-none");
 
