@@ -1,12 +1,12 @@
 // side nav
-const body = document.querySelector("body");
+// const body = document.querySelector("body");
 const sidenavBox = document.querySelector("#sideNav");
 const sidebarBtn = document.querySelector("#SideNavBtn");
 const contentContainer = document.querySelector("#contentContainer");
 const timelines = document.getElementsByClassName("timeline");
 const clickMeIcon = document.getElementsByClassName("clickMeIcon");
 const contents = document.getElementsByClassName("content");
-const x_subSections = document.getElementsByClassName("x_subSection");
+// const x_subSections = document.getElementsByClassName("x_subSection");
 const skillsSectionTitle = document.querySelector("#skillsSection").children[0].children[0];
 
 const x_subSectionContents = document.querySelectorAll(".x_subSection ~ .content");
@@ -26,7 +26,7 @@ if (window.innerWidth < maxTabletScreenWidth) {
     if (window.innerWidth < maxMobileScreenWidth) {
         // remove all timeline classes in mobile view
         removeClassName(timelines, ['timeline']);
-        hideElements(clickMeIcon)
+        hideElements(clickMeIcon);
         SidenavBoxWidth = "50vw";
     }
     sidebarBtn.addEventListener("click", function(event) {
@@ -115,7 +115,7 @@ for (i = 0; i < coll.length; i++) {
 
                     hideElements(x_subSectionContents);
 
-                    if (typeof(active_subSection) != 'undefined' & active_subSection.length > 0) {
+                    if (typeof(active_subSection) != 'undefined' && active_subSection.length > 0) {
                         removeClassName(active_subSection, ['active_subSection']);
                     }
                     this.classList.add("active_subSection");
@@ -175,7 +175,7 @@ for (y = 0; y < navItems.length; y++) {
 
         // get the specified section to display
         ActiveSectionId = activeNavItemId.replace("NavItem", "Section")
-        content = document.querySelector("#" + ActiveSectionId);
+        var content = document.querySelector("#" + ActiveSectionId);
 
         // hide all active sections
         if (activeSections.length > 0) {
