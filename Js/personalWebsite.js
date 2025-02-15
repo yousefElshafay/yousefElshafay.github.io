@@ -217,8 +217,39 @@ function hideElements(elements) {
     }
 }
 
+// Initialize desktop-only background overlay effect
+function initBackgroundOverlay() {
+  // Only run on desktop
+  if (window.innerWidth <= 768) return;
 
+  // Create and inject background overlay
+  const bgDiv = document.createElement('div');
+  bgDiv.id = 'bgOverlay';
+  document.body.appendChild(bgDiv);
 
+  // Random angle generator
+  const getRandomAngle = () => Math.floor(Math.random() * 361);
+
+  // Add click handlers to nav items
+  const navItems = document.querySelectorAll('#sideNav .navItem a');
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const newAngle = getRandomAngle();
+      bgDiv.style.transform = `rotate(${newAngle}deg)`;
+    });
+  });
+}
+
+// Initialize on load and handle resize
+document.addEventListener('DOMContentLoaded', initBackgroundOverlay);
+window.addEventListener('resize', () => {
+  const overlay = document.getElementById('bgOverlay');
+  if (window.innerWidth <= 768 && overlay) {
+    overlay.remove();
+  } else if (window.innerWidth > 768 && !overlay) {
+    initBackgroundOverlay();
+  }
+});
 
 // this function magnify the hero image on the website
 // REFERENCE https://www.w3schools.com/

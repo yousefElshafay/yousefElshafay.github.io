@@ -1303,4 +1303,30 @@ body::-webkit-scrollbar {
             animation: none;
   }
 }
+
+/* Desktop-only background overlay and nav effects */
+@media (min-width: 769px) {
+  #bgOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(#000 50%, #fff 50%);
+    transform: rotate(45deg);
+    transition: transform 0.8s ease;
+  }
+
+  #sideNav .navItem a {
+    color: white;
+    mix-blend-mode: difference;
+    transition: transform 0.1s ease, color 0.3s ease;
+  }
+
+  #sideNav .navItem a:hover {
+    transform: scale(1.05);
+  }
+}
+
 /*# sourceMappingURL=personalWebsitStyles.css.map */
