@@ -5,18 +5,18 @@ document.addEventListener('DOMContentLoaded', function() {
         const prevBtn = container.parentElement.querySelector('.timeline-nav-button.prev');
         const nextBtn = container.parentElement.querySelector('.timeline-nav-button.next');
         const timelineItems = container.querySelector('ul').children;
-        const isSkillsSection = container.closest('#skillsSection') !== null;
+        // const isSkillsSection = container.closest('#skillsSection') !== null;
         
         // Hide buttons if less than 4 items or if in skills section
-        if (timelineItems.length <= 3 || isSkillsSection) {
-            prevBtn.style.display = 'none';
-            nextBtn.style.display = 'none';
-            container.style.width = '100%';
-            container.style.margin = '0';
-            // Remove scrollable class immediately
-            container.classList.remove('is-scrollable');
-            return;
-        }
+        // if (timelineItems.length <= 3 || isSkillsSection) {
+        //     prevBtn.style.display = 'none';
+        //     nextBtn.style.display = 'none';
+        //     container.style.width = '100%';
+        //     container.style.margin = '0';
+        //     // Remove scrollable class immediately
+        //     container.classList.remove('is-scrollable');
+        //     return;
+        // }
 
         // Hide all content divs initially except for active one
         Array.from(timelineItems).forEach((item, index) => {
@@ -232,5 +232,53 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Initial state
         updateScrollState();
+    });
+});
+
+
+// In your timeline.js
+document.addEventListener('DOMContentLoaded', function() {
+    const containers = document.querySelectorAll('.timeline-scroll-container');
+    
+    containers.forEach(container => {
+        const timelineItems = container.querySelector('ul').children;
+        
+        Array.from(timelineItems).forEach(item => {
+            const point = item.querySelector('.point');
+            const content = item.querySelector('.content');
+            
+            if (point && content) {
+                point.addEventListener('click', () => {
+                    // Remove active class from all items
+                    Array.from(timelineItems).forEach(i => i.classList.remove('active'));
+                    
+                    // Add active class to clicked item
+                    item.classList.add('active');
+                    
+                    // Handle skill bars specially
+                    if (content.classList.contains('skill-bars')) {
+                        // Hide all other contents
+                        container.querySelectorAll('.content').forEach(c => {
+                            c.style.display = 'none';
+                            c.style.opacity = '0';
+                            c.style.transform = 'translateY(20px)';
+                        });
+                        
+                        // Show and animate this content
+                        content.style.display = 'block';
+                        requestAnimationFrame(() => {
+                            content.style.opacity = '1';
+                            content.style.transform = 'translateY(0)';
+                        });
+                        
+                        // Reset and replay skill bar animations
+                        content.querySelectorAll('.bar').forEach(bar => {
+                            const skillLevel = bar.getAttribute('data-skill-level') || '0';
+                            bar.style.setProperty('--skill-width', skillLevel + '%');
+                        });
+                    }
+                });
+            }
+        });
     });
 });

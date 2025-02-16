@@ -7,7 +7,7 @@ const timelines = document.getElementsByClassName("timeline");
 const clickMeIcon = document.getElementsByClassName("clickMeIcon");
 const contents = document.getElementsByClassName("content");
 // const x_subSections = document.getElementsByClassName("x_subSection");
-const skillsSectionTitle = document.querySelector("#skillsSection").children[0].children[0];
+// const skillsSectionTitle = document.querySelector("#skillsSection").children[0].children[0];
 
 const x_subSectionContents = document.querySelectorAll(".x_subSection ~ .content");
 const activeCollapsables = document.getElementsByClassName("active");
@@ -81,23 +81,23 @@ for (i = 0; i < coll.length; i++) {
         if (window.innerWidth > maxMobileScreenWidth) {
             hideElements(clickMeIcon)
                 // this.classList.toggle("active");
-            if (ActiveSectionId == "skillsSection") {
+            if (ActiveSectionId == "skillsSection2") {
 
 
 
 
-                if (this.id == T_skillNavBar.id) {
-                    T_skillNavBar.classList.add("active_SkillContainer");
-                    L_skillNavBar.classList.remove("active_SkillContainer");
-                    L_skillNavBar.nextElementSibling.style.display = "none";
+                // if (this.id == T_skillNavBar.id) {
+                //     T_skillNavBar.classList.add("active_SkillContainer");
+                //     L_skillNavBar.classList.remove("active_SkillContainer");
+                //     L_skillNavBar.nextElementSibling.style.display = "none";
 
-                    content.style.display = "flex";
-                    content.style.width = "fit-content";
+                //     content.style.display = "flex";
+                //     content.style.width = "fit-content";
 
-                    content.classList.add("align-skill-content");
+                //     content.classList.add("align-skill-content");
 
-                }
-                if ((this.id == L_skillNavBar.id)) {
+                // }
+                // if ((this.id == L_skillNavBar.id)) {
                     L_skillNavBar.classList.add("active_SkillContainer");
                     T_skillNavBar.classList.remove("active_SkillContainer");
                     T_skillNavBar.nextElementSibling.style.display = "none";
@@ -108,7 +108,7 @@ for (i = 0; i < coll.length; i++) {
 
                     content.style.display = "block";
 
-                }
+                // }
 
 
                 if (this.classList.contains("x_subSection")) {
@@ -132,9 +132,9 @@ for (i = 0; i < coll.length; i++) {
 
             } else {
 
-                T_skillNavBar.classList.remove("active_SkillContainer");
-                L_skillNavBar.classList.remove("active_SkillContainer");
-                removeClassName(active_subSection, ['active_subSection']);
+                // T_skillNavBar.classList.remove("active_SkillContainer");
+                // L_skillNavBar.classList.remove("active_SkillContainer");
+                // removeClassName(active_subSection, ['active_subSection']);
 
 
                 if (this.classList.contains("active")) {
@@ -188,13 +188,13 @@ for (y = 0; y < navItems.length; y++) {
         content.classList.add("activeSection");
 
         // hide skill section title in case we are on bigger screens
-        if (window.innerWidth > maxMobileScreenWidth) {
-            if (ActiveSectionId == "skillsSection") {
-                if (skillsSectionTitle != undefined) {
-                    skillsSectionTitle.style.display = "none";
-                }
-            }
-        }
+        // if (window.innerWidth > maxMobileScreenWidth) {
+        //     if (ActiveSectionId == "skillsSection") {
+        //         if (skillsSectionTitle != undefined) {
+        //             skillsSectionTitle.style.display = "none";
+        //         }
+        //     }
+        // }
 
     });
 }
