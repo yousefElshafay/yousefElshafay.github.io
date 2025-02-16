@@ -251,84 +251,87 @@ window.addEventListener('resize', () => {
   }
 });
 
-// this function magnify the hero image on the website
-// REFERENCE https://www.w3schools.com/
+// Simplified timeline initialization
+function initTimeline() {
+  const timelines = document.querySelectorAll('.timeline');
+  
+  timelines.forEach(timeline => {
+    const itemsContainer = timeline.querySelector('ul');
+    const items = itemsContainer.children;
+    const itemWidth = 300; // Width of each timeline item
+    let currentPosition = 0;
+    
+    // Add content container if not exists
+    let contentContainer = timeline.querySelector('.timeline-content-container');
+    if (!contentContainer) {
+      contentContainer = document.createElement('div');
+      contentContainer.className = 'timeline-content-container';
+      timeline.appendChild(contentContainer);
+    }
 
+    // Add navigation if more than 3 items
+    // if (items.length > 2) {
+    //   const nav = `
+    //     <button class="timeline-nav prev">←</button>
+    //     <button class="timeline-nav next">→</button>
+    //   `;
+    //   timeline.insertAdjacentHTML('beforeend', nav);
+      
+    //   const prevBtn = timeline.querySelector('.timeline-nav.prev');
+    //   const nextBtn = timeline.querySelector('.timeline-nav.next');
+      
+    //   prevBtn.addEventListener('click', () => {
+    //     currentPosition = Math.min(currentPosition + itemWidth, 0);
+    //     itemsContainer.style.transform = `translateX(${currentPosition}px)`;
+    //   });
+      
+    //   nextBtn.addEventListener('click', () => {
+    //     currentPosition = Math.max(currentPosition - itemWidth, 
+    //       -(itemWidth * (items.length - 3)));
+    //     itemsContainer.style.transform = `translateX(${currentPosition}px)`;
+    //   });
+    // }
+    
+    // Handle item clicks
+    Array.from(items).forEach(item => {
+      const point = item.querySelector('.point');
+      const content = item.querySelector('.content');
+      
+    //   if (point && content) {
+    //     point.addEventListener('click', () => {
+    //       // Remove active class from all items
+    //       Array.from(items).forEach(i => i.classList.remove('active'));
+          
+    //       // Add active class to clicked item
+    //       item.classList.add('active');
+          
+    //       // Move content to fixed container
+    //       contentContainer.innerHTML = content.outerHTML;
+    //       const movedContent = contentContainer.querySelector('.content');
+    //       movedContent.style.opacity = '1';
+    //       movedContent.style.visibility = 'visible';
+    //     });
+    //   }
+    });
+    
+    // Activate first item by default
+    // if (items[0]) {
+    //   items[0].classList.add('active');
+    //   const firstContent = items[0].querySelector('.content');
+    //   if (firstContent) {
+    //     contentContainer.innerHTML = firstContent.outerHTML;
+    //     const movedContent = contentContainer.querySelector('.content');
+    //     movedContent.style.opacity = '1';
+    //     movedContent.style.visibility = 'visible';
+    //   }
+    // }
+  });
+}
 
-
-// function magnify(imgID, zoom) {
-//     var img, glass, w, h, bw;
-//     img = document.getElementById(imgID);
-
-//     /* Create magnifier glass: */
-//     glass = document.createElement("DIV");
-//     glass.setAttribute("class", "img-magnifier-glass");
-
-//     /* Insert magnifier glass: */
-//     img.parentElement.insertBefore(glass, img);
-
-//     /* Set background properties for the magnifier glass: */
-//     glass.style.backgroundImage = "url('" + img.src + "')";
-//     glass.style.backgroundRepeat = "no-repeat";
-//     glass.style.backgroundSize =
-//         img.width * zoom + "px " + img.height * zoom + "px";
-//     bw = 3;
-//     w = glass.offsetWidth / 2;
-//     h = glass.offsetHeight / 2;
-
-//     /* Execute a function when someone moves the magnifier glass over the image: */
-//     glass.addEventListener("mousemove", moveMagnifier);
-//     img.addEventListener("mousemove", moveMagnifier);
-
-//     /*and also for touch screens:*/
-//     glass.addEventListener("touchmove", moveMagnifier);
-//     img.addEventListener("touchmove", moveMagnifier);
-
-//     function moveMagnifier(e) {
-//         var pos, x, y;
-//         /* Prevent any other actions that may occur when moving over the image */
-//         e.preventDefault();
-//         /* Get the cursor's x and y positions: */
-//         pos = getCursorPos(e);
-//         x = pos.x;
-//         y = pos.y;
-//         /* Prevent the magnifier glass from being positioned outside the image: */
-//         if (x > img.width - w / zoom) {
-//             x = img.width - w / zoom;
-//         }
-//         if (x < w / zoom) {
-//             x = w / zoom;
-//         }
-//         if (y > img.height - h / zoom) {
-//             y = img.height - h / zoom;
-//         }
-//         if (y < h / zoom) {
-//             y = h / zoom;
-//         }
-//         /* Set the position of the magnifier glass: */
-//         glass.style.left = x - w + "px";
-//         glass.style.top = y - h + "px";
-//         /* Display what the magnifier glass "sees": */
-//         glass.style.backgroundPosition =
-//             "-" + (x * zoom - w + bw) + "px -" + (y * zoom - h + bw) + "px";
-//     }
-
-//     function getCursorPos(e) {
-//         var a,
-//             x = 0,
-//             y = 0;
-//         e = e || window.event;
-//         /* Get the x and y positions of the image: */
-//         a = img.getBoundingClientRect();
-//         /* Calculate the cursor's x and y coordinates, relative to the image: */
-//         x = e.pageX - a.left;
-//         y = e.pageY - a.top;
-//         /* Consider any page scrolling: */
-//         x = x - window.pageXOffset;
-//         y = y - window.pageYOffset;
-//         return {
-//             x: x,
-//             y: y
-//         };
-//     }
-// }
+// Initialize timeline on page load and section change
+document.addEventListener('DOMContentLoaded', initTimeline);
+document.querySelectorAll('.navItem').forEach(navItem => {
+  navItem.addEventListener('click', () => {
+    setTimeout(initTimeline, 100);
+  });
+});

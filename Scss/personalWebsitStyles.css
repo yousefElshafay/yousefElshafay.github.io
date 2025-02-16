@@ -27,45 +27,159 @@ a:active {
   text-decoration: none;
 }
 
+/* Timeline container */
 .timeline {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 4;
-  -ms-grid-column: 1;
-  grid-area: timeline;
+  position: relative;
+  width: 100%;
+  margin-top: 15vh; /* Space for section title */
+  padding: 20px 0;
+  height: auto;
+  overflow: visible; /* Changed from hidden */
+}
+
+.timeline-scroll-container {
+  position: relative;
+  width: calc(100% - 80px); /* Account for navigation buttons */
+  margin: 0 40px;
+  overflow-x: scroll;
+  overflow-y: visible; /* Allow content to be visible */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scroll-behavior: smooth;
+  padding: 0 20px; /* Space for nav buttons */
+  transition: all 0.3s ease;
+}
+
+/* When buttons are hidden, adjust container width */
+.timeline-scroll-container.no-buttons {
+  width: 100%;
+  margin: 0;
+}
+
+/* When no buttons needed (3 or fewer items) */
+.timeline-scroll-container:not(.is-scrollable) {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Hide gradients when not scrollable */
+.timeline-scroll-container:not(.is-scrollable)::before,
+.timeline-scroll-container:not(.is-scrollable)::after {
+  display: none;
+}
+
+.timeline-scroll-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
 }
 
 .timeline::before {
   content: "";
   position: absolute;
-  height: 100%;
-  width: 3px;
+  width: calc(100% - 80px);
+  height: 3px;
   background-color: #f0f0f0;
+  top: 37%;
+  left: 40px;
+  transform: translateY(-50%);
+  z-index: 1;
 }
 
 .timeline ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0;
+  padding: 20px 40%; /* Add padding for first and last items to center */
+  min-width: max-content;
   position: relative;
-  top: 20vh;
+  gap: 5vw; /* Consistent spacing between points */
+}
+
+/* Scroll Buttons */
+.timeline-nav-button {
+  content: 'Scroll to view';
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  color: #666;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.timeline-nav-button:hover {
+  opacity: 0.9;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.timeline-nav-button.prev {
+  left: -5px;
+}
+
+.timeline-nav-button.next {
+  right: -5px;
+}
+
+.timeline-nav-button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Hide buttons on mobile */
+@media (max-width: 768px) {
+  .timeline-nav-button {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .timeline ul {
+    padding: 0 30%;
+  }
+}
+
+/* For sections with multiple points */
+.timeline ul.multiple-points {
+  justify-content: flex-start;
+  min-width: max-content;
+  padding: 0 calc(50% - 50px); /* Add padding for centering, adjust 50px based on point width */
 }
 
 @media (min-width: 435px) and (max-width: 768px) {
   .timeline ul {
     top: 15vh;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 20px 10px;
   }
 }
 
 .timeline ul li {
-  margin-bottom: 5vh;
-  list-style-type: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  flex: 0 0 auto;
+  margin: 0 5vw;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  cursor: pointer; /* Show it's clickable */
+  min-width: max-content; /* Prevent text wrapping */
+}
+
+/* Center single point */
+.timeline ul:not(.multiple-points) li:only-child {
+  margin: 0;
 }
 
 .timeline ul li .date {
@@ -77,10 +191,11 @@ a:active {
   color: gray;
   width: -webkit-max-content;
   width: -moz-max-content;
-  width: max-content;
+  width: auto;
   text-align: center;
   padding: 5px 10px;
   border-radius: 10px;
+  margin-bottom: 10px;
 }
 
 .timeline ul li:hover .date,
@@ -100,6 +215,10 @@ a:active {
   opacity: 0.7;
   padding: 1em;
   text-transform: uppercase;
+  text-align: center;
+  width: max-content;
+  padding: 0.5em;
+  margin-top: 10px;
 }
 
 @media (min-width: 435px) and (max-width: 768px) {
@@ -110,18 +229,40 @@ a:active {
 
 .timeline ul li .content {
   display: none;
-  position: absolute;
-  left: 15%;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  width: 50vw;
+  position: fixed;
+  left: 50%;
+  /* visibility: visible; */
+  opacity: 1 !important;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  width: 60vw;
+  max-height: 60vh;
+  overflow-y: auto;
+  z-index: 100;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: all 0.3s ease;
+  padding: 20px;
+}
+
+/* Active state styles */
+.timeline ul li.active {
+  z-index: 2;
+}
+
+.timeline ul li.active .content {
+  display: block;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
 }
 
 @media (min-width: 435px) and (max-width: 768px) {
   .timeline ul li .content {
     width: 60vw;
     top: 10%;
+    width: 80vw;
   }
 }
 
@@ -151,25 +292,116 @@ a:active {
 }
 
 .timeline ul .point {
-  min-width: 20px;
+  width: 20px;
   height: 20px;
-  background-color: #04041d;
-  border-radius: 100%;
-  z-index: 2;
+  background-color: rgba(4, 4, 29, 0.7);
+  border-radius: 50%;
   border: 3px #f7f7f7 solid;
-  position: absolute;
-  left: -0.85vh;
+  position: relative;
+  margin-left: 3rem;
+  z-index: 2;
   opacity: 0.6;
-  -webkit-transition: all 0.5s ease-in;
-  transition: all 0.5s ease-in;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Remove old click me icon styles */
+.timeline ul .point .clickMeIcon {
+  display: none;
+}
+
+/* Add pulse animation to points */
+.timeline ul .point::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid rgba(4, 4, 29, 0.3);
+  animation: pulse 2s infinite;
+  left: -2px;
+  top: -2px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+/* Stop animation on hover */
+.timeline ul li:hover .point::after {
+  animation: none;
+  opacity: 0;
+}
+
+.timeline-nav-button:hover .timeline-nav-button:after {
+  opacity: 1;
+}
+/* Enhance hover state */
+.timeline ul li:hover .point {
+  transform: scale(1.2);
+  background-color: #070318;
+  opacity: 1;
+  box-shadow: 0 0 15px rgba(7, 3, 24, 0.3);
+}
+
+/* Add tooltip */
+.timeline ul li .point::before {
+  content: 'Click to view';
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.timeline-nav-button::before 
+{
+  content: 'Scroll  to view';
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.timeline ul li:hover .point::before {
+  opacity: 1;
+}
+
+.timeline-nav-button:hover::before {
+  opacity: 1;
 }
 
 .timeline ul .point .clickMeIcon {
-  position: absolute;
-  z-index: 10;
   -webkit-transform: rotate(75deg);
           transform: rotate(75deg);
-  right: 150%;
+  margin-left: 5px;
 }
 
 .timeline .active .title {
@@ -178,10 +410,51 @@ a:active {
 
 .timeline .active .content {
   display: block;
+  visibility: visible;
+  opacity: 1;
 }
 
 .timeline .active .date {
   opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    padding: 10px 0;
+  }
+  
+  .timeline ul {
+    padding: 0 10px;
+  }
+  
+  .timeline ul li {
+    margin: 0 3vw;
+  }
+  
+  .timeline::before {
+    top: 20vh; /* Adjust line position for mobile */
+  }
+  
+  .timeline ul.multiple-points {
+    padding: 0 calc(50% - 30px); /* Adjust padding for mobile */
+  }
+}
+
+.timeline::-webkit-scrollbar {
+  height: 8px;
+}
+
+.timeline::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.timeline::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.timeline::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 img {
@@ -628,6 +901,13 @@ body::-webkit-scrollbar {
   text-transform: uppercase;
   text-align: center;
   opacity: 0.2;
+  position: fixed;
+  top: 5vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  z-index: 10;
 }
 
 @media (min-width: 310px) and (max-width: 435px) {
@@ -1327,6 +1607,105 @@ body::-webkit-scrollbar {
   #sideNav .navItem a:hover {
     transform: scale(1.05);
   }
+} 
+
+/* Desktop-only background overlay and text inversion */
+@media (min-width: 769px) {
+  #bgOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(#000 50%, #fff 50%);
+    transform: rotate(45deg);
+    transition: transform 0.8s ease;
+    /* mix-blend-mode: difference; */
+
+  }
+
+  /* Text inversion for all text elements except images */
+  /* .container *:not(img)  {
+    mix-blend-mode: difference;
+    color: #fff; 
+  } */
+
+  .container .content
+  {
+    /* transition: transform 0.5s ease; */
+
+    position: relative;
+    z-index: 1;
+    mix-blend-mode: normal; /* No blending */
+    background-color: #fff; /* or rgba(255,255,255,0.9) */
+    color: #333;
+    transition: none;
+  }
+  #bgOverlay  ul li .collapsible *,  #bgOverlay .timeline .sectionTitle {
+    position: relative;
+    z-index: 1;
+    mix-blend-mode: difference;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+/* ul li .collapsible *:hover,
+ul li .collapsible *.active,
+.timeline .sectionTitle:hover,
+.timeline .sectionTitle.active ,  .collapsible *{
+    opacity: 1;
+} */
+  }
+
+/* Scroll indicator */
+.timeline-scroll-indicator {
+  display: none;
+}
+
+/* Gradient indicators for horizontal scroll */
+.timeline-scroll-container::before,
+.timeline-scroll-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Only show gradients when scrollable */
+.timeline-scroll-container.is-scrollable::before {
+  left: 0;
+  opacity: 1;
+  background: linear-gradient(to right, 
+    rgba(255,255,255,0.95) 0%,
+    rgba(255,255,255,0) 100%
+  );
+}
+
+.timeline-scroll-container.is-scrollable::after {
+  right: 0;
+  opacity: 1;
+  background: linear-gradient(to left, 
+    rgba(255,255,255,0.95) 0%,
+    rgba(255,255,255,0) 100%
+  );
+}
+
+/* Skills section specific overrides */
+#skillsSection .timeline-scroll-container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#skillsSection .timeline-nav-button {
+  display: none !important;
 }
 
 /*# sourceMappingURL=personalWebsitStyles.css.map */
