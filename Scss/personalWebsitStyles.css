@@ -1902,4 +1902,20 @@ ul li .collapsible *.active,
   /* background-color: blue; */
 }
 
+.fadedSkills
+{
+  color: gray;
+  cursor: none;
+}
+.fadedSkills:hover
+{
+  color: wheat;
+  font-size: 1.1em;
+  color: rgb(95, 67, 15);
+  cursor: none;
+  transition: all 0.3s ease;
+
+  /* transition: 0.5s  ease-in-out; */
+}
+
 /*# sourceMappingURL=personalWebsitStyles.css.map */
