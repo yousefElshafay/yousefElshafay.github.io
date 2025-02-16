@@ -140,10 +140,12 @@ a:active {
 /* Hide buttons on mobile */
 @media (max-width: 768px) {
   .timeline-nav-button {
-    width: 30px;
-    height: 30px;
+    /* width: 30px; */
+    display: none;
+    /* height: 30px; */
   }
   
+
   .timeline ul {
     padding: 0 30%;
   }
