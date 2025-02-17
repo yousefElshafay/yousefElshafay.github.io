@@ -1719,23 +1719,23 @@ ul li .collapsible *.active,
 }
 
 /* Only show gradients when scrollable */
-.timeline-scroll-container.is-scrollable::before {
+/* .timeline-scroll-container.is-scrollable::before {
   left: 0;
   opacity: 1;
   background: linear-gradient(to right, 
     rgba(255,255,255,0.95) 0%,
     rgba(255,255,255,0) 100%
   );
-}
+} */
 
-.timeline-scroll-container.is-scrollable::after {
+/* .timeline-scroll-container.is-scrollable::after {
   right: 0;
   opacity: 1;
   background: linear-gradient(to left, 
     rgba(255,255,255,0.95) 0%,
     rgba(255,255,255,0) 100%
   );
-}
+} */
 
 /* Skills section specific overrides */
 /* #skillsSection .timeline-scroll-container {

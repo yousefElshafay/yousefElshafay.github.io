@@ -8,88 +8,18 @@ document.addEventListener('DOMContentLoaded', function() {
         // const isSkillsSection = container.closest('#skillsSection') !== null;
         
         // Hide buttons if less than 4 items or if in skills section
-        // if (timelineItems.length <= 3 || isSkillsSection) {
-        //     prevBtn.style.display = 'none';
-        //     nextBtn.style.display = 'none';
-        //     container.style.width = '100%';
-        //     container.style.margin = '0';
-        //     // Remove scrollable class immediately
-        //     container.classList.remove('is-scrollable');
-        //     return;
-        // }
+        if (timelineItems.length <= 2) {
+            prevBtn.style.display = 'none';
+            nextBtn.style.display = 'none';
+            container.style.width = '100%';
+            container.style.margin = '0';
+            // Remove scrollable class immediately
+            container.classList.remove('is-scrollable');
+            return;
+        }
 
-        // Hide all content divs initially except for active one
-        Array.from(timelineItems).forEach((item, index) => {
-            const content = item.querySelector('.content');
-            if (content) {
-                // Only show content for the first item initially
-                content.style.display = index === 0 ? 'block' : 'none';
-            }
-        });
 
-        // Click handler for timeline items
-        Array.from(timelineItems).forEach(item => {
-            const point = item.querySelector('.point');
-            if (!point) return;
-            
-            point.addEventListener('click', (e) => {
-                e.stopPropagation(); // Prevent event bubbling
-                
-                // Remove active class from all items
-                Array.from(timelineItems).forEach(i => i.classList.remove('active'));
-                
-                // Add active class to clicked item
-                item.classList.add('active');
-                
-                // Handle content display
-                const content = item.querySelector('.content');
-                if (content) {
-                    // Hide all other contents
-                    container.querySelectorAll('.content').forEach(c => {
-                        if (c !== content) {
-                            c.style.display = 'none';
-                            c.style.visibility = 'hidden';
-                            c.style.opacity = '0';
-                        }
-                    });
-                    
-                    // Show this content
-                    content.style.display = 'block';
-                    content.style.visibility = 'visible';
-                    requestAnimationFrame(() => {
-                        content.style.opacity = '1';
-                    });
-                }
-            });
-        });
-
-        // Close content when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.content') && !e.target.closest('.point')) {
-                Array.from(timelineItems).forEach(item => {
-                    item.classList.remove('active');
-                    const content = item.querySelector('.content');
-                    if (content) {
-                        content.style.display = 'none';
-                        content.style.visibility = 'hidden';
-                        content.style.opacity = '0';
-                    }
-                });
-            }
-        });
-
-        // Activate first item by default
-        // if (timelineItems[0]) {
-        //     timelineItems[0].classList.add('active');
-        //     const firstContent = timelineItems[0].querySelector('.content');
-        //     if (firstContent) {
-        //         firstContent.style.display = 'block';
-        //         firstContent.style.opacity = '1';
-        //         firstContent.style.transform = 'translate(-50%, -50%) scale(1)';
-        //     }
-        // }
-
-        const scrollStep = 200;
+        const scrollStep = 250;
         const wheelScrollMultiplier = 1.5;
 
         function updateButtonStates() {
@@ -102,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Handle mouse wheel scrolling
         container.addEventListener('wheel', (e) => {
-            e.preventDefault();
+            // e.preventDefault();
             const delta = e.deltaY || e.detail || e.wheelDelta;
             container.scrollBy({
                 left: delta * wheelScrollMultiplier,
@@ -133,38 +63,13 @@ document.addEventListener('DOMContentLoaded', function() {
         let startX;
         let scrollLeft;
 
-        container.addEventListener('mousedown', (e) => {
-            isDown = true;
-            startX = e.pageX - container.offsetLeft;
-            scrollLeft = container.scrollLeft;
-        });
-
-        container.addEventListener('mouseleave', () => { isDown = false; });
-        container.addEventListener('mouseup', () => { isDown = false; });
-
-        container.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - container.offsetLeft;
-            const walk = (x - startX) * 2;
-            container.scrollLeft = scrollLeft - walk;
-            updateButtonStates();
-        });
-
         // Initial button state
         updateButtonStates();
 
         // Handle window resize
         window.addEventListener('resize', updateButtonStates);
 
-        // Add scroll indicator
-        const indicator = document.createElement('div');
-        indicator.className = 'timeline-scroll-indicator';
-        indicator.innerHTML = `
-            <span class="text">Scroll or use arrows</span>
-            <span class="icon">→</span>
-        `;
-        container.parentElement.appendChild(indicator);
+      
 
         // Show/hide indicator based on scroll position
         function updateIndicators() {
@@ -209,76 +114,75 @@ document.addEventListener('DOMContentLoaded', function() {
         // Initial update
         updateIndicators();
 
-        function updateScrollState() {
-            const scrollLeft = container.scrollLeft;
-            const maxScroll = container.scrollWidth - container.clientWidth;
-            
-            // Update scroll indicators
-            if (maxScroll > 0) {
-                container.classList.add('is-scrollable');
-                // Show/hide buttons based on scroll position
-                prevBtn.style.display = scrollLeft <= 0 ? 'none' : 'flex';
-                nextBtn.style.display = scrollLeft >= maxScroll ? 'none' : 'flex';
-            } else {
-                container.classList.remove('is-scrollable');
-                prevBtn.style.display = 'none';
-                nextBtn.style.display = 'none';
-            }
-        }
-
-        // Update on scroll and resize
-        container.addEventListener('scroll', updateScrollState);
-        window.addEventListener('resize', updateScrollState);
-        
-        // Initial state
-        updateScrollState();
     });
 });
 
 
-// In your timeline.js
+
 document.addEventListener('DOMContentLoaded', function() {
     const containers = document.querySelectorAll('.timeline-scroll-container');
     
     containers.forEach(container => {
-        const timelineItems = container.querySelector('ul').children;
+        const timeline = container.closest('.timeline');
+        const prevBtn = timeline.querySelector('.timeline-nav-button.prev');
+        const nextBtn = timeline.querySelector('.timeline-nav-button.next');
+        const itemsList = container.querySelector('ul');
         
-        Array.from(timelineItems).forEach(item => {
-            const point = item.querySelector('.point');
-            const content = item.querySelector('.content');
-            
-            if (point && content) {
-                point.addEventListener('click', () => {
-                    // Remove active class from all items
-                    Array.from(timelineItems).forEach(i => i.classList.remove('active'));
-                    
-                    // Add active class to clicked item
-                    item.classList.add('active');
-                    
-                    // Handle skill bars specially
-                    if (content.classList.contains('skill-bars')) {
-                        // Hide all other contents
-                        container.querySelectorAll('.content').forEach(c => {
-                            c.style.display = 'none';
-                            c.style.opacity = '0';
-                            c.style.transform = 'translateY(20px)';
-                        });
-                        
-                        // Show and animate this content
-                        content.style.display = 'block';
-                        requestAnimationFrame(() => {
-                            content.style.opacity = '1';
-                            content.style.transform = 'translateY(0)';
-                        });
-                        
-                        // Reset and replay skill bar animations
-                        content.querySelectorAll('.bar').forEach(bar => {
-                            const skillLevel = bar.getAttribute('data-skill-level') || '0';
-                            bar.style.setProperty('--skill-width', skillLevel + '%');
-                        });
-                    }
-                });
-            }
+        // Enhanced smooth scroll settings
+        const scrollSettings = {
+            behavior: 'smooth',
+            speed: 2, // Multiplier for wheel scrolling
+            buttonStep: 400, // Pixels to scroll on button click
+            sensitivity: 1.5 // Mouse wheel sensitivity
+        };
+
+        // Handle wheel/trackpad scrolling
+        container.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            const delta = e.deltaY || e.detail || e.wheelDelta;
+            container.scrollLeft += (delta * scrollSettings.speed * scrollSettings.sensitivity);
+            updateButtonVisibility();
+        }, { passive: false });
+
+        // Button click handlers with faster scroll
+        prevBtn.addEventListener('click', () => {
+            container.scrollBy({
+                left: -scrollSettings.buttonStep,
+                behavior: 'smooth'
+            });
         });
+
+        nextBtn.addEventListener('click', () => {
+            container.scrollBy({
+                left: scrollSettings.buttonStep,
+                behavior: 'smooth'
+            });
+        });
+
+        // Visibility logic
+        function updateButtonVisibility() {
+            const items = itemsList.children;
+            const isScrollable = container.scrollWidth > container.clientWidth;
+            const hasEnoughItems = items.length > 2;
+            
+            if (!isScrollable || !hasEnoughItems) {
+                prevBtn.style.display = 'none';
+                nextBtn.style.display = 'none';
+                return;
+            }
+
+            const atStart = container.scrollLeft <= 0;
+            const atEnd = container.scrollLeft >= (container.scrollWidth - container.clientWidth);
+            
+            prevBtn.style.display = atStart ? 'none' : 'flex';
+            nextBtn.style.display = atEnd ? 'none' : 'flex';
+        }
+
+        // Update on scroll and resize
+        container.addEventListener('scroll', updateButtonVisibility);
+        window.addEventListener('resize', updateButtonVisibility);
+
+        // Initial check
+        updateButtonVisibility();
     });
 });
