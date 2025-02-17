@@ -98,7 +98,7 @@ a:active {
 
 /* Scroll Buttons */
 .timeline-nav-button {
-  content: 'Scroll to view';
+  content: 'Scroll Vertically to view';
   position: absolute;
   top: 40%;
   transform: translateY(-50%);

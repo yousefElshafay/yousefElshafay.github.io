@@ -227,6 +227,17 @@ function initBackgroundOverlay() {
   bgDiv.id = 'bgOverlay';
   document.body.appendChild(bgDiv);
 
+
+//   const getRandomAngle = () => {
+//     // Base horizontal angle (90 or 270 degrees)
+//     const baseAngle = Math.random() < 0.5 ? 90 : 270;
+    
+//     // Add slight random tilt (-15 to +15 degrees)
+//     const tiltVariation = (Math.random() * 30) - 15;
+    
+//     // Combine base angle and tilt
+//     return baseAngle + tiltVariation;
+// };
   // Random angle generator
   const getRandomAngle = () => Math.floor(Math.random() * 361);
 
