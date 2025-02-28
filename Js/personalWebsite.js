@@ -280,62 +280,15 @@ function initTimeline() {
       timeline.appendChild(contentContainer);
     }
 
-    // Add navigation if more than 3 items
-    // if (items.length > 2) {
-    //   const nav = `
-    //     <button class="timeline-nav prev">←</button>
-    //     <button class="timeline-nav next">→</button>
-    //   `;
-    //   timeline.insertAdjacentHTML('beforeend', nav);
-      
-    //   const prevBtn = timeline.querySelector('.timeline-nav.prev');
-    //   const nextBtn = timeline.querySelector('.timeline-nav.next');
-      
-    //   prevBtn.addEventListener('click', () => {
-    //     currentPosition = Math.min(currentPosition + itemWidth, 0);
-    //     itemsContainer.style.transform = `translateX(${currentPosition}px)`;
-    //   });
-      
-    //   nextBtn.addEventListener('click', () => {
-    //     currentPosition = Math.max(currentPosition - itemWidth, 
-    //       -(itemWidth * (items.length - 3)));
-    //     itemsContainer.style.transform = `translateX(${currentPosition}px)`;
-    //   });
-    // }
-    
+   
     // Handle item clicks
     Array.from(items).forEach(item => {
       const point = item.querySelector('.point');
       const content = item.querySelector('.content');
-      
-    //   if (point && content) {
-    //     point.addEventListener('click', () => {
-    //       // Remove active class from all items
-    //       Array.from(items).forEach(i => i.classList.remove('active'));
-          
-    //       // Add active class to clicked item
-    //       item.classList.add('active');
-          
-    //       // Move content to fixed container
-    //       contentContainer.innerHTML = content.outerHTML;
-    //       const movedContent = contentContainer.querySelector('.content');
-    //       movedContent.style.opacity = '1';
-    //       movedContent.style.visibility = 'visible';
-    //     });
-    //   }
+   
     });
     
-    // Activate first item by default
-    // if (items[0]) {
-    //   items[0].classList.add('active');
-    //   const firstContent = items[0].querySelector('.content');
-    //   if (firstContent) {
-    //     contentContainer.innerHTML = firstContent.outerHTML;
-    //     const movedContent = contentContainer.querySelector('.content');
-    //     movedContent.style.opacity = '1';
-    //     movedContent.style.visibility = 'visible';
-    //   }
-    // }
+  
   });
 }
 
