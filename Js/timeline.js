@@ -22,12 +22,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const scrollStep = 250;
         const wheelScrollMultiplier = 1.5;
 
+
+
         function updateButtonStates() {
             const scrollLeft = container.scrollLeft;
             const maxScroll = container.scrollWidth - container.clientWidth;
             
-            prevBtn.style.display = scrollLeft <= 0 ? 'none' : 'flex';
-            nextBtn.style.display = scrollLeft >= maxScroll ? 'none' : 'flex';
+            // prevBtn.style.display = scrollLeft <= 0 ? 'none' : 'flex';
+            // nextBtn.style.display = scrollLeft >= maxScroll ? 'none' : 'flex';
         }
 
         // Handle mouse wheel scrolling
@@ -77,10 +79,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const maxScroll = container.scrollWidth - container.clientWidth;
             
             // Update nav buttons
-            if (prevBtn && nextBtn) {
-                prevBtn.style.display = scrollLeft <= 0 ? 'none' : 'flex';
-                nextBtn.style.display = scrollLeft >= maxScroll ? 'none' : 'flex';
-            }
+            // if (prevBtn && nextBtn) {
+            //     prevBtn.style.display = scrollLeft <= 0 ? 'none' : 'flex';
+            //     nextBtn.style.display = scrollLeft >= maxScroll ? 'none' : 'flex';
+            // }
             
             // Update scroll indicator
             indicator.style.opacity = scrollLeft >= maxScroll ? '0' : '0.8';
@@ -127,6 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const prevBtn = timeline.querySelector('.timeline-nav-button.prev');
         const nextBtn = timeline.querySelector('.timeline-nav-button.next');
         const itemsList = container.querySelector('ul');
+        const items = itemsList.querySelectorAll('li');
         
         // Enhanced smooth scroll settings
         const scrollSettings = {
@@ -136,6 +139,79 @@ document.addEventListener('DOMContentLoaded', function() {
             sensitivity: 1.5 // Mouse wheel sensitivity
         };
 
+        // Track the current active item index
+        let currentItemIndex = -1;
+
+        // Find the currently active or closest visible item
+        function findCurrentItem() {
+            // If an item is already active, return its index
+            for (let i = 0; i < items.length; i++) {
+                if (items[i].querySelector('.collapsible').classList.contains('active')) {
+                    return i;
+                }
+            }
+            
+            // Otherwise find the item closest to the center of the viewport
+            const containerCenter = container.scrollLeft + (container.clientWidth / 2);
+            let closestIndex = 0;
+            let closestDistance = Infinity;
+            
+            items.forEach((item, index) => {
+                const rect = item.getBoundingClientRect();
+                const itemCenter = rect.left + rect.width / 2;
+                const distance = Math.abs(itemCenter - containerCenter);
+                
+                if (distance < closestDistance) {
+                    closestDistance = distance;
+                    closestIndex = index;
+                }
+            });
+            
+            return closestIndex;
+        }
+
+        // Activate a specific item
+        function activateItem(index) {
+            // Ensure index is within bounds
+            if (index < 0) index = 0;
+            if (index >= items.length) index = items.length - 1;
+            
+            // Deactivate all collapsibles
+            items.forEach(item => {
+                const collapsible = item.querySelector('.collapsible');
+                const content = item.querySelector('.content');
+                collapsible.classList.remove('active');
+                if (content) content.style.display = 'none';
+            });
+            
+            // Activate the target item
+            const targetItem = items[index];
+            const collapsible = targetItem.querySelector('.collapsible');
+            const content = targetItem.querySelector('.content');
+            
+            // Trigger click programmatically
+            collapsible.classList.add('active');
+            if (content) content.style.display = 'block';
+            
+            // Scroll the item into view
+            const itemRect = targetItem.getBoundingClientRect();
+            const containerRect = container.getBoundingClientRect();
+            
+            // Calculate desired scroll position to center the item
+            const targetScroll = container.scrollLeft + 
+                (itemRect.left - containerRect.left) - 
+                (containerRect.width / 2) + 
+                (itemRect.width / 2);
+            
+            container.scrollTo({
+                left: targetScroll,
+                behavior: 'smooth'
+            });
+            
+            // Update current item index
+            currentItemIndex = index;
+        }
+
         // Handle wheel/trackpad scrolling
         container.addEventListener('wheel', (e) => {
             e.preventDefault();
@@ -144,43 +220,61 @@ document.addEventListener('DOMContentLoaded', function() {
             updateButtonVisibility();
         }, { passive: false });
 
-        // Button click handlers with faster scroll
+        // Button click handlers for navigating between items
         prevBtn.addEventListener('click', () => {
-            container.scrollBy({
-                left: -scrollSettings.buttonStep,
-                behavior: 'smooth'
-            });
+            // Find current item index
+            if (currentItemIndex < 0) currentItemIndex = findCurrentItem();
+            
+            // Move to previous item
+            activateItem(currentItemIndex - 1);
+            updateButtonVisibility();
         });
 
         nextBtn.addEventListener('click', () => {
-            container.scrollBy({
-                left: scrollSettings.buttonStep,
-                behavior: 'smooth'
-            });
+            // Find current item index
+            if (currentItemIndex < 0) currentItemIndex = findCurrentItem();
+            
+            // Move to next item
+            activateItem(currentItemIndex + 1);
+            updateButtonVisibility();
         });
 
         // Visibility logic
         function updateButtonVisibility() {
-            const items = itemsList.children;
             const isScrollable = container.scrollWidth > container.clientWidth;
-            const hasEnoughItems = items.length > 2;
             
             if (!isScrollable || !hasEnoughItems) {
-                prevBtn.style.display = 'none';
-                nextBtn.style.display = 'none';
+                // prevBtn.style.display = 'none';
+                // nextBtn.style.display = 'none';
                 return;
             }
-
-            const atStart = container.scrollLeft <= 0;
-            const atEnd = container.scrollLeft >= (container.scrollWidth - container.clientWidth);
             
-            prevBtn.style.display = atStart ? 'none' : 'flex';
-            nextBtn.style.display = atEnd ? 'none' : 'flex';
+            // Find current item if not set
+            if (currentItemIndex < 0) currentItemIndex = findCurrentItem();
+            
+            // prevBtn.style.display = atStart ? 'none' : 'flex';
+            // nextBtn.style.display = atEnd ? 'none' : 'flex';
         }
 
         // Update on scroll and resize
-        container.addEventListener('scroll', updateButtonVisibility);
+        container.addEventListener('scroll', () => {
+            // Reset current item index when user scrolls manually
+            currentItemIndex = -1;
+            updateButtonVisibility();
+        });
+        
         window.addEventListener('resize', updateButtonVisibility);
+
+        // Initialize clickable behavior for items
+        items.forEach((item, index) => {
+            const collapsible = item.querySelector('.collapsible');
+            
+            collapsible.addEventListener('click', () => {
+                currentItemIndex = index;
+                activateItem(index);
+                updateButtonVisibility();
+            });
+        });
 
         // Initial check
         updateButtonVisibility();

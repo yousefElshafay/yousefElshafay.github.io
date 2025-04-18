@@ -239,13 +239,48 @@ function initBackgroundOverlay() {
 //     return baseAngle + tiltVariation;
 // };
   // Random angle generator
-  const getRandomAngle = () => Math.floor(Math.random() * 361);
+//   const getRandomAngle = () => Math.floor(Math.random() * 361);
+// const getRandomAngle = () => {
+//     // Base angles: 70° or 250° (180° + 70°)
+//     const baseAngle = Math.random() < 0.5 ? 60 : 250;
+    
+//     // Add slight random variation (-10 to +10 degrees)
+//     const variation = (Math.random() * 20) - 10;
+    
+//     return baseAngle + variation;
+//   };
 
+const getRandomAngle = () => {
+    // Choose between three orientation types: tilted right, tilted left, or horizontal
+    const orientationType = Math.floor(Math.random() * 3);
+    
+    let baseAngle;
+    let variation;
+    
+    switch(orientationType) {
+        case 0: // Tilted right
+            baseAngle = 70;
+            variation = (Math.random() * 20) - 10; // ±10 degrees
+            break;
+        case 1: // Tilted left
+            baseAngle = 250;
+            variation = (Math.random() * 20) - 10; // ±10 degrees
+            break;
+        case 2: // Horizontal
+            baseAngle =  360;
+            variation = 0; // ±3 degrees (smaller variation for horizontal)
+            break;
+    }
+    
+    return baseAngle + variation;
+};
   // Add click handlers to nav items
   const navItems = document.querySelectorAll('#sideNav .navItem a');
   navItems.forEach(item => {
     item.addEventListener('click', () => {
       const newAngle = getRandomAngle();
+      console.log(newAngle);
+
       bgDiv.style.transform = `rotate(${newAngle}deg)`;
     });
   });
