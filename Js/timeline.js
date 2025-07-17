@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // }
             
             // Update scroll indicator
-            indicator.style.opacity = scrollLeft >= maxScroll ? '0' : '0.8';
+            // indicator.style.opacity = scrollLeft >= maxScroll ? '0' : '0.8';
         }
 
         // Add smooth scroll behavior
@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', function() {
         function updateButtonVisibility() {
             const isScrollable = container.scrollWidth > container.clientWidth;
             
-            if (!isScrollable || !hasEnoughItems) {
+            if (!isScrollable ) {
                 // prevBtn.style.display = 'none';
                 // nextBtn.style.display = 'none';
                 return;

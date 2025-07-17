@@ -419,6 +419,14 @@ a:active {
   visibility: visible;
   opacity: 1;
 }
+/* .timeline .content {
+  display: none;
+} */
+
+/* show when its header is active */
+.collapsible.active + .content {
+  display: block;
+}
 
 .timeline .active .date,ul li .collapsible .title,.timeline .sectionTitle,.title-Text {
   opacity: 1;
