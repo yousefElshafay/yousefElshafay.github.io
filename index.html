@@ -1,4 +1,3 @@
-
 <!-- 
      .--.
     |o_o |   "Oh, you’re inspecting me?"
@@ -860,7 +859,7 @@
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
 
-              .section-intro strong {
+        .section-intro strong {
             /* font-size: 1.3rem; */
             color: rgb(206, 206, 206);
 
@@ -1426,23 +1425,31 @@
         }
 
         /* Ensure cards expand gracefully on overflow in mobile view */
-    @media (max-width: 768px) {
-        .card {
-            max-height: none; /* Remove height restriction */
-            overflow-y: auto; /* Enable vertical scrolling for overflowing content */
-            padding: 1rem; /* Ensure padding is consistent */
-            transition: max-height 0.3s ease-out, padding 0.3s ease-out; /* Smooth adjustments */
+        @media (max-width: 768px) {
+            .card {
+                max-height: none;
+                /* Remove height restriction */
+                overflow-y: auto;
+                /* Enable vertical scrolling for overflowing content */
+                padding: 1rem;
+                /* Ensure padding is consistent */
+                transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+                /* Smooth adjustments */
+            }
         }
-    }
 
-    @media (max-width: 480px) {
-        .card {
-            max-height: none; /* Remove height restriction */
-            overflow-y: auto; /* Enable vertical scrolling for overflowing content */
-            padding: 1rem; /* Ensure padding is consistent */
-            transition: max-height 0.3s ease-out, padding 0.3s ease-out; /* Smooth adjustments */
+        @media (max-width: 480px) {
+            .card {
+                max-height: none;
+                /* Remove height restriction */
+                overflow-y: auto;
+                /* Enable vertical scrolling for overflowing content */
+                padding: 1rem;
+                /* Ensure padding is consistent */
+                transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+                /* Smooth adjustments */
+            }
         }
-    }
     </style>
 </head>
 
@@ -1471,8 +1478,10 @@
             <div class="hero__intro">
                 <h1 style=" margin-bottom:1rem">Welcome</h1>
                 <p class="hero__tag">
-                    Hi, I’m Youssef! I love building software that solves real-world problems, whether it’s crafting
-                    scalable systems, developing machine learning models, or helping others to grow and succeed.
+                    Hi, I’m Youssef! I help turn ideas into real, working products.
+                    Whether it’s a quick MVP or an ML-powered service, I love building software that solves real
+                    problems
+                    .
                 </p>
                 <!-- My name is <strong>Youssef Elshafay</strong>. I am a <strong>Software Engineer</strong>
                     located in the <strong>Netherlands</strong> with a passion for <strong>NeuroScience &amp; AI</strong>. -->
@@ -1497,14 +1506,11 @@
             <h1>About Me</h1>
             <article class="summary card" style="margin-top: 10vh;">
                 <p class="hero__tag">
-
-                    With <strong>6+ years of experience</strong>, I build <strong>scalable backend systems</strong> and
-                    deliver
-                    <strong>production-ready ML services</strong> — from <strong>OCR pipelines</strong> to
-                    <strong>containerized APIs</strong>. I care about <strong>mentorship</strong>,
-                    turning ideas
-                    into <strong>impactful software</strong> — whether it’s bootstrapping an MVP or scaling real-world
-                    infrastructure.
+                    <strong>Over the years</strong>, I’ve helped turn early ideas into
+                    <strong>working software</strong>, delivered <strong>ML-powered services</strong> to production,
+                    and built <strong>backend systems</strong> that scale with real use.
+                    I focus on <strong>making software useful and reliable</strong>, supporting teams along the way,
+                    and turning ideas into <strong>real, usable products</strong>.
                 </p>
 
                 <p class="hero__tag">
@@ -1514,6 +1520,7 @@
                         work with.</em>
 
                 </p>
+
             </article>
         </section>
 
@@ -1524,7 +1531,8 @@
                 <div class="chapter__fx-black"></div>
             </div>
             <h1>Experience</h1>
-            <p class="section-intro">From internships to mission-critical systems, here's what shaped my Professional career.</p>
+            <p class="section-intro">From internships to mission-critical systems, here's what shaped my Professional
+                career.</p>
             <div class="h-strip">
                 <article class="card" tabindex="0" title="Double-click to flip for more info">
                     <div class="card-inner">
@@ -1536,11 +1544,11 @@
                                 </figure>
                                 Sitelucent <span class="meta">– NL | Apr 2021 – Present</span>
                             </h2>
-                            <p style="color: #8f8f8f; font-size: larger;">Senior Backend Engineer</p>
+                            <p style="color: #8f8f8f; font-size: larger;">Senior Software Engineer</p>
 
                             <ul class="impact">
                                 <li>Helped move our entire stack to <strong>containerization</strong> </li>
-                                <li>Building api features for our analytics  <strong>dashboard</strong> </li>
+                                <li>Building api features for our analytics <strong>dashboard</strong> </li>
                                 <li>Mentored engineers across the team</li>
                                 <!-- <li>Mentoring engineers.</li> -->
                             </ul>
@@ -1636,7 +1644,8 @@
 
                             <ul class="impact">
                                 <li>poc for Image anomaly detection for rust detection system</li>
-                                <li>gave presentation on anomaly detection for accenture <strong>management team</strong> </li>
+                                <li>gave presentation on anomaly detection for accenture <strong>management
+                                        team</strong> </li>
                                 <li>Graduation internship</li>
                             </ul>
                             <button class="read-more" aria-label="Show more"><span>More info</span></button>
@@ -1670,9 +1679,9 @@
                     <div class="card-inner">
                         <span class="card-position">1/6</span>
                         <div class="card-front">
-                             <figure class="experience-logo">
-                                    <img src="/Assets/Images/sitelucent-logo-footer.png" alt="Sitelucent Logo" />
-                                </figure>
+                            <figure class="experience-logo">
+                                <img src="/Assets/Images/sitelucent-logo-footer.png" alt="Sitelucent Logo" />
+                            </figure>
                             <h2>Similarity Service <span class="meta">Present</span></h2>
                             <ul class="impact">
                                 <li>Image comparison</li>
@@ -1702,9 +1711,9 @@
                     <div class="card-inner">
                         <span class="card-position">2/6</span>
                         <div class="card-front">
-                             <figure class="experience-logo">
-                                    <img src="/Assets/Images/sitelucent-logo-footer.png" alt="Sitelucent Logo" />
-                                </figure>
+                            <figure class="experience-logo">
+                                <img src="/Assets/Images/sitelucent-logo-footer.png" alt="Sitelucent Logo" />
+                            </figure>
                             <h2>Scraping Service <span class="meta">Present</span></h2>
                             <ul class="impact">
                                 <li>SPA scraping (Puppeteer).</li>
@@ -1727,9 +1736,9 @@
                     <div class="card-inner">
                         <span class="card-position">3/6</span>
                         <div class="card-front">
-                             <figure class="experience-logo">
-                                    <img src="/Assets/Images/sitelucent-logo-footer.png" alt="Sitelucent Logo" />
-                                </figure>
+                            <figure class="experience-logo">
+                                <img src="/Assets/Images/sitelucent-logo-footer.png" alt="Sitelucent Logo" />
+                            </figure>
                             <h2>E‑commerce Analytics <span class="meta">Apr 2021 – Present</span></h2>
                             <ul class="impact">
                                 <li>Backend + infra lead</li>
@@ -1753,9 +1762,9 @@
                     <div class="card-inner">
                         <span class="card-position">4/6</span>
                         <div class="card-front">
-                             <figure class="experience-logo">
-                                    <img src="/Assets/Images/peercode_logo.svg" alt="Sitelucent Logo" />
-                                </figure>
+                            <figure class="experience-logo">
+                                <img src="/Assets/Images/peercode_logo.svg" alt="Sitelucent Logo" />
+                            </figure>
                             <h2>Atris <span class="meta">Aug 2020 – Feb 2021</span></h2>
                             <ul class="impact">
                                 <li>Patient telemonitoring</li>
@@ -1779,9 +1788,9 @@
                     <div class="card-inner">
                         <span class="card-position">5/6</span>
                         <div class="card-front">
-                              <figure class="experience-logo">
-                                    <img src="/Assets/Images/Certwell2.png" alt="Sitelucent Logo" />
-                                </figure>
+                            <figure class="experience-logo">
+                                <img src="/Assets/Images/Certwell2.png" alt="Sitelucent Logo" />
+                            </figure>
                             <h2>System Migration <span class="meta">Dec 2019 – Mar 2020</span></h2>
                             <ul class="impact">
                                 <li>.NET Core.</li>
@@ -1805,9 +1814,9 @@
                     <div class="card-inner">
                         <span class="card-position">6/6</span>
                         <div class="card-front">
-                             <figure class="experience-logo">
-                                    <img src="/Assets/Images/Accenture-logo.png" alt="Sitelucent Logo" />
-                                </figure>
+                            <figure class="experience-logo">
+                                <img src="/Assets/Images/Accenture-logo.png" alt="Sitelucent Logo" />
+                            </figure>
                             <h2>Anomaly Detection <span class="meta">Sep 2018 – Jan 2019</span></h2>
                             <ul class="impact">
                                 <li>DL anomaly proof of concept .</li>
@@ -1905,65 +1914,77 @@
             </div>
             <h1>Testimonials</h1>
             <p class="section-intro">
-                I've been lucky to work with people who care about doing meaningful work and doing it well. Here’s what they’ve said about working with me.
+                I've been lucky to work with people who care about doing meaningful work and doing it well. Here’s what
+                they’ve said about working with me.
             </p>
 
             <div class="testimonial-carousel">
                 <div class="testimonial-group">
                     <h3>Innovation & Technical Excellence</h2>
-                    <div>
-                        <article class="card">
-                            <h2>Ivo meesters, Sitelucent</h2>
-                            <p class="quote">
-                               I had the pleasure of working with Yousef for four years, during which time he demonstrated a remarkable passion for innovation and new technologies, particularly in the fields of machine learning and artificial intelligence, bringing innovations and new features to our customers. I highly recommend Yousef for any role that requires innovative thinking, technical expertise, and a collaborative spirit.
-                            </p>
-                            <p class="meta">
-                                <a href="https://www.sitelucent.com" target="_blank" rel="noopener">Sitelucent</a> |
-                                CEO
-                            </p>
-                        </article>
-                    </div>
+                        <div>
+                            <article class="card">
+                                <h2>Ivo meesters, Sitelucent</h2>
+                                <p class="quote">
+                                    I had the pleasure of working with Yousef for four years, during which time he
+                                    demonstrated a remarkable passion for innovation and new technologies, particularly
+                                    in the fields of machine learning and artificial intelligence, bringing innovations
+                                    and new features to our customers. I highly recommend Yousef for any role that
+                                    requires innovative thinking, technical expertise, and a collaborative spirit.
+                                </p>
+                                <p class="meta">
+                                    <a href="https://www.sitelucent.com" target="_blank" rel="noopener">Sitelucent</a> |
+                                    CEO
+                                </p>
+                            </article>
+                        </div>
                 </div>
 
                 <div class="testimonial-group">
                     <h3> Mentorship & Collaboration</h2>
-                    <div >
-                        <article class="card">
-                            <h2>Ivo meesters, Sitelucent</h2>
-                            <p class="quote">
-                                Yousef is dedicated to continuous learning and is eager to share his knowledge with others. He has been instrumental in coaching and training other software developers, fostering a collaborative and growth-oriented environment. His commitment to, and passion for, helping others expand their skills is a testament to his mentorship qualities. 
-                            </p>
-                            <p class="meta" >
-                                <a href="https://www.sitelucent.com" target="_blank" rel="noopener">Sitelucent</a> |
-                                CEO
-                            </p>
-                        </article>
-                        <article class="card" style="margin-top: 1rem;">
-                            <h2>Govert de Vries, PeerCode</h2>
-                            <p class="quote">
-                                Youssef is a great communicator and team builder always willing to help colleagues. Youssef has a great work attitude and wants to get things done. 
-                            </p>
-                            <p class="meta">
-                                <a href="https://www.peercode.nl/en/welcome/" target="_blank"
-                                    rel="noopener">PeerCode</a> | CEO
-                            </p>
-                        </article>
-                    </div>
+                        <div>
+                            <article class="card">
+                                <h2>Ivo meesters, Sitelucent</h2>
+                                <p class="quote">
+                                    Yousef is dedicated to continuous learning and is eager to share his knowledge with
+                                    others. He has been instrumental in coaching and training other software developers,
+                                    fostering a collaborative and growth-oriented environment. His commitment to, and
+                                    passion for, helping others expand their skills is a testament to his mentorship
+                                    qualities.
+                                </p>
+                                <p class="meta">
+                                    <a href="https://www.sitelucent.com" target="_blank" rel="noopener">Sitelucent</a> |
+                                    CEO
+                                </p>
+                            </article>
+                            <article class="card" style="margin-top: 1rem;">
+                                <h2>Govert de Vries, PeerCode</h2>
+                                <p class="quote">
+                                    Youssef is a great communicator and team builder always willing to help colleagues.
+                                    Youssef has a great work attitude and wants to get things done.
+                                </p>
+                                <p class="meta">
+                                    <a href="https://www.peercode.nl/en/welcome/" target="_blank"
+                                        rel="noopener">PeerCode</a> | CEO
+                                </p>
+                            </article>
+                        </div>
                 </div>
 
                 <div class="testimonial-group">
                     <h3> Entrepreneurial Spirit</h2>
-                    <div >
-                        <article class="card">
-                            <h2>Jacco Kooie, Certwell</h2>
-                            <p class="quote">
-                               Youssef is always looking for opportunities to help the company improve its processes.Out of all our employees ,shows youssef the most entrepreneurial spirit.
-                            </p>
-                            <p class="meta">
-                                <a href="https://www.certwell.com/" target="_blank" rel="noopener">Certwell</a> | CTO
-                            </p>
-                        </article>
-                    </div>
+                        <div>
+                            <article class="card">
+                                <h2>Jacco Kooie, Certwell</h2>
+                                <p class="quote">
+                                    Youssef is always looking for opportunities to help the company improve its
+                                    processes.Out of all our employees ,shows youssef the most entrepreneurial spirit.
+                                </p>
+                                <p class="meta">
+                                    <a href="https://www.certwell.com/" target="_blank" rel="noopener">Certwell</a> |
+                                    CTO
+                                </p>
+                            </article>
+                        </div>
                 </div>
             </div>
         </section>
@@ -1975,9 +1996,15 @@
                 <div class="chapter__fx-black"></div>
             </div>
             <h1>Contact</h1>
-            <p class="section-intro" >I'm open to <strong>Remote-first or hybrid</strong> roles where I can apply my experience in <strong>backend
-                engineering, ML, and ML Ops</strong>. If you're building intelligent systems or <strong>scaling innovation</strong> fast — I’d
-                love to <strong>help.</strong></p>
+            <p class="section-intro">
+                <strong>I collaborate </strong>to turn ideas into real, usable software — <strong>quickly and
+                    reliably</strong>.
+                Whether it’s building out an <strong>MVP</strong>, scaling a <strong>backend</strong>, or getting
+                <strong>ML</strong> tools into production,
+                I bring hands-on experience across <strong>backend engineering, machine learning, and MLOps</strong>.
+                I’m open to <strong>remote-first or hybrid roles</strong>, freelance or long-term.
+                If that sounds like a fit, let’s <strong>Talk</strong>.
+            </p>
             <div class="contact-icons">
                 <a href="mailto:yousefelshafay@gmail.com" target="_blank" aria-label="Email"><i
                         class="fa fa-4x fa-google"></i></a>
@@ -2065,7 +2092,7 @@
             b: sec.querySelector('.chapter__fx-black'),
             dir: sec.dataset.dir || 'l'
         }));
-       
+
         function updateSectionFX() {
             sectionsFX.forEach(o => {
                 const r = o.el.getBoundingClientRect(); const vh = window.innerHeight; const start = vh * (1 - SECTION_STRIP_TRIGGER); // start anim before enters
